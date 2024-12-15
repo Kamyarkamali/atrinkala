@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <title>پنل کاربری</title>
+  </head>
+  <body>
+    <div class="containers">
+      <!-- navbar -->
+      <header
+      class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+    >
+      <!-- بخش بالا در موبایل -->
+      <div class="flex justify-between items-center w-full">
+        <!-- لوگو و همبرگر منو -->
+        <div class="flex items-center gap-4">
+          <img
+            class="w-10 cursor-pointer lg:hidden"
+            src="assets/icons/menu.svg"
+            alt="menu"
+          />
+          <a href="HomePage.html">
+            <img
+              class="w-[150px] lg:w-[190px]"
+              src="assets/images/images/logo.png"
+              alt="logo"
+            />
+          </a>
+          <!-- فیلد جستجو در دسکتاپ -->
+          <div
+            class="hidden md:flex items-center bg-white border rounded-md lg:mx-6 lg:ml-4"
+          >
+            <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+            <input
+              class="w-full lg:w-[600px] text-sm placeholder-gray-500 p-2 rounded-md focus:outline-none"
+              type="text"
+              placeholder="جستجو"
+            />
+          </div>
+        </div>
+        <!-- دکمه‌های ورود و ثبت نام -->
+        <div class="flex lg:hidden items-center gap-2">
+          <button
+            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+          >
+            <a href="SingIn.html">
+              <p>ورود</p>
+            </a>
+            <p class="text-black mx-1">|</p>
+            <a href="SingIn.html">
+              <p>ثبت نام</p>
+            </a>
+          </button>
+          <button
+            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+          >
+            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          </button>
+        </div>
+      </div>
+    
+      <!-- فیلد جستجو در موبایل -->
+      <div
+        class="flex md:hidden items-center bg-white border rounded-md w-full mt-4"
+      >
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <input
+          class="w-full text-sm placeholder-gray-500 p-2 rounded-md focus:outline-none"
+          type="text"
+          placeholder="جستجو"
+        />
+      </div>
+    
+      <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
+      <div class="hidden lg:flex items-center gap-4">
+        <button
+          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
+        >
+          <a href="SingIn.html">
+            <p>ورود</p>
+          </a>
+          <p class="text-black mx-1">|</p>
+          <a href="SingIn.html">
+            <p>ثبت نام</p>
+          </a>
+        </button>
+        <button
+          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+        >
+          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+        </button>
+      </div>
+    </header>
+    
+
+      <section class="mt-[20px] max-w-[1300px] mx-auto">
+        <ul
+          class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
+        >
+          <a class="products">
+  
+            <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
+            <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+  
+            <!--مگا منو  دکستاپ-->
+           <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
+  <div class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
+    <div class="flex items-center gap-3 menu-item" data-category="mobile">
+      <img src="assets/icons/mobile.svg" alt="mobile">
+      <div class="flex items-center justify-between w-full">
+        <p class="text-[15px]">موبایل و تبلت</p>
+        <img class="ml-4" src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" alt="">
+      </div>
+    </div>
+    <div class="flex items-center gap-3 menu-item" data-category="laptop">
+      <img src="assets/icons/laptop.svg" alt="laptop">
+      <p class="text-[15px]">لپ تاپ</p>
+    </div>
+    <div class="flex items-center gap-3 menu-item" data-category="computer">
+      <img src="assets/icons/computer.svg" alt="computer">
+      <p class="text-[15px]">کامپیوتر و تجهیزات جانبی</p>
+    </div>
+    <div class="flex items-center gap-3 menu-item" data-category="game">
+      <img src="assets/icons/game.svg" alt="game">
+      <p class="text-[15px]">بازی و سرگرمی</p>
+    </div>
+  </div>
+  
+  <!-- محتوای نمایش داده‌شده -->
+  <div id="dynamic-content" class="w-[1400px] h-[419px]  rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]">
+    <!-- محتوای پیش‌فرض -->
+     <div class="flex justify-around mt-7">
+      <div class="flex gap-[37px] container2">
+        
+        <!-- قسمت اول اپل -->
+         <div class="flex flex-col gap-2 items-center">
+           <div class="flex  items-center apple">
+             <h3 class="text-[16px]">گوشی اپل</h3>
+             <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"/>
+           </div>
+  
+        <ul class="flex gap-2 flex-col items-center text-[13px] text-[#525252]">
+        <li>گوشی آیفون 11</li>
+        <li>گوشی آیفون 12</li>
+        <li>گوشی آیفون 13</li>
+        <li>گوشی آیفون 14</li>
+        <li>گوشی آیفون 15</li>
+        
+        <div></div>
+  
+        <li>گوشی آیفون 11 پرو</li>
+        <li>گوشی آیفون 12 پرو</li>
+        <li>گوشی آیفون 13 پرو</li>
+        <li>گوشی آیفون 14 پرو</li>
+        <li>گوشی آیفون 15 پرو</li>
+      </ul>
+    </div>
+  
+      <!-- قسمت اول اپل پایان -->
+      
+      <ul class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]">
+        <li>گوشی آیفون 11 پرومکس</li>
+        <li>گوشی آیفون 12 پرومکس</li>
+        <li>گوشی آیفون 13 پرومکس</li>
+        <li>گوشی آیفون 14 پرومکس</li>
+        <li>گوشی آیفون 15 پرومکس</li>
+      </ul>
+    </div>
+  
+    <ul class="flex flex-col gap-2 tablet-container">
+  <div class="flex gap-2 items-center tablet-header">
+    <h3 class="text-[16px]">تبلت</h3>
+    <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+  </div>
+  <li class="tablet-item">تبلت سامسونگ</li>
+  <li class="tablet-item">آیپد</li>
+  <li class="tablet-item">آیپد پرو</li>
+  </ul>
+    
+    
+  
+    <ul class="flex flex-col gap-2 smartwatch-container">
+      <div class="flex items-center smartwatch-header">
+        <h3 class="text-[16px]">ساعت هوشمند</h3>
+        <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+      </div>
+    
+      <li class="smartwatch-item hide">ساعت هوشمند سامسونگ</li>
+      <li class="smartwatch-item hide">ساعت هوشمند شیاومی</li>
+      <li class="smartwatch-item hide">ساعت هوشمند هواوی</li>
+      <li class="smartwatch-item hide">ساعت هوشمند اپل</li>
+    </ul>
+    
+    <ul class="flex flex-col gap-2 accessories-container">
+      <div class="flex items-center accessories-header">
+        <h3 class="text-[16px]">لوازم جانبی گوشی موبایل</h3>
+        <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+      </div>
+    
+      <li class="accessories-item hide">هدفون، هدست و هندزفری</li>
+      <li class="accessories-item hide">شارژر گوشی</li>
+    </ul>
+    
+     </div>
+    <div>
+      
+    </div>
+  </div>
+  </div>
+  
+  <!-- مگا منو  دسکتاپ -->
+  
+  
+  <!-- مگا منو موبایل -->
+  <div class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile">
+    <!-- هدر مگا منو -->
+    <div class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]">
+      <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
+      <p class="text-[15px]">دسته بندی کالا ها</p>
+    </div>
+  
+  
+      <!-- دسته موبایل -->
+      <div class="accordion-item">
+        <div class="flex items-center justify-between">
+          <button
+            type="button"
+            class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+            موبایل
+          </button>
+          <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+        </div>
+        <ul class="accordion-content hidden px-6 py-2 bg-white">
+          <div class="flex items-center justify-between w-full phonTab">
+            <li class="py-1 text-gray-700 text-sm sm:text-base">موبایل و تبلت</li>
+          <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+          </div>
+          <div class="noneApple apple">
+            <div class="flex items-center justify-between w-full noneMobile">
+              <li class="font-bold text-[15px]">موبایل اپل</li>
+              <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+            </div>
+          </div>
+  
+          <div class="noneApple allApple">
+          <div class="grid grid-cols-2">
+  
+            <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+              <li class="hover:text-black duration-300">گوشی آیفون 11</li>
+              <li class="hover:text-black duration-300">گوشی آیفون 12</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 13</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 14</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 15</li>
+            <div class="mt-4 mb-4"></div>
+            <li class="hover:text-black duration-300">گوشی آیفون 11 پرو</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 12 پرو</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 13 پرو</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 14 پرو</li>
+          </div>
+          <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+  
+            <li class="hover:text-black duration-300">گوشی آیفون 11 پرومکس</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 12 پرومکس</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 13 پرومکس</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 14 پرومکس</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 15 پرومکس</li>
+          </div>
+        </div>
+      </div>
+  
+        </ul>
+      </div>
+    
+    <!-- دسته تبلت -->
+    <div class="accordion-item border-b">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+          تبلت
+        </button>
+        <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+      </div>
+      <ul class="accordion-content hidden px-6 py-2 bg-white">
+        <li class="py-1 text-gray-700 text-sm sm:text-base">تبلت سامسونگ</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد پرو</li>
+      </ul>
+    </div>
+    
+    <!-- دسته لپ‌تاپ -->
+    <div class="accordion-item border-b">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+          لپ‌تاپ
+        </button>
+        <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+      </div>
+      <ul class="accordion-content hidden px-6 py-2 bg-white">
+        <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ دل</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ ایسوس</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ اپل</li>
+      </ul>
+    </div>
+    
+    <!-- دسته لوازم جانبی -->
+    <div class="accordion-item border-b">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+          لوازم جانبی
+        </button>
+        <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+      </div>
+      <ul class="accordion-content hidden px-6 py-2 bg-white">
+        <li class="py-1 text-gray-700 text-sm sm:text-base">ماوس</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">کیبورد</li>
+        <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- مگا منو موبایل -->
+  
+          <a href="HomePage.html">
+            <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
+          </a>
+          <a >
+            <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
+          </a>
+          <a >
+            <li class="hover:text-[#003FEB] text-[11px] duration-300">
+              تجربه خرید از آترین کالا
+            </li>
+          </a>
+          <a>
+            <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
+          </a>
+        </ul>
+      </section>
+     <!-- top menu end -->
+
+     <div class="flex justify-center mt-[27px]">
+        <button class="w-[192px] titlePage h-[51px] rounded-[8px] border-[0.5px] border-[#313131]">حساب کاربری من</button>
+    </div>
+
+ <!-- سایدبار موبایل -->
+<aside class="flex justify-center mt-7">
+  <div class="w-full sm:w-[600px] mr-11 ml-11 md:mr-0 md:ml-0  md:w-[740px] xl:hidden border-[0.5px] border-[#AFAFAF] rounded-[10px] shadow-lg saidbarMobile">
+    
+    <div class="flex justify-between border-b-[0.5px] border-[#AFAFAF] items-center p-4">
+      <div class="flex items-center gap-1">
+        <img src="assets/icons/user-alt-1-svgrepo-com 9.svg" alt="تصویر پروفایل سینا احمدی" class="w-[20px] h-[20px]" />
+        <p>سینا احمدی</p>
+      </div>
+      <p>09125647898</p>
+    </div>
+
+    <!-- استفاده از تگ nav برای ناوبری -->
+    <nav>
+      <ul class="flex flex-col gap-4 p-4 text-sm listSaidbarMobile">
+        <li class="hover:text-blue-500 duration-200 cursor-pointer mt-1">حساب کاربری من</li>
+        <li class="hover:text-blue-500 duration-200 cursor-pointer mt-1">مدیریت کیف پول</li>
+        <li class="hover:text-blue-500 duration-200 cursor-pointer mt-1">سفارش های من</li>
+        <li class="hover:text-blue-500 duration-200 cursor-pointer mt-1">نظرات من</li>
+        <li class="hover:text-blue-500 duration-200 cursor-pointer mt-1">تیکت</li>
+      </ul>
+    </nav>
+
+    <!-- استفاده از تگ button به جای p برای عملیات -->
+    <button class="text-sm p-4 border-t-[0.5px] border-[#AFAFAF] cursor-pointer hover:text-blue-500 duration-200 w-full text-left">
+      خروج
+    </button>
+  </div>
+</aside>
+<!-- سایدبار موبایل -->
+
+      <div class="flex max-w-full mx-auto">
+
+          <!-- سایدبار -->
+          <aside class="hidden xl:block mr-[30px] w-[252px] z-40 h-[291px] rounded-[10px] border-[0.5px] border-[#AFAFAF] bg-white shadow-lg shadow-gray-300 p-4 saidbar">
+            <div class="flex items-center justify-between gap-1 border-b-[0.5px] border-[#AFAFAF] p-2">
+              <div  class="flex items-center gap-1">
+                <img src="assets/icons/user-alt-1-svgrepo-com 9.svg" alt="/">
+              <h2 class="text-[13px] font-bold">سینا احمدی</h2>
+              </div>
+                <p class="text-[12px] text-gray-600">09125647898</p>
+            </div>
+            <ul class="mt-[20px] saidbar1">
+                <li class="mb-4 text-[13px] cursor-pointer hover:text-blue-400 duration-200 text-[#1A1A1A] font-bold">
+                  حساب کاربری من
+                </li>
+                <li class="mb-4 text-[13px] cursor-pointer hover:text-blue-400 duration-200 text-[#1A1A1A] font-bold">
+                  مدیریت کیف پول
+                </li>
+                <li class="mb-4 text-[13px] cursor-pointer hover:text-blue-400 duration-200 text-[#1A1A1A] font-bold">
+                  سفارش های من
+                </li>
+                <li class="mb-4 text-[13px] cursor-pointer hover:text-blue-400 duration-200 text-[#1A1A1A] font-bold">
+                  نظرات من
+                </li>
+                <li class="mb-4 text-[13px] cursor-pointer hover:text-blue-400 duration-200 text-[#1A1A1A] font-bold">
+                  تیکت
+                </li>
+            </ul>
+            <p class="border-t-[1px] border-[#AFAFAF cursor-pointer hover:text-blue-400 duration-200">خروج</p>
+        </aside>
+
+        
+
+        <!-- محتوای اصلی -->
+        <div class="flex-1 p-6">
+
+           <!-- باکس های قسمت مدیریت کیف پول -->
+           <div class="flex flex-col items-center gap-3 myWallet">
+
+            <!-- Box 1 -->
+            <div class="w-full max-w-[842px] h-auto bg-white border-[0.5px] border-[#AFAFAF] rounded-[15px] shadow-lg">
+              <div class="flex flex-col justify-end">
+                <!-- مشاهده جزئیات سفارش -->
+                <div class="flex items-center gap-2 border-b-[0.5px] border-[#AFAFAF] p-3">
+                  <span class="text-sm text-[#003FEB]">مشاهده جزئیات سفارش</span>
+                  <button onclick="shoMyShop()" class="text-sm text-[#003FEB] hover:underline focus:outline-none">(کلیک کنید)</button>
+                </div>
+                <!-- قیمت -->
+                <span class="text-[14px] mt-3 px-4 font-bold">26.660.000 تومان</span>
+            
+                <div class="flex flex-wrap justify-around items-center p-2 gap-4 sm:gap-6">
+                  <!-- تاریخ سفارش -->
+                  <div>
+                    <p class="text-center sm:text-right">تاریخ سفارش: 1401/5/12</p>
+                  </div>
+            
+                  <!-- تعداد -->
+                  <div class="flex items-center gap-3">
+                    <span class="text-[14px] text-[#003FEB]">تعداد</span>
+                    <button 
+                      onclick="shoMyShop()" 
+                      class="text-[14px] text-[#003FEB] border-[1px] rounded-lg w-[38px] h-[38px] flex justify-center items-center border-[#464646] hover:bg-[#f0f0f0]"
+                    >
+                      1
+                    </button>
+                  </div>
+            
+                  <!-- تصویر محصول -->
+                  <div>
+                    <img 
+                      class="w-[100px] h-auto sm:w-[150px] object-cover" 
+                      src="assets/images/images/myWallet/atrinkala-hp-victus-15-core-i7-12650h-15-6-full-hd-1 2.png" 
+                      alt="تصویر لپ تاپ HP Victus 15"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <!-- دکمه ادامه خرید -->
+              <div class="flex items-center justify-center mb-4">
+                <a href="StepShop.html">
+                  <button class="w-[98px] h-[43px] rounded-[7px] text-white bg-[#003FEB] hover:bg-blue-600 transition-all">
+                    ادامه خرید
+                  </button>
+                </a>
+              </div>
+            </div>
+            
+          
+            <!-- Box 2 -->
+            <div class="w-full max-w-[842px] h-auto bg-white border-[0.5px] border-[#AFAFAF] rounded-[15px] shadow-lg">
+              <div class="flex flex-col justify-end">
+                <div class="flex items-center gap-2 border-b-[0.5px] border-[#AFAFAF] p-3">
+                  <span class="text-sm text-[#003FEB]">مشاهده جزئیات سفارش</span>
+                  <!-- تغییر span به button برای دسترسی بهتر -->
+                  <button onclick="shoMyShop()" class="text-sm text-[#003FEB] hover:underline focus:outline-none" aria-label="مشاهده جزئیات سفارش">
+                    (کلیک کنید)
+                  </button>
+                </div>
+                <span class="text-[14px] mt-3 px-4 font-bold">26.660.000 تومان</span>
+            
+                <div class="flex flex-wrap justify-around items-center p-2 gap-4 sm:gap-6">
+                  <!-- تاریخ سفارش -->
+                  <div>
+                    <p class="text-center sm:text-right">تاریخ سفارش: 1401/5/12</p>
+                  </div>
+            
+                  <!-- تعداد -->
+                  <div class="flex items-center gap-3">
+                    <span class="text-[14px] text-[#003FEB]">تعداد</span>
+                    <button 
+                      onclick="shoMyShop()" 
+                      class="text-[14px] text-[#003FEB] border-[1px] rounded-lg w-[38px] h-[38px] flex justify-center items-center border-[#464646] hover:bg-[#f0f0f0]"
+                      aria-label="تعداد محصول"
+                    >
+                      2
+                    </button>
+                  </div>
+            
+                  <!-- تصویر محصول -->
+                  <div>
+                    <img 
+                      class="w-[100px] h-auto sm:w-[150px] object-cover" 
+                      src="assets/images/images/myWallet/atrinkala-samsung-galaxy-buds-2-headphones-black 2.png" 
+                      alt="تصویر هدفون بی‌سیم مدل X260" 
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- ادامه خرید -->
+              <div class="flex items-center justify-center mb-4">
+                <a href="StepShop.html">
+                  <button class="w-[98px] h-[43px] rounded-[7px] text-white bg-[#003FEB] hover:bg-blue-600 transition-all" aria-label="ادامه خرید">
+                    ادامه خرید
+                  </button>
+                </a>
+              </div>
+            </div>
+            
+          
+            <!-- Extra Section -->
+            <section class="flex flex-col items-center gap-4 w-full max-w-[842px]">
+              <button class="w-[192px] h-[51px] border-[0.5px] border-[#313131] rounded-[8px]">سفارش # 000001262</button>
+          
+              <div class="w-full h-auto p-4 rounded-[15px] border-[0.5px] border-[#77777] shadow-md">
+                <div class="flex flex-col border-b-[0.5px] border-[#AFAFAF] p-3">
+                  <div class="flex flex-wrap gap-6 justify-between">
+                    <div class="flex items-center gap-3">
+                      <p class="text-[13px]">تحویل گیرنده :</p>
+                      <p class="text-[13px] font-bold">سارا خانی</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <p class="text-[13px]">شماره تماس :</p>
+                      <p class="text-[13px] font-bold">02147557</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 mt-3">
+                    <p class="text-[13px]">ارسال به :</p>
+                    <p class="text-[13px] font-bold">خیابان شریعتی</p>
+                  </div>
+                </div>
+
+             <section class="flex justify-between border-b-[0.5px] border-[#AFAFAF]">
+  <!-- نوع ارسال -->
+  <div class="flex items-center gap-3 py-4">
+    <p class="text-sm">نوع ارسال:</p>
+    <span class="text-sm font-bold">اختصاصی</span>
+  </div>
+
+  <!-- تاریخ سفارش -->
+  <div class="flex items-center gap-3 py-4">
+    <p class="text-sm">تاریخ سفارش:</p>
+    <time datetime="2023-01-19" class="text-sm font-bold">29 دی 1401</time>
+  </div>
+
+  <!-- وضعیت سفارش -->
+  <div class="flex items-center gap-3 py-4">
+    <p class="text-sm">وضعیت سفارش:</p>
+    <span class="text-sm font-bold">تعلیق</span>
+  </div>
+</section>
+
+<article class="py-4 flex items-center justify-between">
+  <!-- اطلاعات محصول -->
+  <div class="flex">
+    <!-- تصویر محصول -->
+    <img 
+      src="assets/images/images/myWallet/atrinkala-samsung-galaxy-buds-2-headphones-black 2.png" 
+      alt="هدفون بی سیم مدل X260" 
+      class="w-16 h-16 object-cover"
+    />
+
+    <!-- توضیحات محصول -->
+    <div class="flex flex-col gap-2 ml-4">
+      <h2 class="text-[13px] font-bold">هدفون بی سیم مدل X260</h2>
+      <p class="text-[13px]">گارانتی: تضمین سلامت کالا</p>
+      <p class="text-[13px] font-bold">26.660.000 تومان</p>
+    </div>
+  </div>
+
+  <!-- تعداد محصول -->
+  <div class="flex items-center gap-2">
+    <label for="product-quantity" class="text-sm text-blue-500 font-bold">تعداد</label>
+    <div 
+      id="product-quantity" 
+      class="w-[38px] h-[38px] rounded-[10px] border-[0.5px] border-[#AFAFAF] flex justify-center items-center"
+    >
+      <span class="text-sm text-blue-500">2</span>
+    </div>
+  </div>
+</article>
+
+                
+              </div>
+            </section>
+          </div>
+
+              <!-- قسمت نظرهای من -->
+              <section class="flex flex-col items-center gap-4 w-full max-w-[842px] hidden myComments">
+                <article class="w-full h-auto p-3 rounded-[15px] border-[0.5px] border-[#777777] shadow-md">
+                  <!-- بخش اطلاعات اصلی نظر -->
+                  <header class="flex gap-8 items-center justify-between border-b-[0.5px] border-[#AFAFAF]">
+                    <!-- نام محصول -->
+                    <div class="flex items-center gap-3 py-4 w-full sm:w-auto">
+                      <h3 class="text-sm sm:text-base text-center sm:text-left">هدفون بی سیم مدل X260</h3>
+                    </div>
+                    
+                    <!-- تاریخ ثبت نظر -->
+                    <div class="flex items-center gap-3 py-4 w-full sm:w-auto">
+                      <p class="text-[12px] sm:text-base font-bold text-center sm:text-left">تاریخ ثبت نظر:</p>
+                      <time datetime="2022-11-03" class="text-[12px] sm:text-base text-center sm:text-left">1401/8/12</time>
+                    </div>
+              
+                    <!-- وضعیت نظر -->
+                    <div class="flex items-center gap-3 py-4 w-full sm:w-auto">
+                      <p class="text-[12px] sm:text-base text-center sm:text-left">وضعیت نظر:</p>
+                      <p class="text-[12px] sm:text-base font-bold text-center sm:text-left">انتظار</p>
+                    </div>
+                  </header>
+              
+                  <!-- بخش جزئیات پیام -->
+                  <div class="py-4 flex flex-wrap items-center justify-between">
+                    <!-- تصویر و متن پیام -->
+                    <div class="flex items-center gap-5 sm:gap-10 w-full sm:w-auto">
+                      <img 
+                        src="assets/images/images/myWallet/atrinkala-samsung-galaxy-buds-2-headphones-black 2.png" 
+                        alt="تصویر هدفون بی سیم مدل X260" 
+                        class="w-16 h-16 sm:w-20 sm:h-20 object-cover"
+                      />
+                      <p class="text-sm sm:text-base">سلام وقتتون بخیر، ZAA موجود است؟</p>
+                    </div>
+              
+                    <!-- ویرایش پیام -->
+                    <div class="flex items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                      <button class="text-sm sm:text-base text-blue-500 font-bold text-center sm:text-left">ویرایش</button>
+                      <img src="assets/icons/write-svgrepo-com 1.svg" alt="آیکن ویرایش" class="w-5 h-5 sm:w-6 sm:h-6">
+                    </div>
+                  </div>
+                </article>
+              </section>              
+               <!-- قسمت نظرهای من -->
+
+              <!-- تیکت -->
+              <article class="w-full max-w-[842px] h-auto rounded-[19px] hidden shadow-lg p-5 ticket">
+                <header>
+                  <h2 class="text-xl font-bold">ارسال پیام جدید</h2>
+                </header>
+                
+                <form class="z-50">
+                  <!-- بخش: Select -->
+                  <fieldset class="flex items-center gap-4 mb-4">
+                    <legend class="sr-only">انتخاب بخش</legend>
+                    <label for="department" class="w-[120px]">بخش:</label>
+                    <select id="department" name="department" class="z-50 cursor-pointer w-full md:w-[417px] h-[33px] border-[0.5px] border-[#AFAFAF] rounded-[6px]">
+                      <option value="sales">فروش</option>
+                      <option value="support">پشتیبانی</option>
+                      <option value="feedback">نظرات و پیشنهادات و انتقادات</option>
+                      <option value="management">مدیریت</option>
+                    </select>
+                  </fieldset>
+              
+                  <!-- بخش: موضوع -->
+                  <fieldset class="flex items-center gap-4 mb-4">
+                    <legend class="sr-only">وارد کردن موضوع</legend>
+                    <label for="subject" class="w-[120px]">موضوع:</label>
+                    <input id="subject" name="subject" type="text" 
+                      class="z-50 outline-none focus:border-[2px] focus:border-blue-400 duration-200 cursor-pointer w-full md:w-[417px] h-[33px] border-[0.5px] border-[#AFAFAF] rounded-[6px]">
+                  </fieldset>
+              
+                  <!-- بخش: متن پیام -->
+                  <fieldset class="flex items-start gap-4 mb-4">
+                    <legend class="sr-only">متن پیام</legend>
+                    <label for="message" class="w-[120px]">متن پیام:</label>
+                    <textarea id="message" name="message" rows="5" 
+                      class="z-50 outline-none focus:border-[2px] focus:border-blue-400 duration-200 cursor-pointer w-full md:w-[417px] border-[0.5px] border-[#AFAFAF] rounded-[6px]"></textarea>
+                  </fieldset>
+              
+                  <!-- دکمه‌ها -->
+                  <div class="flex gap-4 items-center mt-4 justify-center">
+                    <button type="button" class="w-[178px] h-[43px] bg-[#003FEB] rounded-[7px] text-white">یک فایل انتخاب کنید</button>
+                    <button type="submit" class="w-[178px] h-[43px] bg-[#003FEB] rounded-[7px] text-white">ارسال پیام</button>
+                  </div>
+                </form>
+              </article>              
+              <!-- تیکت -->
+
+
+          
+       <!-- باکس های قسمت مدیریت کیف پول -->
+
+            <!-- باکس   اطلاعات -->
+            
+             <section class="flex flex-col items-start boxAll">
+              
+              <div class="flex flex-col items-center w-full"> 
+
+
+              <!-- باکس اول موبایل -->
+               <section class="w-[340px] sm:w-[600px] md:w-[740px] h-[313px] rounded-[15px] shadow-lg lg:hidden boxMobile1">
+                <h3 class="p-4 text-[16px] text-[#5C5C5C] border-b-[0.5px] border-[#A9A9A9]">اطلاعات حساب کاربری</h3>
+                <div class="flex flex-col gap-2 p-4 mr-[10px]">
+                  <label class="text-sm">نام و نام خانوادگی:</label>
+                  <p class="text-sm font-bold">سینا احمدی</p>
+                </div>
+                <div class="flex flex-col gap-2 px-4 mr-[10px]">
+                  <label class="text-sm">شماره تلفن همراه :</label>
+                  <p class="text-sm font-bold">09125647898</p>
+                </div>
+                <div class="flex flex-col gap-2 px-4 mt-[6px] mr-[10px]">
+                  <label class="text-sm">دریافت خبرنامه :</label>
+                  <p class="text-sm font-bold">خیر</p>
+                </div>
+
+                <div class="flex items-center gap-24">
+                  <div class="flex flex-col gap-2 px-4 mt-[6px] mr-[10px]">
+                    <label class="text-sm">پست الکترونیک :</label>
+                    <p class="text-sm font-bold">sinaahmadi@gmail.com</p>
+                  </div>
+                  <div class="flex items-center mr-[-42px] z-[100]  cursor-pointer edite1">
+                    <img src="assets/icons/write-svgrepo-com 1.svg" alt="/">
+                    <p class="text-[14px] text-[#003FEB]">ویرایش</p>
+                  </div>
+                </div>
+               </section>
+              <!-- باکس اول موبایل -->
+
+               <!-- باکس دوم موبایل -->
+               <section class="w-[340px] sm:w-[600px] md:w-[740px] h-[313px] rounded-[15px] shadow-xl lg:hidden boxMobile2">
+                <h3 class="p-4 text-[16px] text-[#5C5C5C] border-b-[0.5px] border-[#A9A9A9]">دفترچه آدرس</h3>
+                <div class="flex flex-col gap-2 p-4 mr-[10px]">
+                  <label class="text-sm">آدرس صورتحساب پیش فرض :</label>
+                  <p class="text-sm font-bold w-[239px]">سینا احمدی خیابان شریعتی تهران
+                    تهران, ایران شماره تماس: 0214557</p>
+                </div>
+                <div class="flex flex-col px-4 mr-[10px]">
+                  <label class="text-sm mt-[14px]">آدرس ارسال پیش فرض :</label>
+                  <div class="flex items-center gap-11">
+                    <p class="text-sm font-bold mt-[16px] w-[239px]">سینا احمدی خیابان شریعتی تهران
+                      تهران, ایران شماره تماس: 0214557</p>
+                      <div class="flex items-center mr-[-42px] z-[100]  cursor-pointer openMpdamMobile">
+                        <img src="assets/icons/write-svgrepo-com 1.svg" alt="/">
+                        <p class="text-[14px] text-[#003FEB]">ویرایش</p>
+                      </div>
+                    </div>
+                </div>
+               </section>
+
+               <!-- باکس دوم موبایل -->
+
+                <section class="informationuser">
+
+                <div class="w-[842px] 2xl:w-[1400px] xl:w-[1000px] hidden lg:flex flex-col h-[184px] rounded-[15px] shadow-lg">
+                  <h3 class="p-4 text-[16px] text-[#5C5C5C] border-b-[0.5px] border-[#A9A9A9]">اطلاعات حساب کاربری</h3>
+                  <div class="flex justify-between mr-[17px]">
+                    <div class="flex flex-col gap-2">
+                      <div class="flex flex-col px-4 mt-[15px]">
+                      <p class="text-[14px]">نام و نام خانوادگی:</p>
+                      <p class="font-bold">سینا احمدی</p>
+                    </div>
+                    <div class="flex flex-col px-4">
+                      <p class="text-[14px]">شماره تلفن همراه :</p>
+                      <p class="font-bold">09125647898</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col gap-2">
+                    <div class="flex flex-col px-4 mt-[15px]">
+                      <p class="text-[14px]">دریافت خبرنامه :</p>
+                      <p class="font-bold">خیر</p>
+                  </div>
+                  <div class="flex flex-col px-4">
+                    <p class="text-[14px]">پست الکترونیک :</p>
+                    <p class="font-bold">sinaahmadi@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="flex relative items-center ml-[72px] z-[200]  cursor-pointer edite2">
+                  <img src="assets/icons/write-svgrepo-com 1.svg" alt="/">
+                  <p class="text-[14px] text-[#003FEB]">ویرایش</p>
+                </div>
+
+                </div>
+                </div>
+
+                <div class="w-[842px] 2xl:w-[1400px] xl:w-[1000px] hidden lg:block h-[184px] mt-[15px] border-[0.5px] border-[#777777] rounded-[15px] shadow-lg">
+                  <h3 class="p-4 text-[16px] text-[#5C5C5C] border-b-[0.5px] border-[#A9A9A9]">دفترچه آدرس</h3>
+                  
+                  <div class="flex justify-between mr-[17px]">
+                    
+                    <!-- آدرس صورتحساب پیش فرض -->
+                    <section class="flex flex-col gap-2">
+                      <div class="flex flex-col px-4 mt-[15px]">
+                        <p class="text-[14px]">آدرس صورتحساب پیش فرض :</p>
+                        <p class="font-bold">سینا احمدی خیابان شریعتی تهران تهران, ایران شماره تماس: 0214557</p>
+                      </div>
+                    </section>
+                    
+                    <!-- آدرس ارسال پیش فرض -->
+                    <section class="flex flex-col gap-2">
+                      <div class="flex flex-col px-4 mt-[15px]">
+                        <p class="text-[14px]">آدرس ارسال پیش فرض :</p>
+                        <p class="font-bold">سینا احمدی خیابان شریعتی تهران تهران, ایران شماره تماس: 0214557</p>
+                      </div>
+                    </section>
+                
+                    <!-- ویرایش -->
+                    <div class="flex items-center cursor-pointer gap-1 ml-[72px] edite3 z-[100]" aria-label="ویرایش آدرس">
+                      <img src="assets/icons/write-svgrepo-com 1.svg" alt="آیکون ویرایش" />
+                      <p class="text-[14px] text-[#003FEB]">ویرایش</p>
+                    </div>
+                  </div>
+                </div>                
+              </section>
+
+             </div>
+            <!-- باکس   اطلاعات -->
+        </section>
+      </div>
+     
+        <!-- مودال اول -->
+        <div class="fixed w-[400px] lg:w-[842px] sm:w-[600px] border-[0.5px] border-[#777777] rounded-[13px] shadow-lg bg-white top-3 left-[50%] transform -translate-x-1/2 modal1 hidden transition-all duration-300 ease-in-out">
+          <div class="flex items-center justify-between border-b-[0.5px] border-[#A9A9A9] p-4">
+            <h3>اطلاعات حساب کاربری</h3>
+            <img class="w-[30px]  cursor-pointer closesvg" src="assets/icons/close-svgrepo-com.svg" alt="closed">
+          </div>
+        
+          <form class="flex relative flex-col items-center gap-6 mt-[34px] w-full px-4 sm:px-0">
+            <!-- Row 1 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700">نام:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+        
+            <!-- Row 2 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700">نام و نام خانوادگی:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+        
+            <!-- چک باکس ها -->
+            <div class="flex justify-center p-3 gap-8 w-full sm:w-[50%]">
+              <div class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 toggleemail">
+                <label class="text-sm text-gray-700">تغییر ایمیل</label>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 changePassword">
+                <label class="text-sm text-gray-700">تغییر کلمه عبور</label>
+              </div>
+            </div>
+        
+            <!-- Row 3 (اینپوت ها برای آپدیت) -->
+            <div class="flex-col items-center gap-4 hidden update1 w-full sm:w-[50%]">
+              <div class="flex items-center gap-4 w-full sm:w-[382px]">
+                <label class="w-1/4 text-right text-sm text-gray-700">ایمیل:</label>
+                <input
+                  type="text"
+                  class="flex-1 w-full h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div class="flex items-center gap-4 w-full sm:w-[382px]">
+                <label class="w-1/4 text-right text-sm text-gray-700">کلمه عبور فعلی:</label>
+                <input
+                  type="text"
+                  class="flex-1 w-full h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+            </div>
+
+            <!-- اینپوت های دوم برای آپدیت -->
+            <form class="flex-col items-center gap-4 update1 w-full sm:w-[50%] hidden close2">
+              <!-- کلمه عبور فعلی -->
+              <div class="flex items-center gap-4 w-full sm:w-[382px]">
+                <label for="current-password" class="w-1/4 text-right text-sm text-gray-700">کلمه عبور فعلی:</label>
+                <input
+                  id="current-password"
+                  type="password"
+                  class="flex-1 w-full h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  aria-label="کلمه عبور فعلی"
+                />
+              </div>
+            
+              <!-- کلمه عبور جدید -->
+              <div class="flex items-center gap-4 w-full sm:w-[382px]">
+                <label for="new-password" class="w-1/4 text-right text-sm text-gray-700">کلمه عبور جدید:</label>
+                <input
+                  id="new-password"
+                  type="password"
+                  class="flex-1 w-full h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  aria-label="کلمه عبور جدید"
+                />
+              </div>
+            
+              <!-- تایید کلمه عبور جدید -->
+              <div class="flex items-center gap-4 w-full sm:w-[382px]">
+                <label for="confirm-password" class="w-1/4 text-right text-sm text-gray-700">تایید کلمه عبور جدید:</label>
+                <input
+                  id="confirm-password"
+                  type="password"
+                  class="flex-1 w-full h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  aria-label="تایید کلمه عبور جدید"
+                />
+              </div>
+            
+              <!-- دکمه‌ها -->
+              <div class="flex items-center justify-center gap-6 w-full sm:w-[400px] cursor-pointer mb-4">
+                <button type="submit" class="w-[66px] h-[43px] bg-[#003FEB] text-white rounded-[5px]">ذخیره</button>
+                <div class="flex items-center gap-1">
+                  <p class="text-[14px] text-[#003FEB]">بازگشت</p>
+                  <img src="assets/icons/arrowLeft.svg" alt="آیکون بازگشت" />
+                </div>
+              </div>
+            </form>
+            
+        
+            <!-- دکمه‌ها -->
+            <div class="flex items-center justify-center gap-6 w-full sm:w-[400px] mb-4 cursor-pointer close1">
+              <button class="w-[66px] h-[43px] bg-[#003FEB] text-white rounded-[5px]">ذخیره</button>
+              <div class="flex items-center gap-1">
+                <p class="text-[14px] text-[#003FEB]">بازگشت</p>
+                <img src="assets/icons/Frame 43.svg" alt="/">
+              </div>
+            </div>
+          </form>
+        </div>         
+         <!-- مودال اول -->
+
+        <!-- مودال دوم -->
+         <div class="fixed h-[202px] w-[400px] lg:w-[842px] sm:w-[600px] border-[0.5px] border-[#777777] rounded-[13px] shadow-lg bg-white top-3 left-[50%] transform -translate-x-1/2 transition-all duration-300 ease-in-out hidden modal2">
+          <div class="flex  items-center p-3 gap-40 border-b-[0.5px] border-[#777777]">
+            <p class="text-[12px]">آدرس صورتحساب پیش فرض :</p>
+            <p class="text-[12px]">آدرس ارسال پیش فرض :</p>
+          </div>
+
+            <div class="flex items-center p-3 gap-10">
+              <p class="text-[14px] font-bold w-[239px]">سینا احمدی خیابان شریعتی تهران
+                تهران, ایران شماره تماس: 0214557</p>
+                <p class="text-[14px] font-bold w-[239px]">سینا احمدی خیابان شریعتی تهران
+                  تهران, ایران شماره تماس: 0214557</p>
+                </div>
+
+                <div class="items-center btnOpenModal2 flex">
+                  <div class="px-9 mt-[21px]">
+                    <button onclick="btnOpenModal3()" class="text-sm w-[184px] h-[43px] bg-[#003FEB] rounded-[7px] text-white">تغیر آدرس  صورتحساب</button>
+                  </div>
+                  <div class="px-9 mt-[21px]">
+                    <button onclick="btnOpenModal3()" class="text-sm w-[184px] h-[43px] bg-[#003FEB] rounded-[7px] text-white">تغیر آدرس  صورتحساب</button>
+                  </div>
+                  <div class="flex items-center cursor-pointer justify-end w-full ml-9 gap-2 closemodal2">
+                    <p class="text-[13px] text-blue-600">بازگشت</p>
+                    <img src="assets/icons/Vector.svg" alt="/">
+                  </div>
+                </div>     
+         </div>
+        <!-- مودال دوم -->
+
+        <!-- مودال دوم برای موبایل -->
+        <div class="fixed h-[400px] z-[20000] w-[356px] border-[0.5px] border-[#777777] rounded-[13px] shadow-lg bg-white top-3 left-[50%] transform -translate-x-1/2 hidden transition-all duration-300 ease-in-out  btnOpenModal3">
+          <p class="text-[14px] border-b-[0.5px] border-[#777777] p-3">دفترچه آدرس</p>
+
+        <div>
+          <div class="flex flex-col p-4">
+            <p class="text-[13px] font-bold">آدرس صورتحساب پیش فرض :</p>
+            <p class="text-[13px] w-[300px] font-bold">سینا احمدی خیابان شریعتی تهران تهران, ایران شماره تماس: 0214557</p>
+            <div class="flex justify-center">
+              <button onclick="openModalMobile()" class="w-[170px] text-[13px] h-[40px] mt-[25px] bg-[#003FEB] rounded-[8px] text-white">تغیر آدرس صورتحساب</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex flex-col p-4">
+            <p class="text-[13px] font-bold">آدرس ارسال پیش فرض :</p>
+            <p class="text-[13px] w-[300px] font-bold">سینا احمدی خیابان شریعتی تهران تهران, ایران شماره تماس: 0214557</p>
+            <div class="flex justify-center">
+              <button onclick="openModalMobile()" class="w-[170px] text-[13px] h-[40px] mt-[25px] bg-[#003FEB] rounded-[8px] text-white">تغیر آدرس ارسال</button>
+            </div>
+          </div>
+        </div>
+          
+         </div>
+         <!-- مودال دوم برای موبایل -->
+
+
+
+        <!-- مودال سوم -->
+        <div class="fixed w-[350px] lg:w-[842px] modal3 sm:w-[600px] border-[0.5px] border-[#777777] rounded-[13px] shadow-lg bg-white top-3 left-[50%] transform -translate-x-1/2 hidden modal4 transition-all duration-300 ease-in-out max-h-[90vh] overflow-y-auto">
+          <div class="flex z-50 items-center justify-between border-b-[0.5px] border-[#A9A9A9] p-4">
+            <h3>اطلاعات تماس</h3>
+            <img onclick="closeHandeler()" class="w-[30px] closesvg2 cursor-pointer" src="assets/icons/close-svgrepo-com.svg" alt="/">
+          </div>
+        
+          <form class="flex flex-col items-center gap-6 mt-[34px] w-full px-4 sm:px-0">
+            <!-- Row 1 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700">نام:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+        
+            <!-- Row 2 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700">نام و نام خانوادگی:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+
+            <!-- Row 3 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700"> شماره تلفن:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+
+            <!-- Row 4 -->
+            <div class="flex items-center gap-4 w-full sm:w-[50%]">
+              <label class="w-1/4 text-right text-sm text-gray-700">خیابان:</label>
+              <input
+                type="text"
+                class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+        
+         
+         <!-- Row 4 -->
+         <div class="flex items-center gap-4 w-full sm:w-[50%]">
+          <label class="w-1/4 text-right text-sm text-gray-700">کشور:</label>
+          <input
+            type="text"
+            class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+          <!-- Row 5 selected  inputs -->
+          <div class="flex cursor-pointer items-center gap-4 w-full sm:w-[50%]">
+            <label class="w-1/4 text-right text-sm text-gray-700">استان:</label>
+            <select
+              class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="تهران">تهران</option>
+              <option value="تست1">تست1</option>
+              <option value="تست2">تست2</option>
+            </select>
+          </div>
+          
+          <div class="flex cursor-pointer items-center gap-4 w-full sm:w-[50%]">
+            <label class="w-1/4 text-right text-sm text-gray-700">شهر:</label>
+            <select
+              class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="تهران">تهران</option>
+              <option value="تست1">تست1</option>
+              <option value="تست2">تست2</option>
+            </select>
+          </div>  
+
+            <!-- row 7 -->
+          <div class="flex items-center gap-4 w-full sm:w-[50%]">
+            <label class="w-1/4 text-right text-sm text-gray-700">کد پستی:</label>
+            <input
+              type="text"
+              class="flex-1 w-full sm:w-[382px] h-[43px] shadow-md border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div class="flex items-center justify-center gap-6 w-full sm:w-[400px] mb-4 cursor-pointer close1">
+            <button class="w-[66px] h-[43px] bg-[#003FEB] text-white rounded-[5px]">ذخیره</button>
+            <div class="flex items-center gap-1">
+              <p class="text-[14px] text-[#003FEB]">بازگشت</p>
+              <img src="assets/icons/arrowLeft.svg" alt="/">
+            </div>
+          </div>  
+            </div>
+            <!-- دکمه‌ها -->
+          </form>
+        </div>  
+        <!-- مودال سوم -->
+
+      </div>
+    </div>
+
+    <script src="assets/js/PanelUsers.js"></script>
+    </div>
+  </body>
+</html>

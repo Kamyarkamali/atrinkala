@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <title>صفحه ورود</title>
+  </head>
+  <body>
+    <div class="font-sans">
+          <!-- navbar -->
+          <nav
+          class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+        >
+          <!-- بخش بالا در موبایل -->
+          <div class="flex justify-between items-center w-full">
+            <!-- لوگو و همبرگر منو -->
+            <div class="flex items-center gap-4">
+              <img
+                class="w-[40px] cursor-pointer lg:hidden"
+                src="assets/icons/menu.svg"
+                alt="menu"
+              />
+              <img
+                class="w-[150px] lg:w-[190px]"
+                src="assets/images/images/logo.png"
+                alt="logo"
+              />
+              <!-- فیلد جستجو -->
+              <div
+                class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+              >
+                <img
+                  src="assets/icons/search.svg"
+                  alt="search"
+                  class="w-6 h-6 ml-2"
+                />
+                <input
+                  class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+                  type="text"
+                  placeholder="جستجو"
+                />
+              </div>
+            </div>
+            <!-- دکمه‌های ورود و ثبت نام -->
+            <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
+              <button
+                class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+              >
+              <a href="SingIn.html">
+                <p>ورود</p>
+              </a>
+                <p class="text-black mx-1">|</p>
+              <a href="SingIn.html">
+                <p>ثبت نام</p>
+              </a>
+  
+              </button>
+              <button
+                class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+              >
+                <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+              </button>
+            </div>
+          </div>
+  
+          <!-- فیلد جستجو -->
+          <div
+            class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+          >
+            <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+            <input
+              class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+              type="text"
+              placeholder="جستجو"
+            />
+          </div>
+  
+          <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
+          <div class="hidden lg:flex items-center gap-4">
+            <button
+              class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
+            >
+            <a href="SingIn.html">
+              <p>ورود</p>
+            </a>
+              <p class="text-black mx-1">|</p>
+              <a href="SingIn.html">
+                <p>ثبت نام</p>
+              </a>
+  
+            </button>
+            <button
+              class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+            >
+              <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+            </button>
+          </div>
+        </nav>
+    <!-- navbar -->
+
+     <!-- tom menu start -->
+     <section class="mt-[20px] max-w-[1300px] mx-auto">
+      <ul
+        class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
+      >
+        <a class="products">
+
+          <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
+          <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+
+          <!--مگا منو  دکستاپ-->
+         <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
+<div class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
+  <div class="flex items-center gap-3 menu-item" data-category="mobile">
+    <img src="assets/icons/mobile.svg" alt="mobile">
+    <div class="flex items-center justify-between w-full">
+      <p class="text-[15px]">موبایل و تبلت</p>
+      <img class="ml-4" src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" alt="">
+    </div>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="laptop">
+    <img src="assets/icons/laptop.svg" alt="laptop">
+    <p class="text-[15px]">لپ تاپ</p>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="computer">
+    <img src="assets/icons/computer.svg" alt="computer">
+    <p class="text-[15px]">کامپیوتر و تجهیزات جانبی</p>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="game">
+    <img src="assets/icons/game.svg" alt="game">
+    <p class="text-[15px]">بازی و سرگرمی</p>
+  </div>
+</div>
+
+<!-- محتوای نمایش داده‌شده -->
+<div id="dynamic-content" class="w-[1400px] h-[419px]  rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]">
+  <!-- محتوای پیش‌فرض -->
+   <div class="flex justify-around mt-7">
+    <div class="flex gap-[37px] container2">
+      
+      <!-- قسمت اول اپل -->
+       <div class="flex flex-col gap-2 items-center">
+         <div class="flex  items-center apple">
+           <h3 class="text-[16px]">گوشی اپل</h3>
+           <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"/>
+         </div>
+
+      <ul class="flex gap-2 flex-col items-center text-[13px] text-[#525252]">
+      <li>گوشی آیفون 11</li>
+      <li>گوشی آیفون 12</li>
+      <li>گوشی آیفون 13</li>
+      <li>گوشی آیفون 14</li>
+      <li>گوشی آیفون 15</li>
+      
+      <div></div>
+
+      <li>گوشی آیفون 11 پرو</li>
+      <li>گوشی آیفون 12 پرو</li>
+      <li>گوشی آیفون 13 پرو</li>
+      <li>گوشی آیفون 14 پرو</li>
+      <li>گوشی آیفون 15 پرو</li>
+    </ul>
+  </div>
+
+    <!-- قسمت اول اپل پایان -->
+    
+    <ul class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]">
+      <li>گوشی آیفون 11 پرومکس</li>
+      <li>گوشی آیفون 12 پرومکس</li>
+      <li>گوشی آیفون 13 پرومکس</li>
+      <li>گوشی آیفون 14 پرومکس</li>
+      <li>گوشی آیفون 15 پرومکس</li>
+    </ul>
+  </div>
+
+  <ul class="flex flex-col gap-2 tablet-container">
+<div class="flex gap-2 items-center tablet-header">
+  <h3 class="text-[16px]">تبلت</h3>
+  <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+</div>
+<li class="tablet-item">تبلت سامسونگ</li>
+<li class="tablet-item">آیپد</li>
+<li class="tablet-item">آیپد پرو</li>
+</ul>
+  
+  
+
+  <ul class="flex flex-col gap-2 smartwatch-container">
+    <div class="flex items-center smartwatch-header">
+      <h3 class="text-[16px]">ساعت هوشمند</h3>
+      <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+    </div>
+  
+    <li class="smartwatch-item hide">ساعت هوشمند سامسونگ</li>
+    <li class="smartwatch-item hide">ساعت هوشمند شیاومی</li>
+    <li class="smartwatch-item hide">ساعت هوشمند هواوی</li>
+    <li class="smartwatch-item hide">ساعت هوشمند اپل</li>
+  </ul>
+  
+  <ul class="flex flex-col gap-2 accessories-container">
+    <div class="flex items-center accessories-header">
+      <h3 class="text-[16px]">لوازم جانبی گوشی موبایل</h3>
+      <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+    </div>
+  
+    <li class="accessories-item hide">هدفون، هدست و هندزفری</li>
+    <li class="accessories-item hide">شارژر گوشی</li>
+  </ul>
+  
+   </div>
+  <div>
+    
+  </div>
+</div>
+</div>
+
+<!-- مگا منو  دسکتاپ -->
+
+
+<!-- مگا منو موبایل -->
+<div class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile">
+  <!-- هدر مگا منو -->
+  <div class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]">
+    <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
+    <p class="text-[15px]">دسته بندی کالا ها</p>
+  </div>
+
+
+    <!-- دسته موبایل -->
+    <div class="accordion-item">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+          موبایل
+        </button>
+        <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+      </div>
+      <ul class="accordion-content hidden px-6 py-2 bg-white">
+        <div class="flex items-center justify-between w-full phonTab">
+          <li class="py-1 text-gray-700 text-sm sm:text-base">موبایل و تبلت</li>
+        <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+        </div>
+        <div class="noneApple apple">
+          <div class="flex items-center justify-between w-full noneMobile">
+            <li class="font-bold text-[15px]">موبایل اپل</li>
+            <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+          </div>
+        </div>
+
+        <div class="noneApple allApple">
+        <div class="grid grid-cols-2">
+
+          <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+            <li class="hover:text-black duration-300">گوشی آیفون 11</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 12</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 15</li>
+          <div class="mt-4 mb-4"></div>
+          <li class="hover:text-black duration-300">گوشی آیفون 11 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 12 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14 پرو</li>
+        </div>
+        <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+
+          <li class="hover:text-black duration-300">گوشی آیفون 11 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 12 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 15 پرومکس</li>
+        </div>
+      </div>
+    </div>
+
+      </ul>
+    </div>
+  
+  <!-- دسته تبلت -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        تبلت
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">تبلت سامسونگ</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد پرو</li>
+    </ul>
+  </div>
+  
+  <!-- دسته لپ‌تاپ -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        لپ‌تاپ
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ دل</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ ایسوس</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ اپل</li>
+    </ul>
+  </div>
+  
+  <!-- دسته لوازم جانبی -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        لوازم جانبی
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">ماوس</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">کیبورد</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
+    </ul>
+  </div>
+  
+
+</div>
+
+
+
+
+<!-- مگا منو موبایل -->
+
+        <a>
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
+        </a>
+        <a >
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
+        </a>
+        <a >
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">
+            تجربه خرید از آترین کالا
+          </li>
+        </a>
+        <a>
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
+        </a>
+      </ul>
+    </section>
+   <!-- top menu end -->
+
+   <div class="max-w-[1300px] mx-auto">
+
+      <div class="flex justify-center mt-[27px]">
+          <button class="w-[192px] h-[51px] rounded-[8px] border-[0.5px] border-[#313131]"> ورود کاربر</button>
+      </div>
+
+      <form class="flex lg:flex-row flex-col items-center gap-10 justify-around mt-[45px]">
+        
+          <div class="w-[315px] h-[147px] rounded-[8px] shadow-lg flex flex-col gap-1">
+              <p class="text-[14px] mt-[21px] mr-[17px]">مزایای ایجاد حساب کاربری :</p>
+              <div class="flex gap-1 items-center mr-[17px]">
+                  <img src="assets/icons/tick-svgrepo-com 2.svg" alt="/">
+                  <p class="text-[14px]">سریعتر پرداخت کنید.</p>
+              </div>
+              <div class="flex gap-1 items-center mr-[17px]">
+                  <img src="assets/icons/tick-svgrepo-com 2.svg" alt="/">
+                  <p class="text-[14px]">سفارشتان را پیگیری کنید.</p>
+              </div>
+              <div class="flex gap-1 items-center mr-[17px]">
+                  <img src="assets/icons/tick-svgrepo-com 2.svg" alt="/">
+                  <p class="text-[14px]">بیش از یک آدرس ثبت کنید.</p>
+              </div>
+          </div>
+      
+         
+          <div class="flex flex-col items-center gap-4 z-30">
+              <div class="flex items-center justify-between w-full max-w-md">
+                  <label class="w-[100px] text-[11px] font-bold">ایمیل  یا شماره موبایل:</label>
+                  <input type="text" class="w-2/3 shadow-md outline-none p-2 rounded-md">
+              </div>
+              <div class="flex items-center justify-between w-full max-w-md">
+                  <label class="w-1/3 text-right text-[13px] font-bold">گذرواژه:</label>
+                  <input type="text" class="w-2/3 shadow-md outline-none p-2 rounded-md">
+              </div>
+              <div class="flex items-center justify-center mt-[15px] w-full max-w-md gap-2">
+                  <input type="checkbox">
+                  <label class="w-1/3 text-right text-[13px] font-bold">مرا بخاطر بسپار</label>
+            </div>
+          </div>      
+         
+          <div class="flex flex-col items-center gap-4 z-30">
+              <div class="flex ml-14 items-center justify-center gap-2 w-full max-w-md">
+              <button class="w-[66px] h-[43px] rounded-[8px] bg-[#003FEB] text-white">ورود</button>
+              </div>
+              <div class="flex items-center justify-center">
+                <p class="text-[13px] font-bold text-blue-600">گذر واژه خود را فراموش کرده اید؟</p>
+            </div>
+            <div class="flex items-center justify-center gap-2 w-full max-w-md">
+                <p class="text-[13px]">کاربر جدید هستید؟</p>
+                  <button type="submit" class="w-[175px] h-[43px] bg-[#003FEB] text-white rounded-[8px]">ایجاد حساب کاربری</button>
+              </div>
+          </div>
+      </form>
+      
+   </div>
+    </div>
+   <div class="mb-9"></div>
+    </div>
+    <script src="assets/js/singIn.js"></script>
+  </body>
+</html>

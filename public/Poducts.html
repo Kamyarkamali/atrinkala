@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <title>صفحه مصولات</title>
+  </head>
+  <body>
+    <div class="overlay overlaybg">
+      <!-- nav -->
+      <nav
+      class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+    >
+      <!-- بخش بالا در موبایل -->
+      <div class="flex justify-between items-center w-full">
+        <!-- لوگو و همبرگر منو -->
+        <div class="flex items-center gap-4">
+          <img
+            class="w-[40px] cursor-pointer lg:hidden"
+            src="assets/icons/menu.svg"
+            alt="menu"
+          />
+          <a href="HomePage.html">
+            <img
+            class="w-[150px] lg:w-[190px]"
+            src="assets/images/images/logo.png"
+            alt="logo"
+            />
+          </a>
+          <!-- فیلد جستجو -->
+          <div
+            class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+          >
+            <img
+              src="assets/icons/search.svg"
+              alt="search"
+              class="w-6 h-6 ml-2"
+            />
+            <input
+              class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+              type="text"
+              placeholder="جستجو"
+            />
+          </div>
+        </div>
+        <!-- دکمه‌های ورود و ثبت نام -->
+        <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
+          <button
+            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+          >
+          <a href="SingIn.html">
+            <p>ورود</p>
+          </a>
+            <p class="text-black mx-1">|</p>
+          <a href="SingIn.html">
+            <p>ثبت نام</p>
+          </a>
+
+          </button>
+          <button
+            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+          >
+            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          </button>
+        </div>
+      </div>
+
+      <!-- فیلد جستجو -->
+      <div
+        class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+      >
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <input
+          class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+          type="text"
+          placeholder="جستجو"
+        />
+      </div>
+
+      <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
+      <div class="hidden lg:flex items-center gap-4">
+        <button
+          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
+        >
+        <a href="SingIn.html">
+          <p>ورود</p>
+        </a>
+          <p class="text-black mx-1">|</p>
+          <a href="SingIn.html">
+            <p>ثبت نام</p>
+          </a>
+
+        </button>
+        <button
+          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+        >
+          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+        </button>
+      </div>
+    </nav>
+    <!-- پایان nav -->
+
+    <!-- tom menu start -->
+    <section class="mt-[20px] max-w-[1300px] mx-auto">
+      <ul
+        class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
+      >
+        <a class="products">
+
+          <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
+          <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+
+          <!--مگا منو  دکستاپ-->
+         <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
+<div class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
+  <div class="flex items-center gap-3 menu-item" data-category="mobile">
+    <img src="assets/icons/mobile.svg" alt="mobile">
+    <div class="flex items-center justify-between w-full">
+      <p class="text-[15px]">موبایل و تبلت</p>
+      <img class="ml-4" src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" alt="">
+    </div>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="laptop">
+    <img src="assets/icons/laptop.svg" alt="laptop">
+    <p class="text-[15px]">لپ تاپ</p>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="computer">
+    <img src="assets/icons/computer.svg" alt="computer">
+    <p class="text-[15px]">کامپیوتر و تجهیزات جانبی</p>
+  </div>
+  <div class="flex items-center gap-3 menu-item" data-category="game">
+    <img src="assets/icons/game.svg" alt="game">
+    <p class="text-[15px]">بازی و سرگرمی</p>
+  </div>
+</div>
+
+<!-- محتوای نمایش داده‌شده -->
+<div id="dynamic-content" class="w-[1400px] h-[419px]  rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]">
+  <!-- محتوای پیش‌فرض -->
+   <div class="flex justify-around mt-7">
+    <div class="flex gap-[37px] container2">
+      
+      <!-- قسمت اول اپل -->
+       <div class="flex flex-col gap-2 items-center">
+         <div class="flex  items-center apple">
+           <h3 class="text-[16px]">گوشی اپل</h3>
+           <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"/>
+         </div>
+
+      <ul class="flex gap-2 flex-col items-center text-[13px] text-[#525252]">
+      <li>گوشی آیفون 11</li>
+      <li>گوشی آیفون 12</li>
+      <li>گوشی آیفون 13</li>
+      <li>گوشی آیفون 14</li>
+      <li>گوشی آیفون 15</li>
+      
+      <div></div>
+
+      <li>گوشی آیفون 11 پرو</li>
+      <li>گوشی آیفون 12 پرو</li>
+      <li>گوشی آیفون 13 پرو</li>
+      <li>گوشی آیفون 14 پرو</li>
+      <li>گوشی آیفون 15 پرو</li>
+    </ul>
+  </div>
+
+    <!-- قسمت اول اپل پایان -->
+    
+    <ul class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]">
+      <li>گوشی آیفون 11 پرومکس</li>
+      <li>گوشی آیفون 12 پرومکس</li>
+      <li>گوشی آیفون 13 پرومکس</li>
+      <li>گوشی آیفون 14 پرومکس</li>
+      <li>گوشی آیفون 15 پرومکس</li>
+    </ul>
+  </div>
+
+  <ul class="flex flex-col gap-2 tablet-container">
+<div class="flex gap-2 items-center tablet-header">
+  <h3 class="text-[16px]">تبلت</h3>
+  <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+</div>
+<li class="tablet-item">تبلت سامسونگ</li>
+<li class="tablet-item">آیپد</li>
+<li class="tablet-item">آیپد پرو</li>
+</ul>
+  
+  
+
+  <ul class="flex flex-col gap-2 smartwatch-container">
+    <div class="flex items-center smartwatch-header">
+      <h3 class="text-[16px]">ساعت هوشمند</h3>
+      <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+    </div>
+  
+    <li class="smartwatch-item hide">ساعت هوشمند سامسونگ</li>
+    <li class="smartwatch-item hide">ساعت هوشمند شیاومی</li>
+    <li class="smartwatch-item hide">ساعت هوشمند هواوی</li>
+    <li class="smartwatch-item hide">ساعت هوشمند اپل</li>
+  </ul>
+  
+  <ul class="flex flex-col gap-2 accessories-container">
+    <div class="flex items-center accessories-header">
+      <h3 class="text-[16px]">لوازم جانبی گوشی موبایل</h3>
+      <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
+    </div>
+  
+    <li class="accessories-item hide">هدفون، هدست و هندزفری</li>
+    <li class="accessories-item hide">شارژر گوشی</li>
+  </ul>
+  
+   </div>
+  <div>
+    
+  </div>
+</div>
+</div>
+
+<!-- مگا منو  دسکتاپ -->
+
+
+<!-- مگا منو موبایل -->
+<div class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile">
+  <!-- هدر مگا منو -->
+  <div class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]">
+    <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
+    <p class="text-[15px]">دسته بندی کالا ها</p>
+  </div>
+
+
+    <!-- دسته موبایل -->
+    <div class="accordion-item">
+      <div class="flex items-center justify-between">
+        <button
+          type="button"
+          class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+          موبایل
+        </button>
+        <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+      </div>
+      <ul class="accordion-content hidden px-6 py-2 bg-white">
+        <div class="flex items-center justify-between w-full phonTab">
+          <li class="py-1 text-gray-700 text-sm sm:text-base">موبایل و تبلت</li>
+        <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+        </div>
+        <div class="noneApple apple">
+          <div class="flex items-center justify-between w-full noneMobile">
+            <li class="font-bold text-[15px]">موبایل اپل</li>
+            <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
+          </div>
+        </div>
+
+        <div class="noneApple allApple">
+        <div class="grid grid-cols-2">
+
+          <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+            <li class="hover:text-black duration-300">گوشی آیفون 11</li>
+            <li class="hover:text-black duration-300">گوشی آیفون 12</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 15</li>
+          <div class="mt-4 mb-4"></div>
+          <li class="hover:text-black duration-300">گوشی آیفون 11 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 12 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13 پرو</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14 پرو</li>
+        </div>
+        <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+
+          <li class="hover:text-black duration-300">گوشی آیفون 11 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 12 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 13 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 14 پرومکس</li>
+          <li class="hover:text-black duration-300">گوشی آیفون 15 پرومکس</li>
+        </div>
+      </div>
+    </div>
+
+      </ul>
+    </div>
+  
+  <!-- دسته تبلت -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        تبلت
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">تبلت سامسونگ</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد پرو</li>
+    </ul>
+  </div>
+  
+  <!-- دسته لپ‌تاپ -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        لپ‌تاپ
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ دل</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ ایسوس</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ اپل</li>
+    </ul>
+  </div>
+  
+  <!-- دسته لوازم جانبی -->
+  <div class="accordion-item border-b">
+    <div class="flex items-center justify-between">
+      <button
+        type="button"
+        class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
+        لوازم جانبی
+      </button>
+      <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+    </div>
+    <ul class="accordion-content hidden px-6 py-2 bg-white">
+      <li class="py-1 text-gray-700 text-sm sm:text-base">ماوس</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">کیبورد</li>
+      <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
+    </ul>
+  </div>
+</div>
+
+<!-- مگا منو موبایل -->
+
+        <a href="HomePage.html">
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
+        </a>
+        <a >
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
+        </a>
+        <a >
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">
+            تجربه خرید از آترین کالا
+          </li>
+        </a>
+        <a>
+          <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
+        </a>
+      </ul>
+    </section>
+     <!-- top menu end -->
+
+      <!-- section1 -->
+       <div class="max-w-[1340px] mx-auto  border-b-[1px] border-[#A9A9A9] p-5 text-[12px] text-[#3A3A3A]">
+        <div class="flex items-center gap-1">
+          <a href="./HomePage.html" target="_blank">
+            خانه
+          </a>
+        <p>/</p>
+        <p>موبایل و تبلت</p>
+        <p>/</p>
+        <p>تبلت</p>
+        <p>/</p>
+        <p class="text-[#000] font-bold text-[13px]">تبلت سامسونگ</p>
+      </div>
+    </div>
+    <!-- section1 -->
+
+      <div class="max-w-[1340px] mt-[16px] md:text-[16px] mr-[21px] text-[13px] font-bold text-[#252525] mx-auto">
+        <h3>تبلت سامسونگ Galaxy Tab S9 FE Plus حافظه 256 گیگابایت</h3>
+      </div>
+
+      <!-- section2 box product -->
+       <div class="max-w-[1340px] mx-auto flex md:flex-row flex-row-reverse justify-between mt-[25px]">
+
+
+        <div class="w-[459px] hidden h-[335px] lg:flex flex-col border-[1px] border-[#6122EC] rounded-[9px]">
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]">بدنه:</p>
+            <p class="text-[13px] text-[#373737]"> 6.5 × 185.4 × 285.4  </p>
+          </div>
+          
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]">صفحه نمایش:</p>
+            <p class="text-[13px] text-[#373737]">12.4 اینچ</p>
+          </div>
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]">دوربین عقب:</p>
+            <p class="text-[13px] text-[#373737]">لنز اولتراواید 8 مگاپیکسل</p>
+          </div>
+
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]">دوربین سلفی:</p>
+            <p class="text-[13px] text-[#373737]"> 12 مگاپیکسل</p>
+          </div>
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]"> پردازنده:</p>
+            <p class="text-[13px] text-[#373737]">هشت هسته ای، 2.4GHz</p>
+          </div>
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]"> باتری:</p>
+            <p class="text-[13px] text-[#373737]">10090 میلی آمپر</p>
+          </div>
+
+          <div class="flex items-center gap-2 mt-[22px] mr-[19px]">
+            <p class="text-[13px] text-[#535353]"> سنسورها:</p>
+            <p class="text-[13px] text-[#373737]">اثر انگشت ، شتاب سنج، ژیروسکوپ، مجاورت، قطب نما</p>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col items-center">
+          <div>
+            <img class="md:w-[220px] md:h-[300px] w-[126px]" src="assets/images/images/PoductsImages/1.png" alt="tablet">
+          </div>
+
+          <div class="md:flex hidden justify-center mt-[16px] gap-[12px] itemimages">
+            <div class="border-[1px] w-[74px] h-[74px] flex justify-center p-1 border-[#AAAAAA] cursor-pointer rounded-[6px]">
+            <img class="w-[43px]" src="assets/images/images/PoductsImages/1.png" alt="tablet1">
+            </div>
+            <div class="border-[1px] w-[74px] h-[74px] flex justify-center p-1 border-[#AAAAAA] cursor-pointer rounded-[6px]">
+              <img class="w-[43px]" src="assets/images/images/PoductsImages/2.png" alt="tablet2">
+            </div>
+            <div class="border-[1px] w-[74px] h-[74px] flex justify-center p-1 border-[#AAAAAA] cursor-pointer rounded-[6px]">
+              <img src="assets/images/images/PoductsImages/3.png" alt="tablet3">
+            </div>
+            <div class="border-[1px] relative w-[74px] h-[74px] flex justify-center p-1 border-[#AAAAAA] cursor-pointer rounded-[6px]">
+              <img src="assets/images/images/PoductsImages/1.png" alt="tablet3">
+              <div class="w-[74px] absolute top-0 h-[74px] bg-black/60">
+                <div class="flex flex-col  gap-1 items-center justify-center h-full">
+                  <div class="w-[4.5px] h-[4.5px] rounded-[100%] bg-white"></div>
+                  <div class="w-[4.5px] h-[4.5px] rounded-[100%] bg-white"></div>
+                  <div class="w-[4.5px] h-[4.5px] rounded-[100%] bg-white"></div>
+                </div>
+              </div>
+              <div class="flex absolute top-0 left-0 text-white font-bold ml-1 text-xl items-center">
+                <p>+</p>
+                <p>4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- پاپ آپ -->
+        <section class="popup hidden">
+          <div class="absolute z-40 top-[67px] left-[6.5%] max-w-[1259px] md:w-[1259px] w-[80%] h-fit md:h-[472px] bg-white rounded-[17px] border-2">
+            <!-- هدر پاپ‌آپ -->
+            <div class="flex items-center justify-between p-3 border-b-[1px] border-gray-300">
+              <p class="text-[#444444]">عکسها و فیلمها</p>
+              <img class="w-[26px] cursor-pointer closed" src="assets/icons/close-circle-svgrepo-com.svg" alt="close">
+            </div>
+        
+            <!-- بخش تصاویر و اسلایدر -->
+            <div class="flex md:flex-row flex-col-reverse md:items-start items-center justify-between">
+        
+              <!-- بخش تصاویر کوچک (سمت راست در دسکتاپ، بالا در موبایل) -->
+              <div>
+                <div class="flex items-center gap-10 mt-[21px] mr-[46px] mb-3 md:mb-0 flex-wrap">
+                  <img class="border-2 p-1 cursor-pointer border-[#A5A5A5] rounded-[7px]" src="assets/images/images/mobile/iphone-13-pro-blue_1_7 1.png" alt="/">
+                  <img class="border-2 p-1 cursor-pointer border-[#A5A5A5] rounded-[7px]" src="assets/images/images/mobile/iphone-13-pro-blue_1_7 2.png" alt="/">
+                  <img class="border-2 p-1 cursor-pointer border-[#A5A5A5] rounded-[7px]" src="assets/images/images/mobile/iphone-13-pro-gold_1_7 1.png" alt="/">
+                  <img class="border-2 p-1 cursor-pointer border-[#A5A5A5] rounded-[7px]" src="assets/images/images/mobile/iphone-13-pro-white_1_2 4.png" alt="/">
+                  <img class="border-2 p-1 cursor-pointer border-[#A5A5A5] rounded-[7px]" src="assets/images/images/mobile/iphone-13-pro-white_1_2 5.png" alt="/">
+                </div>
+              </div>
+        
+              <!-- بخش اسلایدر -->
+              <div class="translate-x-[-30px]">
+                <div class="sliders">
+                  <div class="ml-[59px] mt-[25px]">
+                    <div class="slides2 w-full overflow-hidden flex justify-end relative">
+                      <img class="h-[257px] md:w-[90%] w-[100%]" src="assets/images/iphone-13-pro-black_1_7 1.png" alt="/">
+                      <img class="h-[257px] md:w-[90%] w-[100%]" src="assets/images/iphone-13-pro-black_1_7 1.png" alt="/">
+                      <img class="h-[257px] md:w-[90%] w-[100%]" src="assets/images/iphone-13-pro-black_1_7 1.png" alt="/">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+        </section>
+        
+        <!-- پاپ آپ -->
+
+
+        <!-- باکس سوم -->
+        <section class="flex flex-col">
+          <div class="sm:w-[500px] md:w-fit w-[260px] h-fit flex p-4 flex-col items-start gap-3 rounded-[19px] shadow-lg shadow-teal-200 mr-4 md:mr-0">
+
+            <div class="flex items-center gap-2 mr-[36px]">
+              <label class="text-[12px]">گارانتی:</label>
+              <div class="flex justify-between items-center bg-[#F1F1F1] sm:w-[350px] w-[140px] p-1 rounded-[4px]">
+                <span class=" text-[#3D3D3D] sm:text-[13px] text-[11px]">گارانتی 18 ماهه</span>
+                <img src="assets/icons/arrow-up-340-svgrepo-com 5.svg" alt="/">
+            </div>
+            </div>
+
+            <div class="flex justify-start items-center gap-2 mr-[27px]">
+              <label class="text-[12px]">پارت نامبر:</label>
+              <div class="flex justify-between items-center bg-[#F1F1F1] sm:w-[350px] w-[140px]  p-1 rounded-[4px]">
+                <span class=" text-[#3D3D3D] sm:text-[13px] text-[11px]">دوس سیمکارت  ZAA (ناموجود)</span>
+                <img src="assets/icons/arrow-up-340-svgrepo-com 5.svg" alt="/">
+            </div>
+              </div>
+              
+              <div class="flex items-center gap-2 mr-[36px]">
+                <label class="text-[12px]">وضعیت:</label>
+                <div class="flex justify-between items-center bg-[#F1F1F1] sm:w-[350px] w-[140px]  p-1 rounded-[4px]">
+                  <span class=" text-[#3D3D3D] md:text-[13px] text-[11px]">NOT ACTIVE (ناموجود)</span>
+                  <img src="assets/icons/arrow-up-340-svgrepo-com 5.svg" alt="/">
+              </div>
+                </div>
+                <div class="flex items-center gap-2 mr-[36px]">
+                  <label class="text-[12px]">ریجیستر:</label>
+                  <div class="flex justify-between items-center bg-[#F1F1F1] sm:w-[350px] w-[140px]  p-1 rounded-[4px]">
+                    <span class=" text-[#3D3D3D] md:text-[13px] text-[11px]">ریجیستر شده</span>
+                    <img src="assets/icons/arrow-up-340-svgrepo-com 5.svg" alt="/">
+                </div>
+                  </div>
+
+                  <div class="flex items-center gap-2 mr-[36px]">
+                    <label class="text-[12px]">تعداد:</label>
+                    <div class="flex justify-between items-center bg-[#F1F1F1] sm:w-[350px] w-[140px]  p-1 rounded-[4px]">
+                      <span class=" text-[#3D3D3D] md:text-[13px] text-[11px]">1</span>
+                      <img src="assets/icons/arrow-up-340-svgrepo-com 5.svg" alt="/">
+                      </div>
+                    </div>
+                    
+                    <section class="flex items-center gap-3 mr-[42px]">
+                      <label class="text-[13px]">رنگ:</label>
+                      <div class="flex gap-3">
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#000]"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-green-500"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#00529F]"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#F11818]"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#FFC700]"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#7E06B7]"></button>
+                      <button class="w-[14px] h-[14px] rounded-[3px] bg-[#FFFF]"></button>
+                    </div>
+                    </section>
+
+                      <section class="boxs relative flex">
+                        <div class="flex flex-col bg-[#EEF7FC]">
+                          <div class="flex justify-between gap-3 items-center sm:w-[341px] p-2 mr-[26px] rounded-[7px]"> 
+                         <div class="flex items-center">
+                      <div class="flex items-center gap-3 mr-[16px]">
+                        <img src="assets/icons/tick-svgrepo-com 2.svg" alt="/">
+                        <p class="text-[#0F6115] text-[13px]">موجود</p>
+                      </div>
+
+                      <div class="flex items-center gap-3">
+                        <img class="w-[30px]" src="assets/icons/close-svgrepo-com.svg" alt="/">
+                        <p class="text-[#ab3b20] text-[13px]">ناموجود</p>
+                      </div>
+                    </div>
+
+                    <div class="ml-4">
+                      <img src="assets/icons/scales-bold-svgrepo-com 1.svg" alt="/">
+                    </div>
+                  </div>
+
+                  <div class="flex items-center mr-[30px] mb-5">
+                    <img class="w-[20px]" src="assets/icons/category-svgrepo-com.svg" alt="">
+                    <p>دسته بندی:موبایل و تبلت</p>
+                  </div>
+
+                </div> 
+              </section>
+            </div> 
+
+            <section class="mt-[5rem] flex sm:translate-x-[-32%] translate-x-[-10%] md:translate-x-0 md:flex-col items-center gap-4">
+              <button class="md:w-[371px] w-[140px] p-2 text-sm md:h-[42px] bg-[#B3000F] rounded-[29px] md:text-[20px] font-bold text-white">49.500.000 تومان</button>
+              <button class="md:w-[371px] w-[140px] p-2 text-sm flex items-center justify-center gap-3 md:h-[50px] bg-[#106516] rounded-[10px] md:text-[20px] font-bold text-white">
+                <p>افزودن به سبد</p>
+                <img class="w-[20px] z-20" src="assets/icons/Vector.png" alt="/">
+              </button>
+            </section>
+
+             </section>
+
+        <!-- باکس سوم -->
+      <!-- section2 box product -->
+
+      
+      <!-- section3 نمایش  بیشتر -->
+    </div>
+    <div class="w-[344px] sm:w-[500px] mx-auto border-[1px] mt-[13px] border-[#6122EC] h-fit p-4 md:hidden block bg-white shadow-lg rounded-lg relative ">
+      <h2 class="text-lg font-bold mb-4">مشخصات گوشی</h2>
+      <div
+        id="text-content"
+        class="overflow-hidden text-[#535353] transition-all duration-500 ease-in-out max-h-[4rem] sm:max-h-[6rem] relative"
+      >
+        <p class="text-sm leading-8">
+          صفحه نمایش: 6.5 اینچ <br/>
+          باتری: 4500 میلی‌آمپر ساعت <br/>
+          پردازنده: اسنپدراگون 865 <br />
+          رم: 8 گیگابایت <br/>
+          حافظه داخلی: 128 گیگابایت <br/>
+          دوربین: 64 مگاپیکسل <br/>
+          سیستم‌عامل: اندروید 12 <br/>
+        </p>
+        <div
+          id="gradient"
+          class="absolute bottom-[-10px] left-0 w-full h-8 bg-gradient-to-b from-white to-transparent pointer-events-none"
+        ></div>
+      </div>
+      <button
+        id="toggle-btn"
+        class="mt-4 flex gap-1 items-center justify-center w-full text-blue-600 text-sm font-medium"
+        onclick="toggleContent()"
+      >
+        <span class="text-[13px]">نمایش بیشتر</span>
+        <img
+          id="toggle-icon"
+          class="w-[14px] ml-2 transition-transform duration-500"
+          src="assets/icons/arrowDown.svg"
+          alt="arrow"
+        />
+      </button>
+    </div>
+     <!-- section3 نمایش  بیشتر -->
+
+
+     <!-- section4 supporter -->
+     <div class="flex items-center justify-around border-t mt-5 py-6 gap-x-4">
+      <div class="flex flex-col items-center gap-2 w-[90px] sm:w-[110px] lg:w-[140px]">
+        <img src="assets/images/images/product1/Frame 36.png" alt="">
+        <p class="md:text-sm text-[11px] text-[#1C274C] text-center h-[40px] flex items-center justify-center">تحویل به موقع</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 w-[90px] sm:w-[110px] lg:w-[140px]">
+        <img src="assets/images/images/product1/credit-card-pay-svgrepo-com 1.png" alt="">
+        <p class="md:text-sm text-[11px] text-[#1C274C] text-center h-[40px] flex items-start justify-center">پرداخت در محل</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 w-[90px] sm:w-[110px] lg:w-[140px]">
+        <img src="assets/images/images/product1/price-label-svgrepo-com 1.png" alt="">
+        <p class="md:text-sm text-[11px] text-[#1C274C] text-center h-[40px] flex items-center justify-center">ضمانت کالای اورجینال</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 w-[90px] sm:w-[110px] lg:w-[140px]">
+        <img src="assets/images/images/product1/support-svgrepo-com 1.png" alt="">
+        <p class="md:text-sm text-[11px] text-[#1C274C] text-center h-[40px] flex items-center justify-center">پشتیبانی<br> از ساعت 8 تا 19</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 w-[90px] sm:w-[110px] lg:w-[140px]">
+        <img src="assets/images/images/product1/verified-svgrepo-com 1.png" alt="">
+        <p class="md:text-sm text-[11px] text-[#1C274C] text-center h-[40px] flex items-center justify-center">تضمین بهترین قیمت</p>
+      </div>
+    </div>
+     <!-- section4 supporter -->
+
+
+     <!-- section5 -->
+<div class="max-w-[1351px] mx-auto mt-[10px] px-4">
+
+  <!-- تب‌ها -->
+  <section class="bg-[#EEF7FC] h-auto rounded-[7px] flex items-center justify-start flex-wrap md:gap-4 p-4 sm:text-[13px] text-[10px] gap-3 font-bold">
+    <span class="cursor-pointer tab">مشخصات فنی</span>
+    <span class="cursor-pointer md:px-4 py-2 tab">توضیحات تکمیلی</span>
+    <span class="cursor-pointer md:px-4 py-2 tab">نظرات کاربران (12)</span>
+    <span class="cursor-pointer md:px-4 py-2 tab">محصولات مشابه</span>
+  </section>
+
+  <!-- عنوان بخش -->
+  <div class="flex items-center gap-2 mt-[20px] tabaledesc shodesc created">
+    <div class="w-[11px] h-[11px] bg-[#6122EC] rounded-[100%]"></div>
+    <span class="text-[#494949] text-[19px] font-bold">طراحی بدنه</span>
+  </div>
+
+  <!-- مشخصات -->
+  <section class="tabaledescription">
+    <!-- ردیف مشخصات -->
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">ابعاد:</span>
+      <span class="text-[15px] text-[#565656]">ضخامت 7.7، اندازه 78.1 × 160.8 میلی متر</span>
+    </div>
+
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">ساختار بدنه:</span>
+      <span class="text-[13px] text-[#565656]">جلو شیشه، پشت شیشه، فریم آلومینیومی</span>
+    </div>
+
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">وزن:</span>
+      <span class="text-[15px] text-[#565656]">240 گرم</span>
+    </div>
+
+    <!-- عنوان بخش -->
+    <div class="flex items-center gap-2 mt-[20px]">
+      <div class="w-[11px] h-[11px] bg-[#6122EC] rounded-[100%]"></div>
+      <span class="text-[#494949] text-[19px] font-bold">صفحه نمایش</span>
+    </div>
+
+    <!-- مشخصات صفحه نمایش -->
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">اندازه صفحه نمایش:</span>
+      <span class="text-[15px] text-[#565656]">6.1 اینچ</span>
+    </div>
+
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">رزولوشن:</span>
+      <span class="text-[15px] text-[#565656]">2778 × 1284</span>
+    </div>
+
+    <!-- عنوان بخش -->
+    <div class="flex items-center gap-2 mt-[20px]">
+      <div class="w-[11px] h-[11px] bg-[#6122EC] rounded-[100%]"></div>
+      <span class="text-[#494949] text-[19px] font-bold">دوربین</span>
+    </div>
+
+    <!-- مشخصات دوربین -->
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">فوکوس اتوماتیک (دوربین-عقب):</span>
+      <img src="assets/icons/Frame 43.svg" alt="/" class="w-6 h-6">
+    </div>
+
+    <div class="bg-[#EEF7FC] text-[#2D2D2D] h-auto flex items-center flex-wrap gap-4 p-4 mt-[15px]">
+      <span class="text-[16px]">لرزش گیر OIS (دوربین-عقب):</span>
+      <img src="assets/icons/Frame 43.svg" alt="/" class="w-6 h-6">
+    </div>
+  </section>
+
+  <section class="container mx-auto md:mx-0 px-4 md:px-0 hidedesc desc">
+    <div class="w-full max-w-none mx-0 mt-4 h-fit p-4 bg-white shadow-lg rounded-lg relative">
+      <h2 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
+        بررسی اجمالی آیفون 13 پرو مکس 1 ترابایت
+      </h2>
+      <div
+        id="text-contents"
+        class="overflow-hidden text-gray-600 transition-all duration-500 ease-in-out max-h-[4rem] sm:max-h-[6rem] relative"
+      >
+        <p class="text-sm sm:text-[14px] leading-7 sm:leading-7">
+          اپل مطابق انتظار در ماه سپتامبر 2021 از سری جدید گوشی‌های آیفون 13 رونمایی کرد و توانست بار دیگر توجه و نگاه کاربران را از سرتاسر جهان معطوف خود سازد. گوشی آیفون 13 پرو مکس 1 ترابایت یکی از مدل‌های جدید شرکت اپل است که از جنبه نرم‌افزاری با تغییرات گسترده‌ای ازنظر عملکرد همراه بوده و ازنظر طراحی نیز تغییرات بسیار جزئی را تجربه کرده است. اپل در ساخت و طراحی ظاهری این گوشی جدید خود، تغییر چشمگیری را ایجاد نکرده است و تنها قسمت ماژول دوربین را بزرگ‌تر و عدسی‌ها را نیز برجسته‌تر ساخته است. در قسمت قدامی گوشی نیز حاشیه‌های اطراف نمایشگر باریک‌تر شده و اندازه ناچ با کاهش چشمگیر 40% همراه بوده تا مخاطبان بتوانند اندازه صفحه بیشتری را برای تماشا در اختیار داشته باشند. اپل برای ارائه بهترین تجربه دیداری مخاطبان، از نمایشگر باکیفیت OLED بهره برده و سایز نمایشگر را 6.7 اینچ قرار داده است. نمایشگر گوشی آیفون 13 پرومکس از نرخ بروزرسانی خیره کننده 120 هرتز پشتیبانی می کند و قابلیت ارائه حداکثر روشنایی 1000 نیت در حالت عادی و 1200 نیت در حالت HDR را برخوردار است که یک نمایش بصری عالی را ایجاد خواهد کرد. آیفون 13 پرو مکس در قسمت تراشه و پردازنده های مرکزی و گرافیکی نیز ارتقا پیدا کرده و عملکرد گوشی را بهبود بخشیده است. شرکت اپل از تراشه 5 نانومتری A15 Bionic بهره برده که قدرتمندترین تراشه طراحی شده در گوشی های جهان شناخته ش
+        </p>
+        <div
+          id="gradients"
+          class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-b from-transparent to-white pointer-events-none"
+        ></div>
+      </div>
+      <button
+        id="toggle-btns"
+        class="mt-4 flex gap-2 items-center justify-center w-full text-blue-600 text-sm sm:text-base font-medium"
+        onclick="toggleContents()"
+      >
+        <span>نمایش بیشتر</span>
+        <img
+          id="toggle-icons"
+          class="w-4 sm:w-5 transition-transform duration-500"
+          src="assets/icons/arrowDown.svg"
+          alt="arrow"
+        />
+      </button>
+    </div>
+  </section>
+
+  <!-- بخش نظرات کاربران -->
+  <div class="mt-[29px] text-[18px] text-[#3F3F3F] hidedesc comments">
+    <h3 class="mb-[24px]">لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:</h3>
+  
+    <div class="flex items-center gap-5 mt-[24px]">
+      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+      <p class="text-[14px] text-[#434343]">
+        لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی رسمی و عاری از لحن تند، تمسخر و توهین باشد.
+      </p>
+    </div>
+  
+    <div class="flex items-center gap-2 mt-[24px]">
+      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+      <p class="text-[14px] text-[#434343]">
+        از ارسال لینک‌های سایت‌های دیگر و ارائه‌ی اطلاعات شخصی خودتان مثل شماره تماس، ایمیل و آی‌دی شبکه‌های اجتماعی پرهیز کنید.
+      </p>
+    </div>
+  
+    <div class="flex items-center gap-2 mt-[24px]">
+      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+      <p class="text-[14px] text-[#434343]">
+        هدف نهایی از ارائه‌ی نظر درباره‌ی کالا ارائه‌ی اطلاعات مشخص و دقیق برای راهنمایی سایر کاربران است.
+      </p>
+    </div>
+  
+    <div class="flex items-center gap-2 mt-[24px]">
+      <div class="w-[7px] h-[7px] bg-[#B3000F] rounded-full"></div>
+      <p class="text-[14px] text-[#434343]">
+        از پرسیدن سوال یا درخواست راهنمایی در این بخش خودداری کرده و سوالات خود را در بخش «پرسش و پاسخ» مطرح کنید.
+      </p>
+    </div>
+  
+    <!-- باکس نظرات و فرم ارسال -->
+    <div class="mt-[51px] flex flex-col md:flex-row gap-6">
+      <!-- باکس نظر -->
+      <div class="w-full md:w-[464px] h-[174px] shadow-lg border rounded-[25px] p-6">
+        <h4 class="text-[14px] font-bold text-[#5A658A] mb-4">
+          گوشی آیفون 13 پرو مکس حافظه 1 ترابایت (استوک)
+        </h4>
+        <div class="flex items-center gap-2 mb-4 ">
+          <img class="w-[23px] h-[23px]" src="assets/images/comment-dots-Regular.png" alt="comments" />
+          <p class="text-[13px] text-[#555555] font-bold">
+            در مورد این محصول می‌توانید نظر دهید...
+          </p>
+        </div>
+        <div class="flex gap-2 mt-[22px]">
+          <div class="flex items-center gap-2">
+            <p class="text-[13px] font-bold text-[#707070]">کیفیت</p>
+            <div class="flex items-center">
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+            </div>
+          </div>
+  
+          <div class="flex items-center gap-2">
+            <p class="text-[13px] font-bold text-[#707070]">طراحی</p>
+            <div class="flex items-center">
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+            </div>
+          </div>
+  
+          <div class="flex items-center gap-2">
+            <p class="text-[13px] font-bold text-[#707070]">قیمت</p>
+            <div class="flex items-center">
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+              <img class="w-[14px] h-[14px]" src="assets/images/images/star.png" alt="/" />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- فرم ارسال نظر -->
+      <div class="w-full md:w-1/2 flex flex-col items-center justify-center gap-4">
+        <div class="flex w-full gap-2 items-center">
+          <label class="text-[15px] text-[#707070] w-[80px]">نام:</label>
+          <input type="text" class="bg-[#EEF7FC] w-full md:w-[366px] h-[35px] text-[13px] rounded-[6px] outline-none" />
+        </div>
+        
+        <div class="flex w-full gap-2 items-center">
+          <label class="text-[15px] text-[#707070] w-[80px]">ایمیل:</label>
+          <input type="text" class="bg-[#EEF7FC] w-full md:w-[366px] h-[35px] text-[13px] rounded-[6px] outline-none" />
+        </div>
+        
+        <div class="flex w-full gap-2 items-center">
+          <label class="text-[15px] text-[#707070] w-[80px]">نظر:</label>
+          <div class="flex w-full items-center gap-2">
+            <input type="text" class="bg-[#EEF7FC] w-full md:w-[366px] h-[85px] text-[13px] rounded-[6px] outline-none" />
+            <button class="w-[123px] h-fit p-2 rounded-[6px] bg-[#003FEB] text-[14px] text-white">ارسال نظر</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- نظرات کاربران -->
+    <section class="comments">
+      <div class="flex items-center gap-2 mt-[34px] border-b-[1px] border-[#A9A9A9] p-3">
+        <img src="assets/images/users.png" alt="/" class="w-[20px] h-[20px] md:w-[24px] md:h-[24px] lg:w-[28px] lg:h-[28px]" />
+        <p class="text-[#7D7D7D] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]">نظرات کاربران</p>
+      </div>
+    
+      <div class="mt-[14px] border-b-[1px] border-[#A9A9A9] p-3">
+        <div class="flex items-center gap-3">
+          <p class="font-bold text-[#494949] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">سعید</p>
+          <p class="font-bold text-[#545454] text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px]">1401/04/19</p>
+        </div>
+        <p class="mt-[6px] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">طراحی فوق العاده ای داره، با این وضعیت واقعاً هر کسی نمیتونه اونو بخره</p>
+      </div>
+    
+      <div class="mt-[14px] border-b-[1px] border-[#A9A9A9] p-3">
+        <div class="flex items-center gap-3">
+          <p class="font-bold text-[#494949] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">نیما</p>
+          <p class="font-bold text-[#545454] text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px]">1400/8/19</p>
+        </div>
+        <p class=" mt-[6px] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">سلام برای این گوشی ۱۳ پرو یک ترا میخواستم ببینم دو سیم کارت هستش Zaa هستش</p>
+        <div class="mt-[21px]">
+          <p class=" font-bold text-[#545454] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px]">آترین کالا :</p>
+          <p class=" text-[#717171] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]">سلام وقتتون بخیر، پرو مکس است و lla ، همیشه داخل مشخصات محصول میتونید انتخاب و بررسی کنید</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- نظرات کاربران -->  
+  </div>
+</div>
+
+
+     <!-- اسلایدر محصولات مشابه  -->      
+       <section class="allslides">
+       <div class="border-[0.5px] bordr-[#A9A9A9] max-w-[1310px] h-[459px] rounded-[16px] mx-auto mt-[20px]">
+        <div class="flex  justify-between mt-[10px] mr-[20px] ml-[20px]">
+          <p class="text-[16px] font-bold cursor-pointer text-[#383838]">محصولات مشابه</p>
+
+          <div class="flex  items-center gap-1">
+            <p class="text-[15px] font-bold cursor-pointer text-[#383838]">نمایش همه</p>
+            <img src="assets/icons/arrowLeft.svg" alt="left">
+          </div>
+
+        </div>
+      <div class="relative mt-[35px] w-full py-5 max-w-[1100px] mx-auto overflow-hidden">
+        <div class="flex gap-10 transition-transform duration-500 ease-in-out" id="slider">
+          <div class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
+            <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 1" class="w-[165px] h-[165px] rounded-lg">
+
+            <div class="flex flex-col">
+              <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+              <div class="flex gap-2 mt-[6px]">
+                <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
+                <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
+              </div>
+              <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+
+          </div>
+          <div  class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
+            <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 2" class="w-[165px] h-[165px] rounded-lg">
+            <div class="flex flex-col">
+              <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+              <div class="flex gap-2 mt-[6px]">
+                <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
+                <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
+              </div>
+              <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
+            <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 3" class="w-[165px] h-[165px] rounded-lg">
+            <div class="flex flex-col">
+              <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+              <div class="flex gap-2 mt-[6px]">
+                <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
+                <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
+              </div>
+              <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
+            <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 4" class="w-[165px] h-[165px] rounded-lg">
+            <div class="flex flex-col">
+              <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+              <div class="flex gap-2 mt-[6px]">
+                <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
+                <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
+              </div>
+              <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+          </div>
+        </div>
+   
+        <button id="prevBtn" class="absolute w-[32px] h-[32px] left-20 top-1/2 transform px-3 bg-white shadow-md text-black rounded-full">
+          <img src="assets/icons/arrowLeft.svg" alt="">
+        </button>
+        <button id="nextBtn" class="absolute right-[-3px]  w-[32px] h-[32px] top-1/2 transform  px-3 bg-white shadow-md text-black rounded-full">
+          <img src="assets/icons/arrowRight.svg" alt="">
+        </button>
+      </div> 
+    </div>
+  </section>
+
+
+     <!-- اسلایدر محصولات مشابه  -->
+
+
+     <!-- فوتر -->
+
+     <footer
+     class="max-w-[1370px] relative bg-[#F4F4F4] h-[560px] border-[1px] border-[#3F3F3F] mt-[16px] mx-auto rounded-[15px]"
+   >
+     <div class="flex justify-between gap-3 max-w-[1000px] text-[#3F3F3F]">
+       <div class="mt-[27px] mr-[30px] hidden lg:block">
+         <img src="assets/images/images/logo.png" alt="/" />
+       </div>
+
+       <div class="mt-[37px] text-[13px] mr-[20px] lg:mr-0">
+         <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">راهنمای مشتریان</h3>
+         <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-2">
+           <a href="#" target="_blank">
+             <li>تماس با ما</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>درباره ما</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>شرایط و ضوابط استفاده</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>چگونه اعتماد کنیم؟</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>تجربه خرید از آترین کالا</li>
+           </a>
+           <a href="#" target="_blank">
+             <li>نقشه سایت</li>
+           </a>
+         </ul>
+       </div>
+
+       <div class="mt-[37px] text-[13px]">
+         <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">لینک های مفید</h3>
+         <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-2">
+           <a href="#" target="_blank">
+             <li>محصولات جدید</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>آترین پلاس</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>آیفون 14</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>آیفون 15</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>آیپد</li>
+           </a>
+         </ul>
+       </div>
+
+       <div class="mt-[37px] text-[13px] ml-[20px] lg:mr-0">
+         <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">خواندنی ها</h3>
+         <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-2">
+           <a href="#" target="_blank">
+             <li>آیا آیفون 15 ارزش خریدن دارد؟</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>بهترین لپ تاپ اچ پی</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>بهترین ساعت هوشمند</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>آیفون چی بخرم؟</li>
+           </a>
+
+           <a href="#" target="_blank">
+             <li>تفاوت اپل واچ فیک و اصل</li>
+           </a>
+           <a href="#" target="_blank">
+             <li>تفاوت گوشی اکتیو و نات اکتیو</li>
+           </a>
+         </ul>
+       </div>
+     </div>
+     <div class="flex justify-center mt-[21px]">
+       <p
+         class="text-[14px] border-b-[1px] p-2 border-[#C9C9C9] inline-block text-[#373737]"
+       >
+         تماس با ما هفت روز هفته از ساعت 8 الی 19
+       </p>
+     </div>
+
+     <div class="flex justify-between mt-[21px] max-w-[1200px] mx-auto overflow-x-auto whitespace-nowrap scrollbar-hide touch-pan-x">
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407014</p>
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407013</p>
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407012</p>
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">021-28421592</p>
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">021-71057528</p>
+       <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">0873-4259380</p>
+     </div>
+     
+     
+
+
+     <div
+ class="flex flex-wrap justify-between items-center max-w-[1300px] mx-auto mt-[33px] gap-4"
+>
+ <!-- لوگوها -->
+ <div class="flex items-center gap-4 flex-wrap">
+   <img
+     class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+     src="assets/images/images/imagesFooter/en 1.png"
+     alt="/"
+   />
+   <img
+     class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+     src="assets/images/images/imagesFooter/ershad 1.png"
+     alt="/"
+   />
+   <img
+     class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+     src="assets/images/images/imagesFooter/torob_guarantee_hologram 1.png"
+     alt="/"
+   />
+   <img
+     class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+     src="assets/images/images/imagesFooter/namad 1.png"
+     alt="/"
+   />
+ </div>
+
+ <!-- دکمه‌ها -->
+ <div class="flex flex-wrap justify-center items-center gap-4">
+   <div
+     class="w-[110px] md:w-[146px] h-[42px] flex justify-center items-center bg-white rounded-[8px]"
+   >
+     <div class="flex gap-3 items-center">
+       <img
+         src="assets/images/images/imagesFooter/shopper-svgrepo-com 1.png"
+         alt="/"
+       />
+       <p class="text-[10px] md:text-[13px] ml-1 text-[#003FEB]">
+         تجربه خریداران
+       </p>
+     </div>
+   </div>
+   <div
+     class="w-[110px] md:w-[146px] h-[42px] flex justify-center items-center bg-white rounded-[8px]"
+   >
+     <img src="assets/images/images/logo.png" class="w-[80px] md:w-[110px]" alt="" />
+   </div>
+   <div
+     class="w-[110px] md:w-[146px] h-[42px] flex justify-center items-center bg-white rounded-[8px]"
+   >
+     <img src="assets/images/images/logo.png" class="w-[80px] md:w-[110px]" alt="" />
+   </div>
+ </div>
+
+ 
+ <div class="flex items-center gap-4 flex-wrap">
+   <img
+     class="w-[20px] md:w-[24px]"
+     src="assets/images/images/imagesFooter/instagram-167-svgrepo-com 1.png"
+     alt="/"
+   />
+   <img
+     class="w-[20px] md:w-[24px]"
+     src="assets/images/images/imagesFooter/whatsapp-svgrepo-com (1) 1.png"
+     alt="/"
+   />
+   <img
+     class="w-[20px] md:w-[24px]"
+     src="assets/images/images/imagesFooter/aparat-svgrepo-com 1.png"
+     alt="/"
+   />
+ </div>
+</div>
+     <div
+       class="absolute flex justify-center items-center bottom-0 rounded-b-[15px] h-[64px] w-full bg-[#ECEBEB]"
+     >
+       <p class="lg:text-[13px] text-[10px] font-bold text-[#555555]">
+         استفاده از تمامی مطالب، تصاویر و محتوای سایت فقط برای مقاصد غیر تجاری
+         و با ذکر منبع بلامانع است.
+       </p>
+     </div>
+   </footer>
+   <!--فوتر -->
+      
+
+  </div>
+  
+     
+<script src="assets/js/Product.js"></script>
+  </body>
+</html>

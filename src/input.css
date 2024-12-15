@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Show scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    display: block;
+  }
+  .scrollbar {
+    -ms-overflow-style: auto; /* IE and Edge */
+    scrollbar-width: auto; /* Firefox */
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Sans Regular";
+    src: local("sans"), url("../Fonts/IRANSansX-Regular.woff"), format("woff2");
+  }
+  @font-face {
+    font-family: "Sans Bold";
+    src: url("../Fonts/IRANSansX-Bold.woff2");
+  }
+  @font-face {
+    font-family: "Sans FanumRegular";
+    src: url("../Fonts/IRANSansXFaNum-Regular.woff2");
+  }
+  @font-face {
+    font-family: "Sans FanumBold";
+    src: url("../Fonts/IRANSansXFaNum-Bold.woff2");
+  }
+}
