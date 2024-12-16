@@ -76,6 +76,31 @@ smartwatchContainer.addEventListener("mouseout", () => {
   });
 });
 
+// --------------------------------------------------------------------------------------------
+
+// باز و بسته کردن همبرگرمنو
+
+// گرفتن عناصر
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
+
+// تابع باز کردن منو
+function openMenu() {
+  hamburgerMenu.style.transform = "translateY(0)";
+}
+
+// تابع بستن منو
+function closeMenu() {
+  hamburgerMenu.style.transform = "translateY(100%)";
+}
+
+// رویداد کلیک برای دکمه‌ها
+openButton.addEventListener("click", openMenu);
+closeButton.addEventListener("click", closeMenu);
+
+// ---------------------------------------------------------------------------------------------
+
 // هاور برای فعال و غیر فعال کردن لوازم جانبی گوشی
 
 document.addEventListener("DOMContentLoaded", () => {

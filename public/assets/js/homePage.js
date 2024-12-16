@@ -265,22 +265,17 @@ container.addEventListener("mousemove", (e) => {
   container.scrollLeft = scrollLeft - walk;
 });
 
-// هاور کردن و فعال و غیر فعال کردن مگا منو
-
 const tageLi = document.querySelector(".menu");
 
 const megamenu = document.querySelector(".megamenu");
 
-// وقتی موس روی "دسته بندی ها" می‌رود مگا منو باز می‌شود
 tageLi.addEventListener("mouseover", () => {
   megamenu.classList.remove("hidden");
   megamenu.classList.add("flex");
   megamenu.classList.add("transition-all", "duration-300");
 });
 
-// وقتی موس از "دسته بندی ها" خارج می‌شود، مگا منو بسته می‌شود
 tageLi.addEventListener("mouseout", () => {
-  // فقط زمانی که موس از مگا منو هم خارج شود بسته می‌شود
   if (!megamenu.matches(":hover")) {
     megamenu.classList.remove("flex");
     megamenu.classList.add("transition-all", "duration-300");
@@ -288,25 +283,21 @@ tageLi.addEventListener("mouseout", () => {
   }
 });
 
-// زمانی که موس روی مگا منو می‌رود، مگا منو نباید بسته شود
 megamenu.addEventListener("mouseover", () => {
   megamenu.classList.remove("hidden");
   megamenu.classList.add("flex");
   megamenu.classList.add("transition-all", "duration-300");
 });
 
-// وقتی موس از مگا منو خارج می‌شود، مگا منو بسته می‌شود
 megamenu.addEventListener("mouseout", () => {
   megamenu.classList.remove("flex");
   megamenu.classList.add("transition-all", "duration-300");
   megamenu.classList.add("hidden");
 });
 
-// انتخاب container و آیتم‌ها
 const tabletContainer = document.querySelector(".tablet-container");
 const tabletItems = document.querySelectorAll(".tablet-item");
 
-// رویداد هاور برای نمایش آیتم‌ها
 tabletContainer.addEventListener("mouseover", () => {
   tabletItems.forEach((item) => {
     item.classList.remove("hide");
@@ -314,15 +305,12 @@ tabletContainer.addEventListener("mouseover", () => {
   });
 });
 
-// رویداد خارج شدن از هاور برای مخفی کردن آیتم‌ها
 tabletContainer.addEventListener("mouseout", () => {
   tabletItems.forEach((item) => {
     item.classList.remove("show");
     item.classList.add("hide");
   });
 });
-
-// هاور برای فعال و  غیر فعال کردن  ساعت های هوشمند
 
 const smartwatchContainer = document.querySelector(".smartwatch-container");
 const smartwatchItems = document.querySelectorAll(".smartwatch-item");
@@ -340,8 +328,6 @@ smartwatchContainer.addEventListener("mouseout", () => {
     item.classList.add("hide");
   });
 });
-
-// هاور برای فعال و غیر فعال کردن لوازم جانبی گوشی
 
 document.addEventListener("DOMContentLoaded", () => {
   const megamenu = document.querySelector(".megamenu");

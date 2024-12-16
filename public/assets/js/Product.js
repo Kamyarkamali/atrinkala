@@ -449,6 +449,31 @@ $.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// --------------------------------------------------------------------------------------------
+
+// باز و بسته کردن همبرگرمنو
+
+// گرفتن عناصر
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
+
+// تابع باز کردن منو
+function openMenu() {
+  hamburgerMenu.style.transform = "translateY(0)";
+}
+
+// تابع بستن منو
+function closeMenu() {
+  hamburgerMenu.style.transform = "translateY(100%)";
+}
+
+// رویداد کلیک برای دکمه‌ها
+openButton.addEventListener("click", openMenu);
+closeButton.addEventListener("click", closeMenu);
+
+// ---------------------------------------------------------------------------------------------
+
 // اسلایدر محصولات مشابه
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -493,3 +518,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // به‌روزرسانی اسلایدر به صورت پیش‌فرض
   updateSlider();
 });
+
+// اسلایدر بخش مودال موبایل
+
+let slideOne = 0;
+
+function moveSlide(direction) {
+  const sliderBanner = document.getElementById("sliderMobile");
+  const totalSlides = document.querySelectorAll("#sliderMobile img").length;
+
+  slideOne += direction;
+
+  // بررسی مرزها
+  if (slideOne >= totalSlides) {
+    slideOne = 0; //
+  } else if (slideOne < 0) {
+    slideOne = totalSlides - 1;
+  }
+
+  // حرکت دادن اسلایدر
+  sliderBanner.style.transform = `translateX(-${slideOne * 100}%)`;
+  sliderBanner.style.transition = "transform 0.5s ease-in-out";
+}
+
+// نمایش اسلایدر برای سایز موبایل
+// --------------------------------------------------------------
+function showModal() {
+  popup.classList.remove("hidden");
+  popup.classList.add("block");
+}

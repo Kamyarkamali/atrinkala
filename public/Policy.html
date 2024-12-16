@@ -9,21 +9,22 @@
   <body>
     <div>
       <!-- navbar -->
-      <nav
-      class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+      <header
+      class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
     >
       <!-- بخش بالا در موبایل -->
       <div class="flex justify-between items-center w-full">
         <!-- لوگو و همبرگر منو -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 relative">
           <img
+            id="openButton"
             class="w-[40px] cursor-pointer lg:hidden"
             src="assets/icons/menu.svg"
-            alt="menu"
+            alt="hamburGerMenu"
           />
-          <a href="HomePage.html">
+          <a href="/public/HomePage.html">
             <img
-            class="w-[150px] lg:w-[190px]"
+            class="w-[150px] hidden lg:block lg:w-[190px]"
             src="assets/images/images/logo.png"
             alt="logo"
             />
@@ -45,7 +46,7 @@
           </div>
         </div>
         <!-- دکمه‌های ورود و ثبت نام -->
-        <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
+        <div class="flex ml-[5px] items-center gap-2 lg:hidden">
           <button
             class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
           >
@@ -64,6 +65,31 @@
             <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
           </button>
         </div>
+
+          <!-- محتوای همبرگر منو -->
+          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+            <div class="flex justify-between items-center p-4">
+              <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
+              <button id="closeButton" class="text-lg font-bold">&times;</button>
+            </div>
+            <nav>
+              <ul class="flex text-sm flex-col gap-4 p-4">
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">لپ تاپ </a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">آیفون</a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">پلی استیشن 5</a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">درباره ما</a></li>
+                <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
+              </ul>
+              <div class="flex flex-col items-center gap-3">
+                <button class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg">
+                  <a href="#">ورود و ثبت نام</a>
+                </button>
+                <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
+              </div>
+            </nav>
+          </aside>
+        <!-- محتوای همبرگر منو -->
+
       </div>
 
       <!-- فیلد جستجو -->
@@ -98,7 +124,7 @@
           <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
         </button>
       </div>
-    </nav>
+    </header>
       <!-- navbar -->
 
                <!-- tom menu start -->
@@ -353,82 +379,83 @@
      <!-- top menu end -->
 
      <div class="max-w-[1300px] mx-auto p-4">
-        <!-- مسیر صفحات -->
-        <div class="flex items-center gap-2 text-[14px] sm:text-[16px]">
-          <p>خانه</p>
-          <p>/</p>
-          <p>شرایط و ضوابط</p>
-        </div>
-      
-        <!-- دکمه شرایط و ضوابط -->
-        <div class="flex justify-center mt-4">
-          <button class="w-[155px] h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9] text-[14px] sm:text-[16px]">
-            درباره ما
-          </button>
-        </div>
-      
-        <!-- شرایط و ضوابط -->
-        <div class="flex flex-col gap-3 mt-6">
-          <div class="flex flex-col gap-2">
-            <p class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">
-              شرایط و ضوابط فروشگاه اینترنتی آترین کالا :
-            </p>
-            <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
-              کردستان - بانه - بلوار شهرداری - جنب مجتمع تجاری نور - ساختمان پاییز - طبقه دوم - واحد یک
-            </p>
+      <!-- مسیر صفحات -->
+      <nav class="flex items-center gap-2 text-[14px] sm:text-[16px]" aria-label="breadcrumb">
+        <a href="/" class="text-blue-600">خانه</a>
+        <span>/</span>
+        <span>شرایط و ضوابط</span>
+      </nav>
+    
+      <!-- دکمه شرایط و ضوابط -->
+      <section class="flex justify-center mt-4">
+        <button class="w-[155px] h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9] text-[14px] sm:text-[16px]">
+          درباره ما
+        </button>
+      </section>
+    
+      <!-- شرایط و ضوابط -->
+      <section class="flex flex-col gap-3 mt-6">
+        <article class="flex flex-col gap-2">
+          <h2 class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">
+            شرایط و ضوابط فروشگاه اینترنتی آترین کالا :
+          </h2>
+          <address class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
+            کردستان - بانه - بلوار شهرداری - جنب مجتمع تجاری نور - ساختمان پاییز - طبقه دوم - واحد یک
+          </address>
+        </article>
+    
+        <article class="flex flex-col gap-2">
+          <h2 class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">دفتر تهران :</h2>
+          <address class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
+            تهران - سه راه امین حضور - خیابان ایران - بازار بزرگ امیر کبیر - طبقه همکف - پلاک 460
+          </address>
+        </article>
+      </section>
+    
+      <!-- شماره های تماس -->
+      <section class="flex flex-col gap-4 mt-6">
+        <article>
+          <h2 class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">شماره‌های تماس :</h2>
+          <div class="flex flex-wrap items-center gap-2 mt-3">
+            <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">دفتر:</p>
+            <a href="tel:08734259380" class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">08734259380</a>
           </div>
-      
-          <div class="flex flex-col gap-2">
-            <p class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">دفتر تهران :</p>
-            <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
-              تهران - سه راه امین حضور - خیابان ایران - بازار بزرگ امیر کبیر - طبقه همکف - پلاک 460
-            </p>
+        </article>
+    
+        <article>
+          <div class="flex flex-wrap items-center gap-2">
+            <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">کارشناس فروش:</p>
+            <a href="tel:09129407014" class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">
+              09129407014 - 09129407013 - 09129407012
+            </a>
           </div>
-        </div>
-      
-        <!-- شماره های تماس -->
-        <div class="flex flex-col gap-4 mt-6">
-          <div class="flex flex-col">
-            <p class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">شماره های تماس :</p>
-            <div class="flex flex-wrap items-center gap-2 mt-3">
-              <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">دفتر:</p>
-              <p class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">08734259380</p>
-            </div>
+        </article>
+    
+        <article>
+          <div class="flex flex-wrap items-center gap-2">
+            <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">پشتیبانی:</p>
+            <a href="tel:02128421592" class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">
+              02128421592 - 02171057528
+            </a>
           </div>
-      
-          <div class="flex flex-col">
-            <div class="flex flex-wrap items-center gap-2">
-              <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">کارشناس فروش:</p>
-              <p class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">
-                09129407014 - 09129407013 - 09129407012
-              </p>
-            </div>
-          </div>
-      
-          <div class="flex flex-col">
-            <div class="flex flex-wrap items-center gap-2">
-              <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">پشتیبانی:</p>
-              <p class="text-[14px] sm:text-[16px] font-bold text-[#003FEB]">
-                02128421592 - 02171057528
-              </p>
-            </div>
-          </div>
-        </div>
-      
-        <!-- امور مشتریان -->
-        <div class="flex flex-col gap-3 mt-6">
-          <p class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">امور مشتریان:</p>
-          <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
-            از ساعت 9 صبح الی 8 شب، در تمامی طول هفته آماده پاسخگویی و ارائه خدمات به مشتریان عزیزمان هستیم.
-          </p>
-        </div>
-      
-        <!-- ایمیل سازمانی -->
-        <div class="flex flex-col gap-3 mt-8">
-          <p class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">ایمیل سازمانی :</p>
-          <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">Support@atrinkala.com</p>
-        </div>
-      </div>
+        </article>
+      </section>
+    
+      <!-- امور مشتریان -->
+      <section class="flex flex-col gap-3 mt-6">
+        <h2 class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">امور مشتریان:</h2>
+        <p class="text-[14px] sm:text-[16px] text-[#1A1A1A]">
+          از ساعت 9 صبح الی 8 شب، در تمامی طول هفته آماده پاسخگویی و ارائه خدمات به مشتریان عزیزمان هستیم.
+        </p>
+      </section>
+    
+      <!-- ایمیل سازمانی -->
+      <section class="flex flex-col gap-3 mt-8">
+        <h2 class="text-[15px] sm:text-[17px] text-[#1A1A1A] font-bold">ایمیل سازمانی :</h2>
+        <a href="mailto:Support@atrinkala.com" class="text-[14px] sm:text-[16px] text-[#1A1A1A]">Support@atrinkala.com</a>
+      </section>
+    </div>
+    
     </div>
     </div>
     </div>

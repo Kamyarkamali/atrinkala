@@ -9,94 +9,123 @@
   <body>
     <div>
       <!-- navbar -->
-         <nav
-         class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
-       >
-         <!-- بخش بالا در موبایل -->
-         <div class="flex justify-between items-center w-full">
-           <!-- لوگو و همبرگر منو -->
-           <div class="flex items-center gap-4">
-             <img
-               class="w-[40px] cursor-pointer lg:hidden"
-               src="assets/icons/menu.svg"
-               alt="menu"
-             />
-             <img
-               class="w-[150px] lg:w-[190px]"
-               src="assets/Images/images/logo.png"
-               alt="logo"
-             />
-             <!-- فیلد جستجو -->
-             <div
-               class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
-             >
-               <img
-                 src="assets/icons/search.svg"
-                 alt="search"
-                 class="w-6 h-6 ml-2"
-               />
-               <input
-                 class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
-                 type="text"
-                 placeholder="جستجو"
-               />
-             </div>
-           </div>
-           <!-- دکمه‌های ورود و ثبت نام -->
-           <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
-             <button
-               class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
-             >
-             <a href="SingIn.html">
-               <p>ورود</p>
-             </a>
-               <p class="text-black mx-1">|</p>
-             <a href="SingIn.html">
-               <p>ثبت نام</p>
-             </a>
- 
-             </button>
-             <button
-               class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
-             >
-               <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
-             </button>
-           </div>
-         </div>
- 
-         <!-- فیلد جستجو -->
-         <div
-           class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
-         >
-           <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
-           <input
-             class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
-             type="text"
-             placeholder="جستجو"
-           />
-         </div>
- 
-         <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
-         <div class="hidden lg:flex items-center gap-4">
-           <button
-             class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
-           >
-           <a href="SingIn.html">
-             <p>ورود</p>
-           </a>
-             <p class="text-black mx-1">|</p>
-             <a href="SingIn.html">
-               <p>ثبت نام</p>
-             </a>
- 
-           </button>
-           <button
-             class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
-           >
-             <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
-           </button>
-         </div>
-       </nav>
+      <header
+      class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
+    >
+      <!-- بخش بالا در موبایل -->
+      <div class="flex justify-between items-center w-full">
+        <!-- لوگو و همبرگر منو -->
+        <div class="flex items-center gap-4 relative">
+          <img
+            id="openButton"
+            class="w-[40px] cursor-pointer lg:hidden"
+            src="assets/icons/menu.svg"
+            alt="hamburGerMenu"
+          />
+          <a href="/public/HomePage.html">
+            <img
+            class="w-[150px] hidden lg:block lg:w-[190px]"
+            src="assets/images/images/logo.png"
+            alt="logo"
+            />
+          </a>
+          <!-- فیلد جستجو -->
+          <div
+            class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+          >
+            <img
+              src="assets/icons/search.svg"
+              alt="search"
+              class="w-6 h-6 ml-2"
+            />
+            <input
+              class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+              type="text"
+              placeholder="جستجو"
+            />
+          </div>
+        </div>
+        <!-- دکمه‌های ورود و ثبت نام -->
+        <div class="flex ml-[5px] items-center gap-2 lg:hidden">
+          <button
+            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+          >
+          <a href="SingIn.html">
+            <p>ورود</p>
+          </a>
+            <p class="text-black mx-1">|</p>
+          <a href="SingIn.html">
+            <p>ثبت نام</p>
+          </a>
+
+          </button>
+          <button
+            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+          >
+            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          </button>
+        </div>
+
+          <!-- محتوای همبرگر منو -->
+          <aside id="hamburgerMenu" class="w-full h-[200vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+            <div class="flex justify-between items-center p-4">
+              <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
+              <button id="closeButton" class="text-lg font-bold">&times;</button>
+            </div>
+            <nav>
+              <ul class="flex text-sm flex-col gap-4 p-4">
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">لپ تاپ </a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">آیفون</a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">پلی استیشن 5</a></li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">درباره ما</a></li>
+                <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
+              </ul>
+              <div class="flex flex-col items-center gap-3">
+                <button class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg">
+                  <a href="#">ورود و ثبت نام</a>
+                </button>
+                <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
+              </div>
+            </nav>
+          </aside>
+        <!-- محتوای همبرگر منو -->
+
+      </div>
+
+      <!-- فیلد جستجو -->
+      <div
+        class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+      >
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <input
+          class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+          type="text"
+          placeholder="جستجو"
+        />
+      </div>
+
+      <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
+      <div class="hidden lg:flex items-center gap-4">
+        <button
+          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
+        >
+        <a href="SingIn.html">
+          <p>ورود</p>
+        </a>
+          <p class="text-black mx-1">|</p>
+          <a href="SingIn.html">
+            <p>ثبت نام</p>
+          </a>
+
+        </button>
+        <button
+          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+        >
+          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+        </button>
+      </div>
+    </header>
+
       <!-- navbar -->
 
            <!-- tom menu start -->
@@ -360,52 +389,67 @@
 
     
       <!-- دکمه درباره ما -->
-      <div class="flex justify-center mt-4">
+      <section class="flex justify-center mt-4">
         <button class="w-[155px] h-[41px]  text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9]">درباره ما</button>
-      </div>
+      </section>
     
       <!-- بخش اول -->
-      <div class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
-        <div class="md:w-[631px] w-[449px] p-6">
+      <section class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
+        <!-- محتوا -->
+        <article class="md:w-[631px] w-[449px] p-6">
           <p class="md:text-[17px] text-[14px] leading-9 font-bold text-[#1A1A1A]">
             آتـریـن کــالا به عنوان یکی از فروشگاه های اینترنتـی سطح کشور با فعالیت در زمینـه های لوازم خانگی، موبایـل و تبلت، ابزار آلات و... در تکاپو بوده تا با در نظـر گرفتن نیـاز کاربران و هموار ساختن مشکلات مخاطبان در خرید اینترنتی اعم از تحویل سریع، ضمانت کالای اورجینال، پرداخت درب منزل و 7 روز ضمانت بازگشت، لذت تجربه سهولت خرید دیجیتال را برای کاربران به ارمغان بیاورد .
           </p>
-        </div>
-        <div class="lg:w-[500px] w-full flex justify-center">
-          <img src="assets/images/images/imageAbout/Group 70.png" alt="/">
-        </div>
-      </div>
+        </article>
+      
+        <!-- تصویر -->
+        <figure class="lg:w-[500px] w-full flex justify-center">
+          <img src="assets/images/images/imageAbout/Group 70.png" alt="تصویر مربوط به توضیحات">
+          <!-- اگر نیاز به توضیحات اضافی برای تصویر دارید، می‌توانید از تگ figcaption استفاده کنید -->
+          <figcaption class="sr-only">تصویر مربوط به آتـریـن کــالا</figcaption>
+        </figure>
+      </section>
+      
     
       <!-- بخش دوم -->
-      <div class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
-        <div class="md:w-[631px] w-[449px] p-6">
+      <section class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
+        <!-- محتوا -->
+        <article class="md:w-[631px] w-[449px] p-6">
           <p class="md:text-[17px] text-[14px] font-bold leading-9 text-[#1A1A1A]">
             آترین کالا برای فراهم آوردن یک بستر خریـد سالم همراه با چاشنی آرامش و از طرفی جلب اعتماد کاربران، با دریافت نماد اعتماد الکترونیکی، مجوز وزارت فرهنگ و ارشاد و مجوز اتحادیه کشوری کسب و کارهای اینترنتی توانسته به یکی از معتبرترین فروشگاه های اینترنتی سطح کشور تبدیل شود و مخاطبان نیز با آرامش خاطر بیشتری در آترین کالا خرید کنند .
           </p>
-        </div>
-        <div class="relative lg:w-[500px] w-full flex justify-center">
-          <img src="assets/images/images/imageAbout/Frame 113.png" alt="/">
-        </div>
-      </div>
+        </article>
+      
+        <!-- تصویر -->
+        <figure class="relative lg:w-[500px] w-full flex justify-center">
+          <img src="assets/images/images/imageAbout/Frame 113.png" alt="تصویر مربوط به اعتماد آترین کالا">
+          <figcaption class="sr-only">تصویر نشان‌دهنده نماد اعتماد الکترونیکی و مجوزهای آترین کالا</figcaption>
+        </figure>
+      </section>
+      
     
       <!-- بخش سوم -->
-      <div class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
-        <div class="md:w-[631px] w-[449px] p-6">
+      <section class="flex flex-col lg:flex-row items-center justify-between mt-8 gap-4 mr-1 md:mr-0">
+        <!-- محتوا -->
+        <article class="md:w-[631px] w-[449px] p-6">
           <p class="md:text-[17px] text-[14px] leading-9 font-bold text-[#1A1A1A]">
-            فروشگاه اینترنتی آترین کالا همواره در راستای تعامل بیشتر با کاربران در تلاش بوده و به همین واسطه فعالیت خود را نیز در شبکه های اجتماعی آغاز نموده تا از همکاری شما عزیزان در راستای تکامل بیشتر و خدمت رسانی بهتر بهره مند شود .
+            فروشگاه اینترنتی آترین کالا همواره در راستای تعامل بیشتر با کاربران در تلاش بوده و به همین واسطه فعالیت خود را نیز در شبکه های اجتماعی آغاز نموده تا از همکاری شما عزیزان در راستای تکامل بیشتر و خدمت رسانی بهتر بهره مند شود.
           </p>
-        </div>
-        <div class="lg:w-[500px] w-full flex flex-wrap justify-center items-center gap-6">
-          <img src="assets/images/images/imageAbout/Page-1.png" alt="">
+        </article>
+      
+        <!-- تصاویر -->
+        <figure class="lg:w-[500px] w-full flex flex-wrap justify-center items-center gap-6">
+          <img src="assets/images/images/imageAbout/Page-1.png" alt="تصویر نمای کلی از فروشگاه آترین کالا" class="w-auto h-auto">
           <div class="relative">
-            <img src="assets/images/images/imageAbout/Vector (4).png" alt="/">
+            <img src="assets/images/images/imageAbout/Vector (4).png" alt="تصویر نماد همکاری" class="w-auto h-auto">
             <div class="absolute top-4 right-3">
-              <img src="assets/images/images/imageAbout/Vector (5).png" alt="/">
+              <img src="assets/images/images/imageAbout/Vector (5).png" alt="تصویر نماد ارتباط" class="w-auto h-auto">
             </div>
           </div>
-          <img src="assets/images/images/imageAbout/Vector (3).png" alt="/">
-        </div>
-      </div>
+          <img src="assets/images/images/imageAbout/Vector (3).png" alt="تصویر نماد گسترش همکاری" class="w-auto h-auto">
+        </figure>
+      </section>      
+
     </div>
       </div>
     </div>

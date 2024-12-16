@@ -9,23 +9,26 @@
 <body>
     <div>
               <!-- navbar -->
-              <nav
-              class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+              <header
+              class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
             >
               <!-- بخش بالا در موبایل -->
               <div class="flex justify-between items-center w-full">
                 <!-- لوگو و همبرگر منو -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 relative">
                   <img
+                    id="openButton"
                     class="w-[40px] cursor-pointer lg:hidden"
                     src="assets/icons/menu.svg"
-                    alt="menu"
+                    alt="hamburGerMenu"
                   />
-                  <img
-                    class="w-[150px] lg:w-[190px]"
+                  <a href="/public/HomePage.html">
+                    <img
+                    class="w-[150px] hidden lg:block lg:w-[190px]"
                     src="assets/images/images/logo.png"
                     alt="logo"
-                  />
+                    />
+                  </a>
                   <!-- فیلد جستجو -->
                   <div
                     class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
@@ -43,7 +46,7 @@
                   </div>
                 </div>
                 <!-- دکمه‌های ورود و ثبت نام -->
-                <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
+                <div class="flex ml-[5px] items-center gap-2 lg:hidden">
                   <button
                     class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
                   >
@@ -62,6 +65,31 @@
                     <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
                   </button>
                 </div>
+      
+                  <!-- محتوای همبرگر منو -->
+                  <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+                    <div class="flex justify-between items-center p-4">
+                      <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
+                      <button id="closeButton" class="text-lg font-bold">&times;</button>
+                    </div>
+                    <nav>
+                      <ul class="flex text-sm flex-col gap-4 p-4">
+                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">لپ تاپ </a></li>
+                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">آیفون</a></li>
+                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">پلی استیشن 5</a></li>
+                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">درباره ما</a></li>
+                        <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
+                      </ul>
+                      <div class="flex flex-col items-center gap-3">
+                        <button class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg">
+                          <a href="#">ورود و ثبت نام</a>
+                        </button>
+                        <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
+                      </div>
+                    </nav>
+                  </aside>
+                <!-- محتوای همبرگر منو -->
+      
               </div>
       
               <!-- فیلد جستجو -->
@@ -96,7 +124,8 @@
                   <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
                 </button>
               </div>
-            </nav>
+            </header>
+      
     <!-- navbar -->
                 <!-- tom menu start -->
                 <section class="mt-[20px] max-w-[1300px] mx-auto">
@@ -359,7 +388,7 @@
                   
                     <!-- دکمه تجربه خرید -->
                     <div class="flex justify-center mt-4">
-                      <button class="w-[155px] h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9]">
+                      <button class="w-[155px] text-sm h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9]">
                         تجربه خرید از آترین کالا
                       </button>
                     </div>
@@ -644,15 +673,15 @@
       </button>
     </div>
 
-    <div class="flex flex-col md:flex-row items-center gap-4">
-      <div class="w-full md:w-[466px] h-[69px] flex justify-center items-center border-[1px] border-gray-300 rounded-[9px]">
+    <div class="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
+      <div class="w-full md:w-[466px] flex justify-center items-center">
         <p class="text-[14px] sm:text-[16px] md:text-[18px]">
-          خرید آیفون 15 128، آقای محمود روشن از مشهد
+          خرید آیفون 15 آقای محمود روشن از مشهد
         </p>
       </div>
       <audio
         controls
-        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] border-[#000000] rounded-[9px]"
+        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
       >
         <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
         مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
@@ -660,14 +689,14 @@
     </div>
 
     <div class="flex flex-col md:flex-row items-center gap-4">
-      <div class="w-full md:w-[466px] h-[69px] flex justify-center items-center border-[1px] border-gray-300 rounded-[9px]">
+      <div class="w-full md:w-[466px] h-[69px] flex justify-center items-center">
         <p class="text-[14px] sm:text-[16px] md:text-[18px]">
-          خرید آیفون 15 128، آقای محمود روشن از مشهد
+          خرید آیفون 15  آقای محمود روشن از مشهد
         </p>
       </div>
       <audio
         controls
-        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] border-[#000000] rounded-[9px]"
+        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
       >
         <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
         مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
