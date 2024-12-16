@@ -209,62 +209,28 @@ scrollContainer6.addEventListener("mousemove", (e) => {
 
 // --------------------------------------------------------------------------------------------
 
-//اسلایدر لپ تاپ ها
+// باز و بسته کردن همبرگرمنو
 
-const swiper5 = new Swiper(".swiper-container5", {
-  slidesPerView: 4,
-  spaceBetween: 24,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  loop: true,
-  breakpoints: {
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
+// گرفتن عناصر
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
 
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
+// تابع باز کردن منو
+function openMenu() {
+  hamburgerMenu.style.transform = "translateY(0)";
+}
 
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-  },
-});
+// تابع بستن منو
+function closeMenu() {
+  hamburgerMenu.style.transform = "translateY(100%)";
+}
 
-// اسلایدر پلی استیشن ها
+// رویداد کلیک برای دکمه‌ها
+openButton.addEventListener("click", openMenu);
+closeButton.addEventListener("click", closeMenu);
 
-const swiper6 = new Swiper(".swiper-container7", {
-  slidesPerView: 4,
-  spaceBetween: 24,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  loop: true,
-  breakpoints: {
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-  },
-});
+// ---------------------------------------------------------------------------------------------
 
 // درگ کردن شماره های فوتتر
 
@@ -302,8 +268,6 @@ container.addEventListener("mousemove", (e) => {
 // هاور کردن و فعال و غیر فعال کردن مگا منو
 
 const tageLi = document.querySelector(".menu");
-
-const tageLiMobile = document.querySelector(".menuMobile");
 
 const megamenu = document.querySelector(".megamenu");
 

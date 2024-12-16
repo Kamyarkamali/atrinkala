@@ -10,22 +10,23 @@
     <div>
       <!-- navbar -->
       <header
-        class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0"
+        class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
       >
         <!-- بخش بالا در موبایل -->
         <div class="flex justify-between items-center w-full">
           <!-- لوگو و همبرگر منو -->
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4 relative">
             <img
+              id="openButton"
               class="w-[40px] cursor-pointer lg:hidden"
               src="assets/icons/menu.svg"
-              alt="menu"
+              alt="hamburGerMenu"
             />
-            <img
+            <!-- <img
               class="w-[150px] lg:w-[190px]"
               src="assets/images/images/logo.png"
               alt="logo"
-            />
+            /> -->
             <!-- فیلد جستجو -->
             <div
               class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
@@ -43,7 +44,7 @@
             </div>
           </div>
           <!-- دکمه‌های ورود و ثبت نام -->
-          <div class="flex ml-[-15px] items-center gap-2 lg:hidden">
+          <div class="flex ml-[5px] items-center gap-2 lg:hidden">
             <button
               class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
             >
@@ -62,6 +63,31 @@
               <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
             </button>
           </div>
+
+            <!-- محتوای همبرگر منو -->
+            <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+              <div class="flex justify-between items-center p-4">
+                <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
+                <button id="closeButton" class="text-lg font-bold">&times;</button>
+              </div>
+              <nav>
+                <ul class="flex text-sm flex-col gap-4 p-4">
+                  <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">لپ تاپ </a></li>
+                  <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">آیفون</a></li>
+                  <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">پلی استیشن 5</a></li>
+                  <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">درباره ما</a></li>
+                  <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
+                </ul>
+                <div class="flex flex-col items-center gap-3">
+                  <button class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg">
+                    <a href="#">ورود و ثبت نام</a>
+                  </button>
+                  <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
+                </div>
+              </nav>
+            </aside>
+          <!-- محتوای همبرگر منو -->
+
         </div>
 
         <!-- فیلد جستجو -->
@@ -98,6 +124,9 @@
         </div>
       </header>
 
+
+      
+
       <!-- navbar -->
 
       <!-- section  2 TopMenu -->
@@ -109,7 +138,7 @@
           <a class="products">
 
             <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
-            <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+            <li class="hover:text-[#003FEB] mr-3 text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
 
             <!--مگا منو  دکستاپ-->
            <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-20 bg-[#ffff] megamenu">
@@ -335,17 +364,12 @@
   </div>
   
 <!-- مگا منو موبایل -->
-
+        <ul class="flex items-center justify-start gap-3">
           <a>
             <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
           </a>
           <a >
             <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
-          </a>
-          <a >
-            <li class="hover:text-[#003FEB] text-[11px] duration-300">
-              تجربه خرید از آترین کالا
-            </li>
           </a>
           <a>
             <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
@@ -361,7 +385,7 @@
           <img class="w-[100%] aspect-auto flex-shrink-0" src="/public/assets/images/slider1.png" alt="slide1">
           <img class="w-[100%] aspect-auto flex-shrink-0" src="/public/assets/images/slider2.png" alt="slide2">
         </div>
-        <div class="absolute md:right-[65px] right-10 flex gap-3 items-centergap-3 z-50 top-[70%] text-black">
+        <div class="absolute md:right-[65px] right-10 flex gap-3 items-centergap-3 top-[70%] text-black">
           <button class="prev w-[20px] h-[20px] flex justify-center items-center md:w-[33px] md:h-[33px] rounded-[100%] bg-white" onclick="moveSlide(-1)">&#10094;</button>
           <button class="next w-[20px] h-[20px] flex justify-center items-center md:w-[33px] md:h-[33px] rounded-[100%] bg-white" onclick="moveSlide(1)">&#10095;</button>
         </div>
@@ -380,32 +404,32 @@
         class="flex gap-16 md:gap-6 overflow-x-auto items-center justify-around transition-all duration-200 ease-linear scrollbar-hide">
         <!-- آیتم 1 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse5.png" alt="گوشی اپل">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse5.png" alt="گوشی اپل">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">گوشی اپل</p>
         </div>
         <!-- آیتم 2 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse6.png" alt="آیپد">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse6.png" alt="آیپد">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">آیپد</p>
         </div>
         <!-- آیتم 3 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse7.png" alt="پلی استیشن">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse7.png" alt="پلی استیشن">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">پلی استیشن</p>
         </div>
         <!-- آیتم 4 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse8.png" alt="لپ تاپ">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse8.png" alt="لپ تاپ">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">لپ تاپ</p>
         </div>
         <!-- آیتم 5 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse9.png" alt="مانیتور">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse9.png" alt="مانیتور">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">مانیتور(نمایشگر)</p>
         </div>
         <!-- آیتم 6 -->
         <div class="flex-shrink-0 flex flex-col items-center w-[33%] max-w-[120px] sm:max-w-[150px]">
-          <img class="w-[126px]" src="/public/assets/images/images/bannerImage/Ellipse10.png" alt="کارت گرافیک">
+          <img class="md:w-[125px] w-[101px]" src="/public/assets/images/images/bannerImage/Ellipse10.png" alt="کارت گرافیک">
           <p class="text-[12px] sm:text-[15px] mt-2 sm:mt-3 text-[#515151]">کارت گرافیک</p>
         </div>
       </div>
@@ -602,36 +626,47 @@
 
     <!-- section 7 laptop -->
 
-    <section class="max-w-[1300px] mx-auto mt-[24px]">
-      <div  class="md:w-full w-[430px] sm:w-[600px] cursor-pointer overflow-hidden mx-auto relative">
-        <div id="scroll-container4" class="flex cursor-pointer overflow-x-auto items-center justify-center lg:justify-center gap-2 sm:gap-10 lg:gap-11 transition-all duration-200 ease-linear scrollbar-hide">
-                <div class="flex flex-col items-center gap-2">
-                  <div class="md:w-[295px] w-[250px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
-                    <img src="/public/assets/images/images/laptop.png" alt="laptopStock">
-                  </div> 
-                  <p>لپ تاپ گیمینگ استوک</p>    
-                </div>        
-              <div class="flex flex-col items-center gap-2">
-                <div class="md:w-[295px] w-[250px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
-                  <img src="/public/assets/images/images/laptop.png" alt="laptopStock">
-                </div>
-                <p>لپ تاپ برنامه نویسی استوک</p>  
-              </div>
-            <div class="flex flex-col items-center gap-2">
-              <div class="md:w-[295px] w-[250px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
-                <img src="/public/assets/images/images/laptop.png" alt="laptopStock">
-              </div>
-              <p>لپ تاپ ترید استوک</p>  
+    <section class="w-full max-w-[1300px] mx-auto mt-[24px]">
+      <div class="w-full sm:w-[90%] md:w-full flex justify-center cursor-pointer overflow-hidden mx-auto relative">
+        <div id="scroll-container4" 
+             class="flex lg:gap-12 gap-2 items-center justify-center overflow-x-auto scrollbar-hide transition-all duration-200 ease-linear">
+          
+          <!-- کارت 1 -->
+          <div class="flex flex-col items-center gap-2 min-w-[250px] h-auto">
+            <div class="md:w-[295px] w-[240px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
+              <img src="/public/assets/images/images/laptop.png" alt="لپ تاپ گیمینگ استوک" class="w-full h-full object-contain">
             </div>
-            <div class="flex flex-col items-center gap-2">
-              <div class="md:w-[295px] w-[250px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
-                <img src="/public/assets/images/images/laptop.png" alt="laptopStock">
-              </div>
-              <p>لپ تاپ طراحی استوک</p>         
+            <p class="text-center">لپ تاپ گیمینگ استوک</p>    
+          </div>
+    
+          <!-- کارت 2 -->
+          <div class="flex flex-col items-center gap-2 min-w-[250px] h-auto">
+            <div class="md:w-[295px] w-[240px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
+              <img src="/public/assets/images/images/laptop.png" alt="لپ تاپ برنامه نویسی استوک" class="w-full h-full object-contain">
             </div>
+            <p class="text-center">لپ تاپ برنامه نویسی استوک</p>  
+          </div>
+    
+          <!-- کارت 3 -->
+          <div class="flex flex-col items-center gap-2 min-w-[250px] h-auto">
+            <div class="md:w-[295px] w-[240px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
+              <img src="/public/assets/images/images/laptop.png" alt="لپ تاپ ترید استوک" class="w-full h-full object-contain">
+            </div>
+            <p class="text-center">لپ تاپ ترید استوک</p>  
+          </div>
+    
+          <!-- کارت 4 -->
+          <div class="flex flex-col items-center gap-2 min-w-[250px] h-auto">
+            <div class="md:w-[295px] w-[240px] h-[145px] flex items-center justify-center shadow-lg shadow-gray-300 rounded-[13px]">
+              <img src="/public/assets/images/images/laptop.png" alt="لپ تاپ طراحی استوک" class="w-full h-full object-contain">
+            </div>
+            <p class="text-center">لپ تاپ طراحی استوک</p>         
+          </div>
+          
         </div>
       </div>
     </section>
+    
 
     <!-- section 7 laptop -->
 
@@ -733,7 +768,7 @@
     <!-- section 8 ps5 -->
 
     <!-- section 9 Alert -->
-    <div
+    <section
     class="flex border-b-[1px] border-[#C9C9C9] max-w-[100%] mx-auto items-center justify-around h-[130px] mt-[11px] px-2 md:px-4"
   >
     <div class="flex flex-col items-center text-[#1C1C1C] text-[12px] md:text-[14px]">
@@ -780,13 +815,13 @@
       />
       <p class="mt-1 md:mt-2 text-[9px] md:text-[14px]">پشتیبانی از ساعت 8 تا 19</p>
     </div>
-  </div>
+  </section>
   
 
     <!-- section 9 Alert -->
 
     <!-- section 10 about -->
-    <div
+    <section
     class="flex lg:mr-[76px] flex-col lg:flex-row justify-between text-[#5B5B5B] max-w-[1380px] mx-auto mt-[43px] px-4"
   >
     
@@ -819,80 +854,82 @@
     </div>
   
     
-    <div class="lg:flex justify-center items-center w-[600px] hidden">
+    <section class="lg:flex justify-center items-center w-[600px] hidden">
       <img src="assets/images/images/about.png" alt="/" class="max-w-full" />
-    </div>
-  </div>
+    </section>
+  </section>
   
     <!-- section 10 about -->
 
     <!-- section 11 -->
-    <div class="max-w-[1370px] mx-auto mt-[23px] bg-[#595654] p-4">
-      <!-- عنوان -->
-      <div class="flex justify-between items-center text-[22px] text-white font-bold">
-        <p class="mb-4 sm:mb-0 sm:mr-[64px] mt-[21px]">مجله آترین کالا</p>
-        <p
+    <section class="max-w-[1370px] mx-auto mt-[23px] bg-[#595654] p-4">
+      <!-- هدر مجله -->
+      <header class="flex justify-between items-center text-[22px] text-white font-bold">
+        <h2 class="mb-4 sm:mb-0 sm:mr-[64px] mt-[21px]">مجله آترین کالا</h2>
+        <a
+          href="#"
           class="sm:ml-[64px] text-[12px] font-bold text-[#595654] mt-[21px] w-[116px] h-[37px] bg-white rounded-[39px] flex items-center justify-center"
         >
           بلاگ آترین کالا
-        </p>
-      </div>
+        </a>
+      </header>
     
-     
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-[20px]">
-        
-        <div class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
+      <!-- شبکه مقالات -->
+      <main class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-[20px]">
+        <!-- مقاله 1 -->
+        <article class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
           <img
             class="w-full h-[150px] rounded-t-[12px] object-cover"
             src="assets/images/images/section8/Rectangle 64.png"
             alt="بهترین لپ تاپ های روز"
           />
           <p class="text-[13px] mt-[11px] mr-[10px]">بهترین لپ تاپ های روز</p>
-        </div>
+        </article>
     
-       
-        <div class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
+        <!-- مقاله 2 -->
+        <article class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
           <img
             class="w-full h-[150px] rounded-t-[12px] object-cover"
             src="assets/images/images/section8/Rectangle 65.png"
             alt="راهنمای خرید کیبورد گیمینگ"
           />
           <p class="text-[13px] mt-[11px] mr-[10px]">راهنمای خرید کیبورد گیمینگ</p>
-        </div>
+        </article>
     
-       
-        <div class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
+        <!-- مقاله 3 -->
+        <article class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
           <img
             class="w-full h-[150px] rounded-t-[12px] object-cover"
             src="assets/images/images/section8/Rectangle 66.png"
             alt="لپ تاپ اپل یا ویندوز؟"
           />
           <p class="text-[13px] mt-[11px] mr-[10px]">لپ تاپ اپل یا ویندوز؟</p>
-        </div>
+        </article>
     
-       
-        <div class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
+        <!-- مقاله 4 -->
+        <article class="w-full h-[188px] rounded-[12px] bg-[#D9D9D9]">
           <img
             class="w-full h-[150px] rounded-t-[12px] object-cover"
             src="assets/images/images/section8/Rectangle 67.png"
             alt="آشنای با گوگل میت"
           />
           <p class="text-[13px] mt-[11px] mr-[10px]">آشنای با گوگل میت</p>
-        </div>
-      </div>
-    </div>
+        </article>
+      </main>
+    </section>
+    
     
 
     <!-- section 11 -->
 
     <!-- section 12 footer -->
      
-    <div
+    <footer
       class="max-w-[1370px] relative bg-[#F4F4F4] h-[560px] border-[1px] border-[#3F3F3F] mt-[16px] mx-auto rounded-[15px]"
     >
       <div class="flex justify-between gap-3 max-w-[1000px] text-[#3F3F3F]">
         <div class="mt-[27px] mr-[30px] hidden lg:block">
-          <img src="assets/images/images/logo.png" alt="/" />
+          <img src="assets/images/images/logo.png" alt="logo" />
         </div>
 
         <div class="mt-[37px] text-[13px] mr-[20px] lg:mr-0">
@@ -984,40 +1021,41 @@
         </p>
       </div>
 
-      <div class="flex justify-between mt-[21px] max-w-[1200px] mx-auto overflow-x-auto whitespace-nowrap scrollbar-hide touch-pan-x">
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407014</p>
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407013</p>
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">09129407012</p>
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">021-28421592</p>
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">021-71057528</p>
-        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold mx-2">0873-4259380</p>
+      <div class="max-w-[1300px] mx-auto grid lg:grid-cols-6 grid-cols-3 mt-[25px] justify-items-center">
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">09129407014</p>
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">09129407013</p>
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">09129407012</p>
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">021-28421592</p>
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">021-71057528</p>
+        <p class="lg:text-[17px] text-[10px] cursor-pointer text-[#333333] font-bold">0873-4259380</p>
       </div>
+      
       
       
 
 
       <div
-  class="flex flex-wrap justify-between items-center max-w-[1300px] mx-auto mt-[33px] gap-4"
+  class="flex flex-wrap lg:justify-between justify-center items-center max-w-[1300px] mx-auto mt-[33px] gap-4"
 >
   <!-- لوگوها -->
   <div class="flex items-center gap-4 flex-wrap">
     <img
-      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px]"
       src="assets/images/images/imagesFooter/en 1.png"
       alt="/"
     />
     <img
-      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px]"
       src="assets/images/images/imagesFooter/ershad 1.png"
       alt="/"
     />
     <img
-      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px]"
       src="assets/images/images/imagesFooter/torob_guarantee_hologram 1.png"
       alt="/"
     />
     <img
-      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px] object-cover"
+      class="w-[50px] md:w-[83px] rounded-[6px] h-[60px] md:h-[76px]"
       src="assets/images/images/imagesFooter/namad 1.png"
       alt="/"
     />
@@ -1051,7 +1089,7 @@
   </div>
 
   
-  <div class="flex items-center gap-4 flex-wrap">
+  <div class="flex items-center gap-4 mt-[-15px]">
     <img
       class="w-[20px] md:w-[24px]"
       src="assets/images/images/imagesFooter/instagram-167-svgrepo-com 1.png"
@@ -1077,7 +1115,7 @@
           و با ذکر منبع بلامانع است.
         </p>
       </div>
-    </div>
+    </footer>
 
       <!-- section 12 footer -->
 
