@@ -22,7 +22,7 @@
   }
 }
 
-@layer base {
+/* @layer base {
   @font-face {
     font-family: "Sans Regular";
     src: local("sans"), url("../Fonts/IRANSansX-Regular.woff"), format("woff2");
@@ -39,4 +39,4 @@
     font-family: "Sans FanumBold";
     src: url("../Fonts/IRANSansXFaNum-Bold.woff2");
   }
-}
+} */
