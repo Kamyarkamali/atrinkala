@@ -22,21 +22,39 @@
   }
 }
 
-/* @layer base {
-  @font-face {
-    font-family: "Sans Regular";
-    src: local("sans"), url("../Fonts/IRANSansX-Regular.woff"), format("woff2");
-  }
-  @font-face {
-    font-family: "Sans Bold";
-    src: url("../Fonts/IRANSansX-Bold.woff2");
-  }
-  @font-face {
-    font-family: "Sans FanumRegular";
-    src: url("../Fonts/IRANSansXFaNum-Regular.woff2");
-  }
-  @font-face {
-    font-family: "Sans FanumBold";
-    src: url("../Fonts/IRANSansXFaNum-Bold.woff2");
-  }
-} */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #f0f0f0; /* رنگ روشن برای پس‌زمینه‌ی ترک */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #005eff, #00d1ff); /* گرادینت آبی جذاب */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; /* ایجاد فاصله بین اسکرول‌بار و ترک */
+}
+
+/* Optional Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #003d99,
+    #0093cc
+  ); /* تغییر گرادینت در حالت هاور */
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/assets/fonts/woff2/YekanBakhFaNum-Regular.woff2");
+}
+
+body {
+  font-family: YekanBakh;
+}

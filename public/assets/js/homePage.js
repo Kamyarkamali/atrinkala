@@ -199,7 +199,7 @@ slider4.addEventListener("mousemove", (e) => {
 // برای رویداد تاچ (موبایل)
 slider4.addEventListener("touchstart", (e) => {
   isDown4 = true;
-  startX4 = e.touches[0].pageX - slider3.offsetLeft;
+  startX4 = e.touches[0].pageX - slider4.offsetLeft;
   scrollLeft4 = slider4.scrollLeft;
   slider4.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
 });
@@ -213,13 +213,13 @@ slider4.addEventListener("touchmove", (e) => {
   if (!isDown4) return;
   const x = e.touches[0].pageX - slider4.offsetLeft;
   const walk = (x - startX4) * 2; // محاسبه فاصله اسکرول
-  slider3.scrollLeft = scrollLeft4 - walk; // اعمال اسکرول
+  slider4.scrollLeft = scrollLeft4 - walk; // اعمال اسکرول
 });
 
 // جلوگیری از کشیدن روی تصویر گوشی (دقیقا مثل اسلایدر)
-const items4 = slider4.querySelectorAll(".flex-shrink-0"); // پیدا کردن همه آیتم‌های اسلایدر (گوشی‌ها)
+const items5 = slider4.querySelectorAll(".flex-shrink-0"); // پیدا کردن همه آیتم‌های اسلایدر (گوشی‌ها)
 
-items4.forEach((item3) => {
+items5.forEach((item3) => {
   item3.addEventListener("mousedown", (e) => {
     e.preventDefault(); // جلوگیری از کشیدن تصویر گوشی
   });
@@ -231,36 +231,70 @@ items4.forEach((item3) => {
 
 // اسلایدر لپ تاپ های استوک
 
-const scrollContainer5 = document.getElementById("scroll-container4");
+const slider5 = document.getElementById("scroll-container4");
 
-let isMouseDown5 = false;
+let isDown5 = false;
 let startX5;
 let scrollLeft5;
 
-scrollContainer5.addEventListener("mousedown", (e) => {
-  isMouseDown5 = true;
-  startX5 = e.pageX - scrollContainer5.offsetLeft;
-  scrollLeft5 = scrollContainer5.scrollLeft;
-  scrollContainer5.style.cursor = "grabbing"; // تغییر ظاهر نشانگر موس
+// جلوگیری از کشیدن تصاویر (برای کل اسلایدر)
+slider5.addEventListener("mousedown", (e) => {
+  isDown5 = true;
+  startX5 = e.pageX - slider5.offsetLeft;
+  scrollLeft5 = slider5.scrollLeft;
+
+  // جلوگیری از کشیدن تصویر
+  e.preventDefault(); // این خط برای جلوگیری از حرکت تصاویر است.
+
+  slider5.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
 });
 
-scrollContainer5.addEventListener("mouseleave", () => {
-  isMouseDown5 = false;
-  scrollContainer5.style.cursor = "default";
+// برای ترک کردن موس
+slider5.addEventListener("mouseleave", () => {
+  isDown5 = false;
+  slider5.style.cursor = "grab"; // تغییر نمای موس به حالت grab
 });
 
-scrollContainer5.addEventListener("mouseup", () => {
-  isMouseDown5 = false;
-  scrollContainer5.style.cursor = "default";
+document.addEventListener("mouseup", () => {
+  isDown5 = false;
+  slider5.style.cursor = "grab"; // تغییر نمای موس به حالت grab
 });
 
-// وقتی موس حرکت می‌کند
-scrollContainer5.addEventListener("mousemove", (e) => {
-  if (!isMouseDown5) return;
-  e.preventDefault();
-  const x = e.pageX - scrollContainer4.offsetLeft;
-  const scroll = (x - startX5) * 1.5;
-  scrollContainer5.scrollLeft = scrollLeft5 - scroll;
+slider5.addEventListener("mousemove", (e) => {
+  if (!isDown5) return; // اگر موس نگه داشته نشده باشد، کاری انجام نشود
+  e.preventDefault(); // جلوگیری از حرکت صفحه
+  const x = e.pageX - slider5.offsetLeft;
+  const walk = (x - startX5) * 2; // محاسبه فاصله اسکرول
+  slider5.scrollLeft = scrollLeft5 - walk; // اعمال اسکرول
+});
+
+// برای رویداد تاچ (موبایل)
+slider5.addEventListener("touchstart", (e) => {
+  isDown5 = true;
+  startX5 = e.touches[0].pageX - slider5.offsetLeft;
+  scrollLeft5 = slider5.scrollLeft;
+  slider5.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
+});
+
+document.addEventListener("touchend", () => {
+  isDown5 = false;
+  slider5.style.cursor = "grab"; // تغییر نمای موس به حالت grab
+});
+
+slider5.addEventListener("touchmove", (e) => {
+  if (!isDown4) return;
+  const x = e.touches[0].pageX - slider5.offsetLeft;
+  const walk = (x - startX4) * 2; // محاسبه فاصله اسکرول
+  slider5.scrollLeft = scrollLeft4 - walk; // اعمال اسکرول
+});
+
+// جلوگیری از کشیدن روی تصویر گوشی (دقیقا مثل اسلایدر)
+const items6 = slider4.querySelectorAll(".flex-shrink-0"); // پیدا کردن همه آیتم‌های اسلایدر (گوشی‌ها)
+
+items6.forEach((item4) => {
+  item4.addEventListener("mousedown", (e) => {
+    e.preventDefault(); // جلوگیری از کشیدن تصویر گوشی
+  });
 });
 
 // --------------------------------------------------------------------------------------------
@@ -268,36 +302,70 @@ scrollContainer5.addEventListener("mousemove", (e) => {
 // --------------------------------------------------------------------------------------------
 // کد اسلایدر پلی استین  5
 
-const scrollContainer6 = document.getElementById("scroll-container5");
+const slider6 = document.getElementById("scroll-container6");
 
-let isMouseDown6 = false;
+let isDown6 = false;
 let startX6;
 let scrollLeft6;
 
-scrollContainer6.addEventListener("mousedown", (e) => {
-  isMouseDown6 = true;
-  startX6 = e.pageX - scrollContainer6.offsetLeft;
-  scrollLeft6 = scrollContainer6.scrollLeft;
-  scrollContainer6.style.cursor = "grabbing"; // تغییر ظاهر نشانگر موس
+// جلوگیری از کشیدن تصاویر (برای کل اسلایدر)
+slider6.addEventListener("mousedown", (e) => {
+  isDown6 = true;
+  startX6 = e.pageX - slider6.offsetLeft;
+  scrollLeft6 = slider6.scrollLeft;
+
+  // جلوگیری از کشیدن تصویر
+  e.preventDefault(); // این خط برای جلوگیری از حرکت تصاویر است.
+
+  slider6.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
 });
 
-scrollContainer6.addEventListener("mouseleave", () => {
-  isMouseDown6 = false;
-  scrollContainer6.style.cursor = "default";
+// برای ترک کردن موس
+slider6.addEventListener("mouseleave", () => {
+  isDown6 = false;
+  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
 });
 
-scrollContainer6.addEventListener("mouseup", () => {
-  isMouseDown6 = false;
-  scrollContainer6.style.cursor = "default";
+document.addEventListener("mouseup", () => {
+  isDown6 = false;
+  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
 });
 
-// وقتی موس حرکت می‌کند
-scrollContainer6.addEventListener("mousemove", (e) => {
-  if (!isMouseDown6) return;
-  e.preventDefault();
-  const x = e.pageX - scrollContainer4.offsetLeft;
-  const scroll = (x - startX6) * 1.5;
-  scrollContainer6.scrollLeft = scrollLeft6 - scroll;
+slider6.addEventListener("mousemove", (e) => {
+  if (!isDown6) return; // اگر موس نگه داشته نشده باشد، کاری انجام نشود
+  e.preventDefault(); // جلوگیری از حرکت صفحه
+  const x = e.pageX - slider6.offsetLeft;
+  const walk = (x - startX6) * 2; // محاسبه فاصله اسکرول
+  slider6.scrollLeft = scrollLeft6 - walk; // اعمال اسکرول
+});
+
+// برای رویداد تاچ (موبایل)
+slider6.addEventListener("touchstart", (e) => {
+  isDown6 = true;
+  startX6 = e.touches[0].pageX - slider6.offsetLeft;
+  scrollLeft6 = slider6.scrollLeft;
+  slider6.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
+});
+
+document.addEventListener("touchend", () => {
+  isDown6 = false;
+  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
+});
+
+slider6.addEventListener("touchmove", (e) => {
+  if (!isDown6) return;
+  const x = e.touches[0].pageX - slider6.offsetLeft;
+  const walk = (x - startX6) * 2; // محاسبه فاصله اسکرول
+  slider6.scrollLeft = scrollLeft6 - walk; // اعمال اسکرول
+});
+
+// جلوگیری از کشیدن روی تصویر گوشی (دقیقا مثل اسلایدر)
+const items7 = slider4.querySelectorAll(".flex-shrink-0"); // پیدا کردن همه آیتم‌های اسلایدر (گوشی‌ها)
+
+items7.forEach((item8) => {
+  item8.addEventListener("mousedown", (e) => {
+    e.preventDefault(); // جلوگیری از کشیدن تصویر گوشی
+  });
 });
 
 // --------------------------------------------------------------------------------------------
@@ -357,6 +425,7 @@ container.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 2;
   container.scrollLeft = scrollLeft - walk;
 });
+// ----------------------------------------------------------------------
 
 const tageLi = document.querySelector(".menu");
 
