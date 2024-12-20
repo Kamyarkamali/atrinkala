@@ -1,714 +1,1057 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/app.css" />
     <title>تجربه خرید</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-              <!-- navbar -->
-              <header
-              class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
+      <!-- navbar -->
+      <header
+        class="flex flex-col lg:flex-row justify-between items-center mt-4 px-4 lg:px-6 gap-4 lg:gap-0 relative"
+      >
+        <!-- بخش بالا در موبایل -->
+        <div class="flex justify-between items-center w-full">
+          <!-- لوگو و همبرگر منو -->
+          <div class="flex items-center gap-4 relative">
+            <img
+              id="openButton"
+              class="w-[40px] cursor-pointer lg:hidden"
+              src="assets/icons/menu.svg"
+              alt="hamburGerMenu"
+            />
+            <a href="/public/HomePage.html">
+              <img
+                class="w-[194.62px] hidden lg:block lg:w-[190px]"
+                src="assets/images/images/logo.png"
+                alt="logo"
+              />
+            </a>
+            <!-- فیلد جستجو -->
+            <div
+              class="bg-[#F0F0F1] border h-[44px] justify-end hidden md:flex items-center rounded-[7px] w-full lg:w-auto mt-4 lg:mt-0"
             >
-              <!-- بخش بالا در موبایل -->
-              <div class="flex justify-between items-center w-full">
-                <!-- لوگو و همبرگر منو -->
-                <div class="flex items-center gap-4 relative">
-                  <img
-                    id="openButton"
-                    class="w-[40px] cursor-pointer lg:hidden"
-                    src="assets/icons/menu.svg"
-                    alt="hamburGerMenu"
-                  />
-                  <a href="/public/HomePage.html">
-                    <img
-                    class="w-[150px] hidden lg:block lg:w-[190px]"
-                    src="assets/images/images/logo.png"
-                    alt="logo"
-                    />
-                  </a>
-                  <!-- فیلد جستجو -->
-                  <div
-                    class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
-                  >
-                    <img
-                      src="assets/icons/search.svg"
-                      alt="search"
-                      class="w-6 h-6 ml-2"
-                    />
-                    <input
-                      class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
-                      type="text"
-                      placeholder="جستجو"
-                    />
-                  </div>
-                </div>
-                <!-- دکمه‌های ورود و ثبت نام -->
-                <div class="flex ml-[5px] items-center gap-2 lg:hidden">
-                  <button
-                    class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
-                  >
-                  <a href="SingIn.html">
-                    <p>ورود</p>
-                  </a>
-                    <p class="text-black mx-1">|</p>
-                  <a href="SingIn.html">
-                    <p>ثبت نام</p>
-                  </a>
-      
-                  </button>
-                  <button
-                    class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
-                  >
-                    <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
-                  </button>
-                </div>
-      
-                  <!-- محتوای همبرگر منو -->
-                  <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
-                    <div class="flex justify-between items-center p-4">
-                      <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
-                      <button id="closeButton" class="text-lg font-bold">&times;</button>
-                    </div>
-                    <nav>
-                      <ul class="flex text-sm flex-col gap-4 p-4">
-                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">لپ تاپ </a></li>
-                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">آیفون</a></li>
-                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">پلی استیشن 5</a></li>
-                        <li class="font-bold border-b-[1px] border-gray-300 p-2"><a href="#">درباره ما</a></li>
-                        <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
-                      </ul>
-                      <div class="flex flex-col items-center gap-3">
-                        <button class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg">
-                          <a href="#">ورود و ثبت نام</a>
-                        </button>
-                        <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
-                      </div>
-                    </nav>
-                  </aside>
-                <!-- محتوای همبرگر منو -->
-      
-              </div>
-      
-              <!-- فیلد جستجو -->
-              <div
-                class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+              <img
+                src="assets/icons/search.svg"
+                alt="search"
+                class="w-[24px] h-[24px] mr-[12px]"
+              />
+              <input
+                class="text-sm bg-[#F0F0F1] h-[44px] placeholder-gray-500 placeholder:text-[12px] w-[350px] md:w-[430px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
+                type="text"
+                placeholder="جستجو"
+              />
+            </div>
+          </div>
+          <!-- دکمه‌های ورود و ثبت نام -->
+          <div class="flex ml-[5px] items-center gap-2 lg:hidden">
+            <section
+              class="w-[100px] flex justify-center items-center border-[0.5px] border-[#4D4D4D] rounded-[7px]"
+            >
+              <button
+                class="text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
               >
-                <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
-                <input
-                  class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
-                  type="text"
-                  placeholder="جستجو"
-                />
-              </div>
-      
-              <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
-              <div class="hidden lg:flex items-center gap-4">
-                <button
-                  class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
-                >
                 <a href="SingIn.html">
                   <p>ورود</p>
                 </a>
-                  <p class="text-black mx-1">|</p>
-                  <a href="SingIn.html">
-                    <p>ثبت نام</p>
-                  </a>
-      
-                </button>
+                <p class="text-black mx-1">|</p>
+                <a href="SingIn.html">
+                  <p>ثبت نام</p>
+                </a>
+              </button>
+            </section>
+            <button
+              class="border-[0.5px] border-[#4D4D4D] w-[38px] h-[28px] flex items-center justify-center rounded-md"
+            >
+              <img
+                class="w-[21px] h-[20px]"
+                src="assets/icons/shopp.svg"
+                alt="shopping"
+              />
+            </button>
+          </div>
+
+          <!-- محتوای همبرگر منو -->
+          <aside
+            id="hamburgerMenu"
+            class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out"
+            style="transform: translateY(200%)"
+          >
+            <div class="flex justify-between items-center p-4">
+              <img
+                class="w-[150px]"
+                src="assets/images/images/logo.png"
+                alt="logo"
+              />
+              <button id="closeButton" class="text-lg font-bold">
+                &times;
+              </button>
+            </div>
+            <nav>
+              <ul class="flex text-sm flex-col gap-4 p-4">
+                <li class="font-bold border-b-[1px] border-gray-300 p-2">
+                  <a href="#">لپ تاپ </a>
+                </li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2">
+                  <a href="#">آیفون</a>
+                </li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2">
+                  <a href="#">پلی استیشن 5</a>
+                </li>
+                <li class="font-bold border-b-[1px] border-gray-300 p-2">
+                  <a href="#">درباره ما</a>
+                </li>
+                <li class="font-bold p-3"><a href="#">تماس با ما</a></li>
+              </ul>
+              <div class="flex flex-col items-center gap-3">
                 <button
-                  class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+                  class="w-[250px] bg-[#3C6CE6] text-white font-bold h-[50px] p-1 border-2 rounded-lg"
                 >
-                  <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+                  <a href="#">ورود و ثبت نام</a>
                 </button>
+                <p class="text-gray-500 font-bold">پشتیبانی:021-28421592</p>
               </div>
-            </header>
-      
-    <!-- navbar -->
-                <!-- tom menu start -->
-                <section class="mt-[20px] max-w-[1300px] mx-auto">
-                  <ul
-                    class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
-                  >
-                    <a class="products">
-            
-                      <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
-                      <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
-            
-                      <!--مگا منو  دکستاپ-->
-                     <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
-            <div class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
-              <div class="flex items-center gap-3 menu-item" data-category="mobile">
-                <img src="assets/icons/mobile.svg" alt="mobile">
+            </nav>
+          </aside>
+          <!-- محتوای همبرگر منو -->
+        </div>
+
+        <!-- فیلد جستجو -->
+        <section
+          class="bg-[#F0F0F1] border justify-end md:hidden flex items-center rounded-[7px] h-[49px] w-full lg:w-auto lg:mx-6 lg:ml-[16px]"
+        >
+          <img
+            src="assets/icons/search.svg"
+            alt="search"
+            class="w-6 h-6 mr-[13px]"
+          />
+          <input
+            class="bg-[#F0F0F1] text-sm placeholder-[#9D9D9D] placeholder:text-[15px] w-full h-[49px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
+            type="text"
+            placeholder="جستجو"
+          />
+        </section>
+
+        <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
+        <div class="hidden lg:flex items-center gap-[22px]">
+          <section
+            class="border-[0.5px] flex justify-center items-center rounded-[7px] border-[#4D4D4D]"
+          >
+            <button
+              class="flex items-center justify-center w-[140px] h-[40px] rounded-md"
+            >
+              <a href="SingIn.html">
+                <p class="text-[15px] ml-[11px]">ورود</p>
+              </a>
+              <p class="text-black mx-1">|</p>
+              <a href="SingIn.html">
+                <p class="text-[15px] mr-[11px]">ثبت نام</p>
+              </a>
+            </button>
+          </section>
+          <button
+            class="border border-[#4D4D4D] w-[55px] h-[40px] flex items-center justify-center rounded-md"
+          >
+            <img
+              class="w-[24.17px] h-[21.75px]"
+              src="assets/icons/shopp.svg"
+              alt="shopping"
+            />
+          </button>
+        </div>
+      </header>
+
+      <section
+        class="lg:mr-[35px] mr-3 mt-[20px] border-b-[0.5px] p-1 border-[#A9A9A9]"
+      >
+        <ul class="w-full flex items-center justify-start lg:gap-10 gap-5">
+          <li
+            class="hover:text-[#003FEB] cursor-pointer relative duration-300 text-[13px] hidden lg:block menu"
+          >
+            دسته بندی ها
+          </li>
+          <li
+            class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 menuMobile lg:hidden"
+          >
+            دسته بندی ها
+          </li>
+          <a href="#">
+            <li
+              class="hover:text-[#003FEB] lg:text-[13px] text-[9px] duration-300"
+            >
+              صفحه اصلی
+            </li>
+          </a>
+          <a href="#">
+            <li
+              class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300"
+            >
+              مقایسه
+            </li>
+          </a>
+          <a href="#">
+            <li
+              class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300"
+            >
+              وبلاگ آترین کالا
+            </li>
+          </a>
+        </ul>
+      </section>
+
+      <!-- navbar -->
+      <!-- tom menu start -->
+      <section class="mt-[20px] max-w-[1300px] mx-auto">
+        <ul
+          class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
+        >
+          <!--مگا منو  دکستاپ-->
+          <div
+            class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu"
+          >
+            <div
+              class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]"
+            >
+              <div
+                class="flex items-center gap-3 menu-item"
+                data-category="mobile"
+              >
+                <img src="assets/icons/mobile.svg" alt="mobile" />
                 <div class="flex items-center justify-between w-full">
                   <p class="text-[15px]">موبایل و تبلت</p>
-                  <img class="ml-4" src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" alt="">
+                  <img
+                    class="ml-4"
+                    src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"
+                    alt=""
+                  />
                 </div>
               </div>
-              <div class="flex items-center gap-3 menu-item" data-category="laptop">
-                <img src="assets/icons/laptop.svg" alt="laptop">
+              <div
+                class="flex items-center gap-3 menu-item"
+                data-category="laptop"
+              >
+                <img src="assets/icons/laptop.svg" alt="laptop" />
                 <p class="text-[15px]">لپ تاپ</p>
               </div>
-              <div class="flex items-center gap-3 menu-item" data-category="computer">
-                <img src="assets/icons/computer.svg" alt="computer">
+              <div
+                class="flex items-center gap-3 menu-item"
+                data-category="computer"
+              >
+                <img src="assets/icons/computer.svg" alt="computer" />
                 <p class="text-[15px]">کامپیوتر و تجهیزات جانبی</p>
               </div>
-              <div class="flex items-center gap-3 menu-item" data-category="game">
-                <img src="assets/icons/game.svg" alt="game">
+              <div
+                class="flex items-center gap-3 menu-item"
+                data-category="game"
+              >
+                <img src="assets/icons/game.svg" alt="game" />
                 <p class="text-[15px]">بازی و سرگرمی</p>
               </div>
             </div>
-            
+
             <!-- محتوای نمایش داده‌شده -->
-            <div id="dynamic-content" class="w-[1400px] h-[419px]  rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]">
+            <div
+              id="dynamic-content"
+              class="w-[1400px] h-[419px] rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]"
+            >
               <!-- محتوای پیش‌فرض -->
-               <div class="flex justify-around mt-7">
+              <div class="flex justify-around mt-7">
                 <div class="flex gap-[37px] container2">
-                  
                   <!-- قسمت اول اپل -->
-                   <div class="flex flex-col gap-2 items-center">
-                     <div class="flex  items-center apple">
-                       <h3 class="text-[16px]">گوشی اپل</h3>
-                       <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"/>
-                     </div>
-            
-                  <ul class="flex gap-2 flex-col items-center text-[13px] text-[#525252]">
-                  <li>گوشی آیفون 11</li>
-                  <li>گوشی آیفون 12</li>
-                  <li>گوشی آیفون 13</li>
-                  <li>گوشی آیفون 14</li>
-                  <li>گوشی آیفون 15</li>
-                  
-                  <div></div>
-            
-                  <li>گوشی آیفون 11 پرو</li>
-                  <li>گوشی آیفون 12 پرو</li>
-                  <li>گوشی آیفون 13 پرو</li>
-                  <li>گوشی آیفون 14 پرو</li>
-                  <li>گوشی آیفون 15 پرو</li>
-                </ul>
-              </div>
-            
-                <!-- قسمت اول اپل پایان -->
-                
-                <ul class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]">
-                  <li>گوشی آیفون 11 پرومکس</li>
-                  <li>گوشی آیفون 12 پرومکس</li>
-                  <li>گوشی آیفون 13 پرومکس</li>
-                  <li>گوشی آیفون 14 پرومکس</li>
-                  <li>گوشی آیفون 15 پرومکس</li>
-                </ul>
-              </div>
-            
-              <ul class="flex flex-col gap-2 tablet-container">
-            <div class="flex gap-2 items-center tablet-header">
-              <h3 class="text-[16px]">تبلت</h3>
-              <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
-            </div>
-            <li class="tablet-item">تبلت سامسونگ</li>
-            <li class="tablet-item">آیپد</li>
-            <li class="tablet-item">آیپد پرو</li>
-            </ul>
-              
-              
-            
-              <ul class="flex flex-col gap-2 smartwatch-container">
-                <div class="flex items-center smartwatch-header">
-                  <h3 class="text-[16px]">ساعت هوشمند</h3>
-                  <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
-                </div>
-              
-                <li class="smartwatch-item hide">ساعت هوشمند سامسونگ</li>
-                <li class="smartwatch-item hide">ساعت هوشمند شیاومی</li>
-                <li class="smartwatch-item hide">ساعت هوشمند هواوی</li>
-                <li class="smartwatch-item hide">ساعت هوشمند اپل</li>
-              </ul>
-              
-              <ul class="flex flex-col gap-2 accessories-container">
-                <div class="flex items-center accessories-header">
-                  <h3 class="text-[16px]">لوازم جانبی گوشی موبایل</h3>
-                  <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg" />
-                </div>
-              
-                <li class="accessories-item hide">هدفون، هدست و هندزفری</li>
-                <li class="accessories-item hide">شارژر گوشی</li>
-              </ul>
-              
-               </div>
-              <div>
-                
-              </div>
-            </div>
-            </div>
-            
-            <!-- مگا منو  دسکتاپ -->
-            
-            
-            <!-- مگا منو موبایل -->
-            <div class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile">
-              <!-- هدر مگا منو -->
-              <div class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]">
-                <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
-                <p class="text-[15px]">دسته بندی کالا ها</p>
-              </div>
-            
-            
-                <!-- دسته موبایل -->
-                <div class="accordion-item">
-                  <div class="flex items-center justify-between">
-                    <button
-                      type="button"
-                      class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
-                      موبایل
-                    </button>
-                    <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
+                  <div class="flex flex-col gap-2 items-center">
+                    <div class="flex items-center apple">
+                      <h3 class="text-[16px]">گوشی اپل</h3>
+                      <img
+                        src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"
+                      />
+                    </div>
+
+                    <ul
+                      class="flex gap-2 flex-col items-center text-[13px] text-[#525252]"
+                    >
+                      <li>گوشی آیفون 11</li>
+                      <li>گوشی آیفون 12</li>
+                      <li>گوشی آیفون 13</li>
+                      <li>گوشی آیفون 14</li>
+                      <li>گوشی آیفون 15</li>
+
+                      <div></div>
+
+                      <li>گوشی آیفون 11 پرو</li>
+                      <li>گوشی آیفون 12 پرو</li>
+                      <li>گوشی آیفون 13 پرو</li>
+                      <li>گوشی آیفون 14 پرو</li>
+                      <li>گوشی آیفون 15 پرو</li>
+                    </ul>
                   </div>
-                  <ul class="accordion-content hidden px-6 py-2 bg-white">
-                    <div class="flex items-center justify-between w-full phonTab">
-                      <li class="py-1 text-gray-700 text-sm sm:text-base">موبایل و تبلت</li>
-                    <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
-                    </div>
-                    <div class="noneApple apple">
-                      <div class="flex items-center justify-between w-full noneMobile">
-                        <li class="font-bold text-[15px]">موبایل اپل</li>
-                        <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
-                      </div>
-                    </div>
-            
-                    <div class="noneApple allApple">
-                    <div class="grid grid-cols-2">
-            
-                      <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
-                        <li class="hover:text-black duration-300">گوشی آیفون 11</li>
-                        <li class="hover:text-black duration-300">گوشی آیفون 12</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 13</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 14</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 15</li>
+
+                  <!-- قسمت اول اپل پایان -->
+
+                  <ul
+                    class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]"
+                  >
+                    <li>گوشی آیفون 11 پرومکس</li>
+                    <li>گوشی آیفون 12 پرومکس</li>
+                    <li>گوشی آیفون 13 پرومکس</li>
+                    <li>گوشی آیفون 14 پرومکس</li>
+                    <li>گوشی آیفون 15 پرومکس</li>
+                  </ul>
+                </div>
+
+                <ul class="flex flex-col gap-2 tablet-container">
+                  <div class="flex gap-2 items-center tablet-header">
+                    <h3 class="text-[16px]">تبلت</h3>
+                    <img
+                      src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"
+                    />
+                  </div>
+                  <li class="tablet-item">تبلت سامسونگ</li>
+                  <li class="tablet-item">آیپد</li>
+                  <li class="tablet-item">آیپد پرو</li>
+                </ul>
+
+                <ul class="flex flex-col gap-2 smartwatch-container">
+                  <div class="flex items-center smartwatch-header">
+                    <h3 class="text-[16px]">ساعت هوشمند</h3>
+                    <img
+                      src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"
+                    />
+                  </div>
+
+                  <li class="smartwatch-item hide">ساعت هوشمند سامسونگ</li>
+                  <li class="smartwatch-item hide">ساعت هوشمند شیاومی</li>
+                  <li class="smartwatch-item hide">ساعت هوشمند هواوی</li>
+                  <li class="smartwatch-item hide">ساعت هوشمند اپل</li>
+                </ul>
+
+                <ul class="flex flex-col gap-2 accessories-container">
+                  <div class="flex items-center accessories-header">
+                    <h3 class="text-[16px]">لوازم جانبی گوشی موبایل</h3>
+                    <img
+                      src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"
+                    />
+                  </div>
+
+                  <li class="accessories-item hide">هدفون، هدست و هندزفری</li>
+                  <li class="accessories-item hide">شارژر گوشی</li>
+                </ul>
+              </div>
+              <div></div>
+            </div>
+          </div>
+
+          <!-- مگا منو  دسکتاپ -->
+
+          <!-- مگا منو موبایل -->
+          <div
+            class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile"
+          >
+            <!-- هدر مگا منو -->
+            <div
+              class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]"
+            >
+              <img
+                class="w-[25px] close z-40"
+                src="assets/icons/close.svg"
+                alt="close"
+              />
+              <p class="text-[15px]">دسته بندی کالا ها</p>
+            </div>
+
+            <!-- دسته موبایل -->
+            <div class="accordion-item">
+              <div class="flex items-center justify-between">
+                <button
+                  type="button"
+                  class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base"
+                >
+                  موبایل
+                </button>
+                <img
+                  class="ml-[40px]"
+                  src="assets/icons/arrowDown.svg"
+                  alt="arrowdown"
+                />
+              </div>
+              <ul class="accordion-content hidden px-6 py-2 bg-white">
+                <div class="flex items-center justify-between w-full phonTab">
+                  <li class="py-1 text-gray-700 text-sm sm:text-base">
+                    موبایل و تبلت
+                  </li>
+                  <img
+                    class="ml-[13px] arrowdown"
+                    src="assets/icons/arrowDown.svg"
+                    alt="arrowdown"
+                  />
+                </div>
+                <div class="noneApple apple">
+                  <div
+                    class="flex items-center justify-between w-full noneMobile"
+                  >
+                    <li class="font-bold text-[15px]">موبایل اپل</li>
+                    <img
+                      class="ml-[13px] arrowdown"
+                      src="assets/icons/arrowDown.svg"
+                      alt="arrowdown"
+                    />
+                  </div>
+                </div>
+
+                <div class="noneApple allApple">
+                  <div class="grid grid-cols-2">
+                    <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 11
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 12
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 13
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 14
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 15
+                      </li>
                       <div class="mt-4 mb-4"></div>
-                      <li class="hover:text-black duration-300">گوشی آیفون 11 پرو</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 12 پرو</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 13 پرو</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 14 پرو</li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 11 پرو
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 12 پرو
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 13 پرو
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 14 پرو
+                      </li>
                     </div>
                     <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
-            
-                      <li class="hover:text-black duration-300">گوشی آیفون 11 پرومکس</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 12 پرومکس</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 13 پرومکس</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 14 پرومکس</li>
-                      <li class="hover:text-black duration-300">گوشی آیفون 15 پرومکس</li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 11 پرومکس
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 12 پرومکس
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 13 پرومکس
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 14 پرومکس
+                      </li>
+                      <li class="hover:text-black duration-300">
+                        گوشی آیفون 15 پرومکس
+                      </li>
                     </div>
                   </div>
                 </div>
-            
-                  </ul>
-                </div>
-              
-              <!-- دسته تبلت -->
-              <div class="accordion-item border-b">
-                <div class="flex items-center justify-between">
-                  <button
-                    type="button"
-                    class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
-                    تبلت
-                  </button>
-                  <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
-                </div>
-                <ul class="accordion-content hidden px-6 py-2 bg-white">
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">تبلت سامسونگ</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد پرو</li>
-                </ul>
-              </div>
-              
-              <!-- دسته لپ‌تاپ -->
-              <div class="accordion-item border-b">
-                <div class="flex items-center justify-between">
-                  <button
-                    type="button"
-                    class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
-                    لپ‌تاپ
-                  </button>
-                  <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
-                </div>
-                <ul class="accordion-content hidden px-6 py-2 bg-white">
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ دل</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ ایسوس</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">لپ‌تاپ اپل</li>
-                </ul>
-              </div>
-              
-              <!-- دسته لوازم جانبی -->
-              <div class="accordion-item border-b">
-                <div class="flex items-center justify-between">
-                  <button
-                    type="button"
-                    class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base">
-                    لوازم جانبی
-                  </button>
-                  <img class="ml-[40px]" src="assets/icons/arrowDown.svg" alt="arrowdown">
-                </div>
-                <ul class="accordion-content hidden px-6 py-2 bg-white">
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">ماوس</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">کیبورد</li>
-                  <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
-                </ul>
-              </div>
+              </ul>
             </div>
-            
-            <!-- مگا منو موبایل -->
-            
-                    <a>
-                      <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
-                    </a>
-                    <a >
-                      <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
-                    </a>
-                    <a >
-                      <li class="hover:text-[#003FEB] text-[11px] duration-300">
-                        تجربه خرید از آترین کالا
-                      </li>
-                    </a>
-                    <a>
-                      <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
-                    </a>
-                  </ul>
-                </section>
-                 <!-- top menu end -->
-                  
-                 <div class="max-w-[1300px] mx-auto p-4">
-                    <!-- مسیر صفحات -->
-                    <div class="flex items-center gap-2">
-                      <p>خانه</p>
-                      <p>/</p>
-                      <p>تجربه خرید از آترین کالا</p>
-                    </div>
-                  
-                    <!-- دکمه تجربه خرید -->
-                    <div class="flex justify-center mt-4">
-                      <button class="w-[155px] text-sm h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9]">
-                        تجربه خرید از آترین کالا
-                      </button>
-                    </div>
-                  
-                    <!-- توضیحات و تصویر -->
-                    <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-4 mt-6">
-                      <div>
-                        <p class="w-full lg:w-[509px] leading-7 text-[#1A1A1A] text-[15px]">
-                          شما می ‌توانید در این قسمت تجربه‌ خرید خودتون رو کاملاً آزاد، به بقیه منتقل کنیدو با به اشتراک گذاشتن تجربه‌های خود به دیگران کمک کنید.
-                        </p>
-                      </div>
-                      <!-- تصویر که در سایز پایین مخفی می‌شود -->
-                      <div class="hidden lg:block w-[330px]">
-                        <img class="w-[143px]" src="assets/images/images/Vector (10).png" alt="/" />
-                      </div>
-                    </div>
-                  
-                    <!-- گزینه‌ها -->
-                    <div class="w-full lg:w-[1314px] h-auto lg:h-[70px] rounded-[7px] bg-[#EEF7FC] mt-6">
-                      <div class="flex flex-wrap lg:flex-nowrap  items-center lg:justify-start justify-center gap-4 p-5 comment">
-                        <span class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold">ویدیوهای شما</span>
-                        <span class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold">نظرات شما</span>
-                        <span class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold">صدای شما</span>
-                      </div>
-                    </div>
-                  
-                    <!-- قوانین -->
-                    <div class="mt-6 flex flex-col gap-4">
-                      <p class="font-bold text-[16px] sm:text-[18px] text-[#3F3F3F]">
-                        لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
-                      </p>
-                  
-                      <div class="flex flex-col gap-4">
-                        <div class="flex items-start gap-2">
-                          <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-                          <p class="text-[14px] sm:text-[16px] text-[#434343]">
-                            لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی رسمی و عاری از لحن تند، تمسخر و توهین باشد.
-                          </p>
-                        </div>
-                        <div class="flex items-start gap-2">
-                          <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-                          <p class="text-[14px] sm:text-[16px] text-[#434343]">
-                            شما می تونید ویدیو ضبط شده خودتون رو از طریق واتساپ برای ما بفرستید تا در تجربه خریدی بهتر به دیگران کمک کنید.
-                          </p>
-                        </div>
-                        <div class="flex items-start gap-2">
-                          <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-                          <p class="text-[14px] sm:text-[16px] text-[#434343]">
-                            در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
-                          </p>
-                        </div>
-                      </div>
-                  
-                      <div class="flex flex-col sm:flex-row items-center gap-4 mt-6">
-                        <h3 class="text-[14px] sm:text-[18px] font-bold text-[#3F3F3F] text-center sm:text-left">
-                          ویدیو ضبط شده خودتون رو با ذکر عنوان صدا و اسم خودتون در واتساپ برای ما بفرستید.
-                        </h3>
-                        <button class="w-[150px] h-[45px] bg-[#003FEB] text-white rounded-[7px]">
-                          ارسال ویدیو
-                        </button>
-                      </div>
-                    <!-- چک باکس ها -->
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 w-full max-w-[800px] mx-auto mt-4 gap-y-4 gap-x-6 justify-center">
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">موبایل و تبلت</label>
-    </div>
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">کارت گرافیک</label>
-    </div>
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">لپ تاپ</label>
-    </div>
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">مانیتور</label>
-    </div>
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">سیستم صوتی</label>
-    </div>
-    <div class="flex items-center gap-3">
-      <input type="checkbox" class="w-5 h-5 align-middle">
-      <label class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none">کنسول بازی</label>
-    </div>
-  </div>
-  <!-- چک باکس ها -->
-  
-</div>
 
-<!-- باکس ویدیوها -->
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden videoContainer">
+            <!-- دسته تبلت -->
+            <div class="accordion-item border-b">
+              <div class="flex items-center justify-between">
+                <button
+                  type="button"
+                  class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base"
+                >
+                  تبلت
+                </button>
+                <img
+                  class="ml-[40px]"
+                  src="assets/icons/arrowDown.svg"
+                  alt="arrowdown"
+                />
+              </div>
+              <ul class="accordion-content hidden px-6 py-2 bg-white">
+                <li class="py-1 text-gray-700 text-sm sm:text-base">
+                  تبلت سامسونگ
+                </li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">آیپد</li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">
+                  آیپد پرو
+                </li>
+              </ul>
+            </div>
 
-    <!-- کارت ویدیو 1 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
+            <!-- دسته لپ‌تاپ -->
+            <div class="accordion-item border-b">
+              <div class="flex items-center justify-between">
+                <button
+                  type="button"
+                  class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base"
+                >
+                  لپ‌تاپ
+                </button>
+                <img
+                  class="ml-[40px]"
+                  src="assets/icons/arrowDown.svg"
+                  alt="arrowdown"
+                />
+              </div>
+              <ul class="accordion-content hidden px-6 py-2 bg-white">
+                <li class="py-1 text-gray-700 text-sm sm:text-base">
+                  لپ‌تاپ دل
+                </li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">
+                  لپ‌تاپ ایسوس
+                </li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">
+                  لپ‌تاپ اپل
+                </li>
+              </ul>
+            </div>
+
+            <!-- دسته لوازم جانبی -->
+            <div class="accordion-item border-b">
+              <div class="flex items-center justify-between">
+                <button
+                  type="button"
+                  class="accordion-header w-full text-right px-4 py-3 bg-white hover:bg-gray-200 font-semibold text-sm sm:text-base"
+                >
+                  لوازم جانبی
+                </button>
+                <img
+                  class="ml-[40px]"
+                  src="assets/icons/arrowDown.svg"
+                  alt="arrowdown"
+                />
+              </div>
+              <ul class="accordion-content hidden px-6 py-2 bg-white">
+                <li class="py-1 text-gray-700 text-sm sm:text-base">ماوس</li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">کیبورد</li>
+                <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </section>
+      <!-- top menu end -->
+
+      <div class="max-w-[1300px] mx-auto p-4">
+        <!-- مسیر صفحات -->
+        <div class="flex items-center gap-2">
+          <p class="text-[11px] text-[#3A3A3A]">خانه</p>
+          <p class="text-[11px]">/</p>
+          <p class="text-[11px]">تجربه خرید از آترین کالا</p>
         </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
+
+        <!-- دکمه تجربه خرید -->
+        <div class="flex justify-center mt-4">
+          <button
+            class="w-[155px] text-sm h-[41px] text-[#212121] rounded-[6px] border-[0.5px] border-[#A9A9A9]"
+          >
+            تجربه خرید از آترین کالا
+          </button>
         </div>
-    </div>
 
-    <!-- کارت ویدیو 2 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
+        <!-- توضیحات و تصویر -->
+        <div
+          class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-4 mt-6"
+        >
+          <div>
+            <p class="w-full lg:w-[509px] leading-7 text-[#1A1A1A] text-[15px]">
+              شما می ‌توانید در این قسمت تجربه‌ خرید خودتون رو کاملاً آزاد، به
+              بقیه منتقل کنیدو با به اشتراک گذاشتن تجربه‌های خود به دیگران کمک
+              کنید.
+            </p>
+          </div>
+          <!-- تصویر که در سایز پایین مخفی می‌شود -->
+          <div class="hidden lg:block w-[330px]">
+            <img
+              class="w-[143px]"
+              src="assets/images/images/Vector (10).png"
+              alt="/"
+            />
+          </div>
         </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
+
+        <!-- گزینه‌ها -->
+        <div
+          class="w-full lg:w-[1314px] h-auto lg:h-[70px] rounded-[7px] bg-[#EEF7FC] mt-6"
+        >
+          <div
+            class="flex flex-wrap lg:flex-nowrap items-center lg:justify-start justify-center gap-4 p-5 comment"
+          >
+            <span
+              class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold"
+              >ویدیوهای شما</span
+            >
+            <span
+              class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold"
+              >نظرات شما</span
+            >
+            <span
+              class="text-[#1C274C] z-30 cursor-pointer text-[14px] font-bold"
+              >صدای شما</span
+            >
+          </div>
         </div>
-    </div>
 
-    <!-- کارت ویدیو 3 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
+        <!-- قوانین -->
+        <div class="mt-6 flex flex-col gap-4">
+          <p class="font-bold text-[16px] sm:text-[18px] text-[#3F3F3F]">
+            لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
+          </p>
+
+          <div class="flex flex-col gap-4">
+            <div class="flex items-start gap-2">
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p class="text-[14px] sm:text-[16px] text-[#434343]">
+                لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی
+                رسمی و عاری از لحن تند، تمسخر و توهین باشد.
+              </p>
+            </div>
+            <div class="flex items-start gap-2">
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p class="text-[14px] sm:text-[16px] text-[#434343]">
+                شما می تونید ویدیو ضبط شده خودتون رو از طریق واتساپ برای ما
+                بفرستید تا در تجربه خریدی بهتر به دیگران کمک کنید.
+              </p>
+            </div>
+            <div class="flex items-start gap-2">
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p class="text-[14px] sm:text-[16px] text-[#434343]">
+                در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای
+                راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 mt-6">
+            <h3
+              class="text-[14px] sm:text-[18px] font-bold text-[#3F3F3F] text-center sm:text-left"
+            >
+              ویدیو ضبط شده خودتون رو با ذکر عنوان صدا و اسم خودتون در واتساپ
+              برای ما بفرستید.
+            </h3>
+            <button
+              class="w-[150px] h-[45px] bg-[#003FEB] text-white rounded-[7px]"
+            >
+              ارسال ویدیو
+            </button>
+          </div>
+          <!-- چک باکس ها -->
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 w-full max-w-[800px] mx-auto mt-4 gap-y-4 gap-x-6 justify-center"
+          >
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >موبایل و تبلت</label
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >کارت گرافیک</label
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >لپ تاپ</label
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >مانیتور</label
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >سیستم صوتی</label
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-5 h-5 align-middle" />
+              <label
+                class="text-[14px] sm:text-[15px] text-[#434343] text-left leading-none"
+                >کنسول بازی</label
+              >
+            </div>
+          </div>
+          <!-- چک باکس ها -->
         </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
+
+        <!-- باکس ویدیوها -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden videoContainer"
+        >
+          <!-- کارت ویدیو 1 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 2 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 3 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 4 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 5 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 6 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 7 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
+
+          <!-- کارت ویدیو 8 -->
+          <div
+            class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]"
+          >
+            <div
+              class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]"
+            >
+              <h3 class="text-xl text-white font-bold">Video</h3>
+            </div>
+            <div class="px-4">
+              <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
+              <p
+                class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words"
+              >
+                خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی
+              </p>
+              <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">
+                1402/6/2
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
+        <!-- باکس ویدیوها -->
 
-    <!-- کارت ویدیو 4 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
+        <!-- باکس نظرات -->
+        <div class="mt-[27px] commentsBox hidden">
+          <div>
+            <p class="text-[18px] font-bold text-[#3F3F3F]">
+              لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 mt-[10px]">
+            <div class="flex items-center gap-2">
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p class="text-[14px] sm:text-[16px] text-[#434343]">
+                لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی
+                رسمی و عاری از لحن تند، تمسخر و توهین باشد.
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p class="text-[14px] sm:text-[16px] text-[#434343]">
+                در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای
+                راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
+              </p>
+            </div>
+          </div>
+
+          <!-- اینپوت ها -->
+          <div class="flex items-center gap-4">
+            <div class="flex flex-col gap-4 mt-[17px]">
+              <input
+                class="w-[367px] h-[69px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 border-[1px] border-gray-400 px-2 rounded-[9px]"
+                type="text"
+                placeholder="نام:"
+              />
+              <input
+                class="w-[367px] h-[69px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 border-[1px] border-gray-400 px-2 rounded-[9px]"
+                type="text"
+                placeholder="شماره تماس:"
+              />
+            </div>
+            <input
+              type="text"
+              class="w-[676px] h-[157px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 rounded-[8px] border-[1px] border-gray-400"
+            />
+          </div>
+          <!-- اینپوت ها -->
+
+          <!-- کامنت ها -->
+          <div class="border-b-[1px] border-gray-400 mt-[17px]">
+            <div class="flex items-center gap-2 mt-[35px]">
+              <p class="text-[14px] text-[#494949]">نیما</p>
+              <p class="text-[14px] text-[#494949]">1400/8/19</p>
+            </div>
+            <p class="text-[16px] text-[#000000] font-bold">
+              سلام برای این گوشی ۱۳ پرو یک ترا میخواستم ببینم دو سیم کارت هستش
+              Zaa هستش
+            </p>
+            <div class="flex flex-col mt-[19px]">
+              <p class="font-bold text-[16px]">آترین کالا:</p>
+              <p class="text-[16px] text-[#717171]">
+                سلام وقتتون بخیر، پرو مکس است و lla ، همیشه داخل مشخصات محصول
+                میتونید انتخاب و بررسی کنید
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mt-[35px]">
+              <p class="text-[14px] text-[#494949]">نیما</p>
+              <p class="text-[14px] text-[#494949]">1400/8/19</p>
+            </div>
+            <p class="text-[16px] text-[#000000] font-bold">
+              سلام برای این گوشی ۱۳ پرو یک ترا میخواستم ببینم دو سیم کارت هستش
+              Zaa هستش
+            </p>
+            <div class="flex flex-col mt-[19px]">
+              <p class="font-bold text-[16px]">آترین کالا:</p>
+              <p class="text-[16px] text-[#717171]">
+                سلام وقتتون بخیر، پرو مکس است و lla ، همیشه داخل مشخصات محصول
+                میتونید انتخاب و بررسی کنید
+              </p>
+            </div>
+          </div>
+          <!-- کامنت ها -->
         </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
+        <!-- باکس نظرات -->
+
+        <!-- باکس صداها -->
+        <div class="voices hidden">
+          <div class="mt-[27px]">
+            <h4
+              class="text-[#3F3F3F] text-[18px] sm:text-[20px] md:text-[22px] font-bold text-center md:text-right"
+            >
+              لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
+            </h4>
+          </div>
+
+          <div class="flex flex-col gap-3 mt-[10px]">
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-2"
+            >
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p
+                class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify"
+              >
+                لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی
+                رسمی و عاری از لحن تند، تمسخر و توهین باشد.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-2"
+            >
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p
+                class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify"
+              >
+                شما می تونید ویدوی ضبط شده خودتون رو از طریق واتساپ برای ما
+                بفرستید تا در تجربه خریدی بهتر به دیگران کمک کنید.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-2"
+            >
+              <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
+              <p
+                class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify"
+              >
+                در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای
+                راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center gap-7"
+            >
+              <p
+                class="text-[16px] sm:text-[18px] text-[#3F3F3F] font-bold text-center md:text-right"
+              >
+                صدای ضبط شده خودتون رو با ذکر عنوان صدا و اسم خودتون در واتساپ
+                برای ما بفرستید.
+              </p>
+              <button
+                class="w-full md:w-[137px] h-[43px] bg-[#003FEB] rounded-[8px] text-white"
+              >
+                ارسال
+              </button>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0"
+            >
+              <div class="w-full md:w-[466px] flex justify-center items-center">
+                <p class="text-[14px] sm:text-[16px] md:text-[18px]">
+                  خرید آیفون 15 آقای محمود روشن از مشهد
+                </p>
+              </div>
+              <audio
+                controls
+                class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
+              >
+                <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
+                مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
+              </audio>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-4">
+              <div
+                class="w-full md:w-[466px] h-[69px] flex justify-center items-center"
+              >
+                <p class="text-[14px] sm:text-[16px] md:text-[18px]">
+                  خرید آیفون 15 آقای محمود روشن از مشهد
+                </p>
+              </div>
+              <audio
+                controls
+                class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
+              >
+                <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
+                مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
+              </audio>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <!-- کارت ویدیو 5 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
-        </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
-        </div>
-    </div>
-
-    <!-- کارت ویدیو 6 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
-        </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
-        </div>
-    </div>
-
-    <!-- کارت ویدیو 7 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
-        </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
-        </div>
-    </div>
-
-    <!-- کارت ویدیو 8 -->
-    <div class="w-full h-[274px] shadow-lg rounded-lg flex flex-col items-center mt-[45px]">
-        <div class="w-full h-[149px] flex justify-center items-center bg-[#D9D9D9] rounded-lg mt-[10px]">
-            <h3 class="text-xl text-white font-bold">Video</h3>
-        </div>
-        <div class="px-4"> <!-- اضافه کردن padding برای جلوگیری از برخورد متن با لبه‌ها -->
-            <p class="text-[13px] text-[#1E1E1E] mt-[15px] font-bold break-words">خرید آیپد پرو 2022 و آیفون 13 آقای عسکری از استان خراسان جنوبی</p>
-            <p class="text-left font-bold text-[#1E1E1E] mt-[15px]">1402/6/2</p>
-        </div>
-    </div>
-
-</div>
-<!-- باکس ویدیوها -->
-
-<!-- باکس نظرات -->
- <div class="mt-[27px] commentsBox hidden">
-  <div>
-    <p class="text-[18px] font-bold text-[#3F3F3F]">لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:</p>
-  </div>
-  <div class="flex flex-col gap-2 mt-[10px]">
-    <div class="flex items-center gap-2">
-      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-      <p class="text-[14px] sm:text-[16px] text-[#434343]">
-        لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی رسمی و عاری از لحن تند، تمسخر و توهین باشد.
-    </p>
-  </div>
-  <div class="flex items-center gap-2">
-    <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-    <p class="text-[14px] sm:text-[16px] text-[#434343]">
-      در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
-    </p>
-  </div>
-</div>
-
-<!-- اینپوت ها -->
- <div class="flex items-center gap-4">
-  <div class="flex flex-col gap-4 mt-[17px]">
-    <input class="w-[367px] h-[69px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 border-[1px] border-gray-400 px-2 rounded-[9px]" type="text" placeholder="نام:">
-    <input class="w-[367px] h-[69px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 border-[1px] border-gray-400 px-2 rounded-[9px]" type="text" placeholder="شماره تماس:">
-  </div>
-  <input type="text" class="w-[676px] h-[157px] outline-none focus:border-[2px] text-gray-600 focus:border-blue-500 rounded-[8px] border-[1px] border-gray-400">
- </div>
-<!-- اینپوت ها -->
-
- <!-- کامنت ها -->
-  <div class="border-b-[1px] border-gray-400 mt-[17px]">
-    <div class="flex items-center gap-2 mt-[35px]">
-      <p class="text-[14px] text-[#494949]">نیما</p>
-      <p class="text-[14px] text-[#494949]">1400/8/19</p>
-    </div>
-    <p class="text-[16px] text-[#000000] font-bold">سلام برای این گوشی ۱۳ پرو یک ترا میخواستم ببینم دو سیم کارت هستش Zaa هستش</p>
-    <div class="flex flex-col mt-[19px]">
-      <p class="font-bold text-[16px]">آترین کالا:</p>
-      <p class="text-[16px] text-[#717171]">سلام وقتتون بخیر، پرو مکس است و lla ، همیشه داخل مشخصات محصول میتونید انتخاب و بررسی کنید</p>
-    </div>
-  </div>
-  <div >
-    <div class="flex items-center gap-2 mt-[35px]">
-      <p class="text-[14px] text-[#494949]">نیما</p>
-      <p class="text-[14px] text-[#494949]">1400/8/19</p>
-    </div>
-    <p class="text-[16px] text-[#000000] font-bold">سلام برای این گوشی ۱۳ پرو یک ترا میخواستم ببینم دو سیم کارت هستش Zaa هستش</p>
-    <div class="flex flex-col mt-[19px]">
-      <p class="font-bold text-[16px]">آترین کالا:</p>
-      <p class="text-[16px] text-[#717171]">سلام وقتتون بخیر، پرو مکس است و lla ، همیشه داخل مشخصات محصول میتونید انتخاب و بررسی کنید</p>
-    </div>
-  </div>
- <!-- کامنت ها -->
-
-
- </div>
-<!-- باکس نظرات -->
-
-<!-- باکس صداها -->
-<div class="voices hidden">
-  <div class="mt-[27px]">
-    <h4 class="text-[#3F3F3F] text-[18px] sm:text-[20px] md:text-[22px] font-bold text-center md:text-right">
-      لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
-    </h4>
-  </div>
-
-  <div class="flex flex-col gap-3 mt-[10px]">
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
-      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-      <p class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify">
-        لازم است محتوای ارسالی منطبق بر عرف و شئونات جامعه و با بیانی رسمی و عاری از لحن تند، تمسخر و توهین باشد.
-      </p>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
-      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-      <p class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify">
-        شما می تونید ویدوی ضبط شده خودتون رو از طریق واتساپ برای ما بفرستید تا در تجربه خریدی بهتر به دیگران کمک کنید.
-      </p>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
-      <div class="w-[7px] h-[7px] bg-[#6122EC] rounded-full"></div>
-      <p class="text-[14px] sm:text-[16px] md:text-[18px] text-[#434343] text-justify">
-        در نظر داشته باشید هدف نهایی از ارائه‌ی نظر درباره‌ی ما برای راهنمایی سایر کاربران در فرآیند خرید توسط شما است.
-      </p>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-7">
-      <p class="text-[16px] sm:text-[18px] text-[#3F3F3F] font-bold text-center md:text-right">
-        صدای ضبط شده خودتون رو با ذکر عنوان صدا و اسم خودتون در واتساپ برای ما بفرستید.
-      </p>
-      <button class="w-full md:w-[137px] h-[43px] bg-[#003FEB] rounded-[8px] text-white">
-        ارسال
-      </button>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
-      <div class="w-full md:w-[466px] flex justify-center items-center">
-        <p class="text-[14px] sm:text-[16px] md:text-[18px]">
-          خرید آیفون 15 آقای محمود روشن از مشهد
-        </p>
       </div>
-      <audio
-        controls
-        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
-      >
-        <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
-        مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
-      </audio>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-center gap-4">
-      <div class="w-full md:w-[466px] h-[69px] flex justify-center items-center">
-        <p class="text-[14px] sm:text-[16px] md:text-[18px]">
-          خرید آیفون 15  آقای محمود روشن از مشهد
-        </p>
-      </div>
-      <audio
-        controls
-        class="w-full md:w-[764px] h-[69px] flex justify-center items-center border-[1px] p-2 border-[#000000] rounded-[9px]"
-      >
-        <source src="path-to-your-audio-file.mp3" type="audio/mpeg" />
-        مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
-      </audio>
-    </div>
-  </div>
-</div>
-
-</div>
-                  
-
     </div>
     <script src="assets/js/Buying.js"></script>
-</body>
+  </body>
 </html>

@@ -23,23 +23,23 @@
             alt="hamburGerMenu"
           />
           <a href="/public/HomePage.html">
-            <img
-            class="w-[150px] hidden lg:block lg:w-[190px]"
-            src="assets/images/images/logo.png"
-            alt="logo"
-            />
+              <img
+              class="w-[194.62px] hidden lg:block lg:w-[190px]"
+              src="assets/images/images/logo.png"
+              alt="logo"
+              />
           </a>
           <!-- فیلد جستجو -->
           <div
-            class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+            class="bg-[#F0F0F1] border h-[44px] justify-end hidden md:flex items-center rounded-[7px] w-full lg:w-auto mt-4 lg:mt-0 "
           >
             <img
               src="assets/icons/search.svg"
               alt="search"
-              class="w-6 h-6 ml-2"
+              class="w-[24px] h-[24px] mr-[12px]"
             />
             <input
-              class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+              class="text-sm bg-[#F0F0F1] h-[44px] placeholder-gray-500 placeholder:text-[12px] w-[350px] md:w-[430px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
               type="text"
               placeholder="جستجو"
             />
@@ -47,27 +47,28 @@
         </div>
         <!-- دکمه‌های ورود و ثبت نام -->
         <div class="flex ml-[5px] items-center gap-2 lg:hidden">
-          <button
-            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
-          >
-          <a href="SingIn.html">
-            <p>ورود</p>
-          </a>
+          <section class="w-[100px] flex justify-center items-center border-[0.5px] border-[#4D4D4D] rounded-[7px]">
+            <button
+            class="text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+            >
+            <a href="SingIn.html">
+              <p>ورود</p>
+            </a>
             <p class="text-black mx-1">|</p>
-          <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <a href="SingIn.html">
+              <p>ثبت نام</p>
+            </a>  
           </button>
+        </section>
           <button
-            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+            class="border-[0.5px] border-[#4D4D4D] w-[38px] h-[28px] flex items-center justify-center rounded-md"
           >
-            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+            <img class="w-[21px] h-[20px]" src="assets/icons/shopp.svg" alt="shopping" />
           </button>
         </div>
 
           <!-- محتوای همبرگر منو -->
-          <aside id="hamburgerMenu" class="w-full h-[200vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(200%);">
             <div class="flex justify-between items-center p-4">
               <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
               <button id="closeButton" class="text-lg font-bold">&times;</button>
@@ -93,35 +94,36 @@
       </div>
 
       <!-- فیلد جستجو -->
-      <div
-        class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+      <section
+        class="bg-[#F0F0F1] border justify-end md:hidden flex items-center rounded-[7px] h-[49px] w-full lg:w-auto lg:mx-6 lg:ml-[16px]"
       >
-        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 mr-[13px]" />
         <input
-          class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+          class="bg-[#F0F0F1] text-sm placeholder-[#9D9D9D] placeholder:text-[15px] w-full h-[49px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
           type="text"
           placeholder="جستجو"
         />
-      </div>
+      </section>
 
       <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
-      <div class="hidden lg:flex items-center gap-4">
-        <button
-          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
-        >
-        <a href="SingIn.html">
-          <p>ورود</p>
-        </a>
+      <div class="hidden lg:flex items-center gap-[22px]">
+        <section class="border-[0.5px] flex justify-center items-center rounded-[7px] border-[#4D4D4D]">
+          <button
+          class="flex items-center justify-center w-[140px] h-[40px] rounded-md"
+          >
+          <a href="SingIn.html">
+            <p class="text-[15px] ml-[11px]">ورود</p>
+          </a>
           <p class="text-black mx-1">|</p>
           <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <p class="text-[15px] mr-[11px]">ثبت نام</p>
+          </a>  
         </button>
+      </section>
         <button
-          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+          class="border border-[#4D4D4D] w-[55px] h-[40px] flex items-center justify-center rounded-md"
         >
-          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          <img class="w-[24.17px] h-[21.75px]" src="assets/icons/shopp.svg" alt="shopping" />
         </button>
       </div>
     </header>
@@ -129,19 +131,38 @@
 
       <!-- navbar -->
 
+
+
+
+      <section class="lg:mr-[35px] mr-3 mt-[20px] border-b-[0.5px] p-3 border-[#A9A9A9] ">
+        <ul class="w-full flex items-center justify-start lg:gap-10 gap-5">
+          <li class="hover:text-[#003FEB] cursor-pointer relative duration-300 text-[13px] hidden lg:block menu">دسته بندی ها</li>
+          <li class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 menuMobile lg:hidden">دسته بندی ها</li>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[9px] duration-300">صفحه اصلی</li>
+          </a>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">مقایسه</li>
+          </a>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">وبلاگ آترین کالا</li>
+          </a>
+        </ul>
+      </section>
+
         <!-- tom menu start -->
         <section class="mt-[20px] max-w-[1300px] mx-auto">
           <ul
             class="flex justify-start md:gap-[36px] gap-3 text-[#474747] sm:text-[13px] text-[9px] cursor-pointer font-bold list"
           >
             <a class="products">
-    
-              <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
-              <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
-    
+  
+              <!-- <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li> -->
+              <!-- <li class="hover:text-[#003FEB] mr-3 text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li> -->
+  
               <!--مگا منو  دکستاپ-->
-             <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
-    <div class="flex flex-col z-50 bg-white gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
+             <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-20 bg-[#ffff] megamenu">
+    <div class="flex flex-col gap-[31px] border-l-[1px] w-[300px] h-[400px] mt-[23px] mr-[23px]">
       <div class="flex items-center gap-3 menu-item" data-category="mobile">
         <img src="assets/icons/mobile.svg" alt="mobile">
         <div class="flex items-center justify-between w-full">
@@ -162,7 +183,7 @@
         <p class="text-[15px]">بازی و سرگرمی</p>
       </div>
     </div>
-    
+  
     <!-- محتوای نمایش داده‌شده -->
     <div id="dynamic-content" class="w-[1400px] h-[419px]  rounded-[18px] rounded-r-none bg-[#EEF7FC] flex flex-col gap-[10px]">
       <!-- محتوای پیش‌فرض -->
@@ -175,7 +196,7 @@
                <h3 class="text-[16px]">گوشی اپل</h3>
                <img src="assets/icons/arrow-prev-small-svgrepo-com 3.svg"/>
              </div>
-    
+  
           <ul class="flex gap-2 flex-col items-center text-[13px] text-[#525252]">
           <li>گوشی آیفون 11</li>
           <li>گوشی آیفون 12</li>
@@ -184,7 +205,7 @@
           <li>گوشی آیفون 15</li>
           
           <div></div>
-    
+  
           <li>گوشی آیفون 11 پرو</li>
           <li>گوشی آیفون 12 پرو</li>
           <li>گوشی آیفون 13 پرو</li>
@@ -192,7 +213,7 @@
           <li>گوشی آیفون 15 پرو</li>
         </ul>
       </div>
-    
+  
         <!-- قسمت اول اپل پایان -->
         
         <ul class="flex flex-col gap-2 mt-7 items-center text-[13px] text-[#525252]">
@@ -203,7 +224,7 @@
           <li>گوشی آیفون 15 پرومکس</li>
         </ul>
       </div>
-    
+  
       <ul class="flex flex-col gap-2 tablet-container">
     <div class="flex gap-2 items-center tablet-header">
       <h3 class="text-[16px]">تبلت</h3>
@@ -212,10 +233,10 @@
     <li class="tablet-item">تبلت سامسونگ</li>
     <li class="tablet-item">آیپد</li>
     <li class="tablet-item">آیپد پرو</li>
-    </ul>
+  </ul>
       
       
-    
+  
       <ul class="flex flex-col gap-2 smartwatch-container">
         <div class="flex items-center smartwatch-header">
           <h3 class="text-[16px]">ساعت هوشمند</h3>
@@ -243,11 +264,10 @@
         
       </div>
     </div>
-    </div>
-    
-    <!-- مگا منو  دسکتاپ -->
-    
-    
+  </div>
+  
+   <!-- مگا منو  دسکتاپ -->
+  
     <!-- مگا منو موبایل -->
     <div class="absolute right-0 left-0 z-10 shadow-xl bg-white w-[90%] sm:w-[80%] h-auto mx-auto border border-gray-300 rounded-lg hidden megaMobile">
       <!-- هدر مگا منو -->
@@ -255,8 +275,8 @@
         <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
         <p class="text-[15px]">دسته بندی کالا ها</p>
       </div>
-    
-    
+  
+  
         <!-- دسته موبایل -->
         <div class="accordion-item">
           <div class="flex items-center justify-between">
@@ -278,10 +298,10 @@
                 <img class="ml-[13px] arrowdown" src="assets/icons/arrowDown.svg" alt="arrowdown">
               </div>
             </div>
-    
+  
             <div class="noneApple allApple">
             <div class="grid grid-cols-2">
-    
+  
               <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
                 <li class="hover:text-black duration-300">گوشی آیفون 11</li>
                 <li class="hover:text-black duration-300">گوشی آیفون 12</li>
@@ -295,7 +315,7 @@
               <li class="hover:text-black duration-300">گوشی آیفون 14 پرو</li>
             </div>
             <div class="text-[#5A5A5A] flex flex-col gap-2 text-[13px]">
-    
+  
               <li class="hover:text-black duration-300">گوشی آیفون 11 پرومکس</li>
               <li class="hover:text-black duration-300">گوشی آیفون 12 پرومکس</li>
               <li class="hover:text-black duration-300">گوشی آیفون 13 پرومکس</li>
@@ -304,7 +324,7 @@
             </div>
           </div>
         </div>
-    
+  
           </ul>
         </div>
       
@@ -358,25 +378,9 @@
           <li class="py-1 text-gray-700 text-sm sm:text-base">هدست</li>
         </ul>
       </div>
+      
+    
     </div>
-    
-    <!-- مگا منو موبایل -->
-    
-            <a>
-              <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
-            </a>
-            <a >
-              <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
-            </a>
-            <a >
-              <li class="hover:text-[#003FEB] text-[11px] duration-300">
-                تجربه خرید از آترین کالا
-              </li>
-            </a>
-            <a>
-              <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
-            </a>
-          </ul>
         </section>
      <!-- top menu end -->
 
@@ -394,7 +398,7 @@
       
 <div class="max-w-[1340px] mx-auto flex flex-row gap-4 p-1 text-[12px] text-[#3A3A3A]">
     <!-- سایدبار -->
-    <aside class="w-[252px] z-30 h-fit hidden xl:block bg-white shadow-lg border-[0.5px] border-[#AFAFAF] p-4 rounded-[10px]">
+    <aside class="w-[252px] z-30 h-fit hidden xl:block bg-white border-[0.5px] border-[#AFAFAF] p-4 rounded-[10px]">
       <!-- عنوان فیلتر -->
       <section class="flex items-center gap-2 border-b-[1px] border-[#AFAFAF] p-1 mb-[13px]">
           <img class="mb-2" src="assets/images/fillter.png" alt="filter">
@@ -511,39 +515,40 @@
         
     <!-- محتوای اصلی -->
     <main class="flex-1 bg-white shadow-md p-4 rounded-md">
-      <section class="flex flex-wrap items-start gap-2">
-        <h1 class="font-bold text-[14px] w-full sm:w-[120px] mb-2 sm:mb-4">گوشی اپل:</h1>
-        <p class="text-[13px] text-[#5C5C5C] leading-6 text-justify w-full">
-          است که دنبال کنندگان و علاقه مندان بسیاری را دارد. اپل ابتدا توسط فردی به نام استیو جابز در سال 1976 بنیان گذاری شد و با تولید محصولات با کیفیت  و استفاده از پلتفرم اختصاصی IOS توانست مخاطبان محدودی را به خود جذب کند. اما اوج کار اپل و نقطه استارت این برند خوش نام را باید سال 2013 دانست.
+      <section class="flex items-start gap-1">
+        <h1 class="font-bold text-[14px] w-[80px] mb-2 sm:mb-4">گوشی اپل:</h1>
+        <p class="text-[14px] text-[#5C5C5C] leading-[20px] lg:leading-[23px] text-justify w-full">
+          اپل از محبوب ترین برندها در زمینه تولید و عرضه گوشی است که دنبال کنندگان و علاقه مندان بسیاری را دارد. اپل ابتدا توسط فردی به نام استیو جابز در سال 
+          1976 بنیان گذاری شد و با تولید محصولات باکیفیت و استفاده از پلتفرم اختصاصی IOS توانست مخاطبان محدودی را به خود جذب کند. اما اوج کار اپل و نقطه استارت این برند خوش نام را باید سال 2013 دانست.
         </p>
       </section>
+      
     
-      <section class="lg:w-[1005px] md:w-[900px] sm:w-[620px] w-full flex justify-around md:h-[122px] h-[51px] border-[0.5px] mt-[28px] border-[#A4A4A4] rounded-[13px]">
+      <section class="lg:w-[1005px] md:w-[900px] sm:w-[620px] w-full flex mx-auto justify-around md:h-[122px] h-[51px] border-[0.5px] mt-[28px] border-[#A4A4A4] rounded-[13px]">
         <article class="flex items-center justify-center gap-2 w-full sm:w-auto">
-          <p class="text-[13px] font-bold">آیفون11</p>
+          <p class="text-[13px] font-bold">آیفون 11</p>
           <img class="hidden md:block" src="assets/images/testapple.png" alt="appletest">
         </article>
         <article class="flex items-center gap-2 w-full sm:w-auto">
-          <p class="text-[13px] font-bold">آیفون11</p>
+          <p class="text-[13px] font-bold">آیفون 12</p>
           <img class="hidden md:block" src="assets/images/testapple.png" alt="appletest">
         </article>
         <article class="flex items-center gap-2 w-full sm:w-auto">
-          <p class="text-[13px] font-bold">آیفون11</p>
+          <p class="text-[13px] font-bold">آیفون 13</p>
           <img class="hidden md:block" src="assets/images/testapple.png" alt="appletest">
         </article>
         <article class="flex items-center gap-2 w-full sm:w-auto">
-          <p class="text-[13px] font-bold">آیفون11</p>
+          <p class="text-[13px] font-bold">آیفون 14</p>
           <img class="hidden md:block" src="assets/images/testapple.png" alt="appletest">
         </article>
         <article class="flex items-center gap-2 w-full sm:w-auto">
-          <p class="text-[13px] font-bold">آیفون11</p>
+          <p class="text-[13px] font-bold">آیفون 15</p>
           <img class="hidden md:block" src="assets/images/testapple.png" alt="appletest">
         </article>
-        <!-- سایر آیتم‌ها -->
       </section>
     
       <!-- برای سایز دکستاپ -->
-      <section class="w-full lg:w-[1005px] lg:flex hidden justify-between items-center h-[50px] border-[0.5px] rounded-[7px] bg-[#EEF7FC] mt-[12px]">
+      <section class="w-full lg:w-[1005px] lg:flex hidden justify-center items-center h-[50px] border-[0.5px] rounded-[7px] bg-[#EEF7FC] mt-[12px] mx-auto">
         <header class="flex items-center gap-7">
           <div class="flex items-center gap-2 px-4">
             <img src="assets/icons/category-svgrepo-com 1.svg" alt="categorys">
@@ -554,7 +559,7 @@
             <p class="font-bold cursor-pointer hover:text-[#003FEB] duration-300">جدید</p>
           </div>
         </header>
-    
+      
         <div class="flex items-center gap-9 px-4 z-40">
           <div class="flex items-center gap-1">
             <img src="assets/icons/view-list-svgrepo-com 1.svg" alt="viewpage">
@@ -565,46 +570,48 @@
           <p class="cursor-pointer hover:text-[#003FEB] duration-300">60</p>
         </div>
       </section>
+      
       <!-- برای سایز دکستاپ -->
 
 
       <!-- برای  سایز موبایل -->
-      <section class="w-[448px] sm:w-[620px] md:w-[900px] mt-[17px] lg:hidden rounded-[7px] h-[68px] border-[0.5px] bg-[#EEF7FC]">
-
+      <section class="w-full max-w-full lg:w-[1000px] mx-auto sm:w-[620px] md:w-[900px] mt-[17px] xl:hidden rounded-[7px] h-auto border-[0.5px] bg-[#EEF7FC]">
         <header class="flex flex-col items-start">
           <div class="flex items-center gap-2 px-4 mt-[13px]">
-            <img src="assets/icons/category-svgrepo-com 1.svg" alt="/">
-            <p class="font-bold">مرتب سازی براساس:</p>
-        </div>
-        <div class="flex justify-center items-center gap-2 mx-auto">
-          <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[131px] h-[22px] border-[#696969]">
-            <option value="جستجوی پیشرفته"> جستجوی پیشرفته</option>
-            <option value="جستجوی پیشرفته">مقدار1</option>
-            <option value="جستجوی پیشرفته">مقدار2</option>
-            <option value="جستجوی پیشرفته">مقدار3</option>
-          </select>
-          <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[131px] h-[22px] border-[#696969]">
-            <option value="قیمت">قیمت</option>
-            <option value="جستجوی پیشرفته"> مقدار1 </option>
-            <option value="جستجوی پیشرفته">مقدار2</option>
-            <option value="جستجوی پیشرفته">مقدار3</option>
-          </select>
-          <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[131px] h-[22px] border-[#696969]">
-            <option value="28">28</option>
-            <option value="جستجوی پیشرفته"> مقدار1 </option>
-            <option value="جستجوی پیشرفته">مقدار2</option>
-            <option value="جستجوی پیشرفته">مقدار3</option>
-          </select>
-        </div>
-          </header>
+            <img src="assets/icons/category-svgrepo-com 1.svg" alt="/" class="w-6 h-6">
+            <p class="font-bold text-sm sm:text-base">مرتب سازی براساس:</p>
+          </div>
+          <div class="flex flex-wrap justify-center items-center gap-2 mx-auto mt-2 h-[68px]">
+            <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[110px] sm:w-[131px] h-[30px] border-[#696969] text-[11px]">
+              <option value="جستجوی پیشرفته">جستجوی پیشرفته</option>
+              <option value="مقدار1">مقدار1</option>
+              <option value="مقدار2">مقدار2</option>
+              <option value="مقدار3">مقدار3</option>
+            </select>
+            <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[110px] sm:w-[131px] h-[30px] border-[#696969] text-[11px]">
+              <option value="قیمت">قیمت</option>
+              <option value="مقدار1">مقدار1</option>
+              <option value="مقدار2">مقدار2</option>
+              <option value="مقدار3">مقدار3</option>
+            </select>
+            <select class="rounded-[4px] bg-[#EEF7FC] border-[0.5px] w-[110px] sm:w-[131px] h-[30px] border-[#696969] text-[11px]">
+              <option value="28">28</option>
+              <option value="مقدار1">مقدار1</option>
+              <option value="مقدار2">مقدار2</option>
+              <option value="مقدار3">مقدار3</option>
+            </select>
+          </div>
+        </header>
       </section>
+      
+      
       <!-- برای  سایز موبایل -->
 
 
       <!-- کارت‌های محصول -->
-      <section class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-9 mt-4">
-        <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-          <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+      <section class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-[10px] lg:gap-9 mt-4">
+        <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF] rounded-[13px] mt-[20px]">
+          <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
           <div class="mt-[17px] flex flex-col items-center">
             <div class="flex items-center gap-6">
               <div class="flex flex-col items-center">
@@ -632,17 +639,17 @@
             <div class="mt-[6px] flex flex-col">
               <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
               <div class="flex items-center gap-3 mt-[6px]">
-                <p>تخفیف خورده</p>
-                <del>42.000.000 تومان</del>
+                <p class="text-[10px] text-[#B3000F]">تخفیف خورده</p>
+                <del class="text-[10px] text-[#B3000F]">42.000.000 تومان</del>
               </div>
-              <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+              <p class="text-left mr-[4px] ml-[12px] lg:mt-[20px] font-bold text-[15px]">21.650.000 تومان</p>
             </div>
           
           </div>
           </article>
 
-          <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-            <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+          <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-[13px] mt-[20px]">
+            <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
             <div class="mt-[17px] flex flex-col items-center">
               <div class="flex items-center gap-6">
                 <div class="flex flex-col items-center">
@@ -669,18 +676,14 @@
             
               <div class="mt-[6px] flex flex-col">
                 <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                <div class="flex items-center gap-3 mt-[6px]">
-                  <p>تخفیف خورده</p>
-                  <del>42.000.000 تومان</del>
-                </div>
-                <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                <p class="text-left mr-[4px] mt-[12px] ml-[12px] lg:mt-[40px] font-bold text-[15px]">21.650.000 تومان</p>
               </div>
             
             </div>
             </article>
 
-            <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-              <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+            <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-[13px] mt-[20px]">
+              <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
               <div class="mt-[17px] flex flex-col items-center">
                 <div class="flex items-center gap-6">
                   <div class="flex flex-col items-center">
@@ -707,18 +710,14 @@
               
                 <div class="mt-[6px] flex flex-col">
                   <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                  <div class="flex items-center gap-3 mt-[6px]">
-                    <p>تخفیف خورده</p>
-                    <del>42.000.000 تومان</del>
-                  </div>
-                  <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                  <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[15px]">21.650.000 تومان</p>
                 </div>
               
               </div>
               </article>
 
-              <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-                <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+              <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-lg mt-[20px]">
+                <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
                 <div class="mt-[17px] flex flex-col items-center">
                   <div class="flex items-center gap-6">
                     <div class="flex flex-col items-center">
@@ -745,18 +744,14 @@
                 
                   <div class="mt-[6px] flex flex-col">
                     <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                    <div class="flex items-center gap-3 mt-[6px]">
-                      <p>تخفیف خورده</p>
-                      <del>42.000.000 تومان</del>
-                    </div>
-                    <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                    <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[15px]">21.650.000 تومان</p>
                   </div>
                 
                 </div>
                 </article>
 
-                <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-                  <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+                <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-lg mt-[20px]">
+                  <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
                   <div class="mt-[17px] flex flex-col items-center">
                     <div class="flex items-center gap-6">
                       <div class="flex flex-col items-center">
@@ -783,18 +778,14 @@
                   
                     <div class="mt-[6px] flex flex-col">
                       <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                      <div class="flex items-center gap-3 mt-[6px]">
-                        <p>تخفیف خورده</p>
-                        <del>42.000.000 تومان</del>
-                      </div>
-                      <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                      <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[15px]">21.650.000 تومان</p>
                     </div>
                   
                   </div>
                   </article>
 
-                  <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-                    <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+                  <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-lg mt-[20px]">
+                    <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
                     <div class="mt-[17px] flex flex-col items-center">
                       <div class="flex items-center gap-6">
                         <div class="flex flex-col items-center">
@@ -821,18 +812,14 @@
                     
                       <div class="mt-[6px] flex flex-col">
                         <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                        <div class="flex items-center gap-3 mt-[6px]">
-                          <p>تخفیف خورده</p>
-                          <del>42.000.000 تومان</del>
-                        </div>
-                        <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                        <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[15px]">21.650.000 تومان</p>
                       </div>
                     
                     </div>
                     </article>
 
-                    <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-                      <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+                    <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-lg mt-[20px]">
+                      <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
                       <div class="mt-[17px] flex flex-col items-center">
                         <div class="flex items-center gap-6">
                           <div class="flex flex-col items-center">
@@ -859,18 +846,15 @@
                       
                         <div class="mt-[6px] flex flex-col">
                           <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                          <div class="flex items-center gap-3 mt-[6px]">
-                            <p>تخفیف خورده</p>
-                            <del>42.000.000 تومان</del>
-                          </div>
-                          <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                          <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[#737373] text-[12px]">در انبار موجود نیست</p>
+
                         </div>
                       
                       </div>
                       </article>
 
-                      <article class="w-[218px] h-[343px] flex flex-col justify-start items-center bg-white shadow-lg rounded-[13px] mt-[20px]">
-                        <img class="w-[165px] h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
+                      <article class="lg:w-[218px] lg:h-[343px] flex flex-col justify-start items-center bg-white border-[0.5px] border-[#AFAFAF]  rounded-lg mt-[20px]">
+                        <img class="lg:w-[165px] lg:h-[165px]" src="assets/images/ps5-digital-edition-1 2.png" alt="ps5">
                         <div class="mt-[17px] flex flex-col items-center">
                           <div class="flex items-center gap-6">
                             <div class="flex flex-col items-center">
@@ -892,16 +876,10 @@
                              <img src="assets/iconsCategpry/hard.svg" alt="memmory">
                              <p class="text-[10px]">6.1</p>
                             </div> 
-                        
-                          </div>
-                        
+                          </div> 
                           <div class="mt-[6px] flex flex-col">
                             <p class="text-[12px] w-[160px] text-[#1E1E1E]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                         <div class="flex items-center gap-3 mt-[6px]">
-                              <p>تخفیف خورده</p>
-                              <del>42.000.000 تومان</del>
-                            </div>
-                            <p class="text-left mt-[8px] font-bold text-[13px]">21.650.000 تومان</p>
+                            <p class="text-left mr-[4px] ml-[12px] lg:mt-[40px] font-bold text-[#737373] text-[12px]">در انبار موجود نیست</p>
                           </div>
                         
                         </div>

@@ -6,6 +6,10 @@ const tageLiMobile = document.querySelector(".menuMobile");
 
 const megamenu = document.querySelector(".megamenu");
 
+const changePasswordModal = document.querySelector(".changePasswordModal");
+
+const backContainer = document.querySelector(".backContainer");
+
 // وقتی موس روی "دسته بندی ها" می‌رود مگا منو باز می‌شود
 tageLi.addEventListener("mouseover", () => {
   megamenu.classList.remove("hidden");
@@ -389,13 +393,35 @@ toggleEmail.addEventListener("change", () => {
 
 emailInputs.addEventListener("change", () => {
   if (emailInputs.checked) {
-    close2.classList.remove("hidden");
-    close2.classList.add("flex");
+    changePasswordModal.classList.remove("hidden");
+    changePasswordModal.classList.add("flex");
   } else {
-    close2.classList.add("hidden");
-    close2.classList.remove("flex");
+    changePasswordModal.classList.add("hidden");
+    changePasswordModal.classList.remove("flex");
   }
 });
+
+// چک کردن هر دو چک باکس اگر درست باشه
+toggleEmail.addEventListener("change", handleCheckboxChange);
+emailInputs.addEventListener("change", handleCheckboxChange);
+
+function handleCheckboxChange() {
+  const isToggleEmailChecked = toggleEmail.checked;
+  const isEmailInputsChecked = emailInputs.checked;
+
+  if (isToggleEmailChecked && isEmailInputsChecked) {
+    close1.classList.add("hidden");
+    close1.classList.remove("flex");
+    closemodal2.classList.add("hidden");
+    closemodal2.classList.remove("flex");
+  } else if (isToggleEmailChecked) {
+    close1.classList.remove("hidden");
+    close1.classList.add("flex");
+  } else {
+    backContainer.classList.add("hidden");
+    backContainer.classList.remove("flex");
+  }
+}
 
 close1.addEventListener("click", () => {
   modal1.classList.remove("block");
@@ -585,3 +611,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// --------------------------------------------------------------------------------------------
+
+// باز و بسته کردن همبرگرمنو
+
+// گرفتن عناصر
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
+
+// تابع باز کردن منو
+function openMenu() {
+  hamburgerMenu.style.transform = "translateY(0)";
+}
+
+// تابع بستن منو
+function closeMenu() {
+  hamburgerMenu.style.transform = "translateY(100%)";
+}
+
+// رویداد کلیک برای دکمه‌ها
+openButton.addEventListener("click", openMenu);
+closeButton.addEventListener("click", closeMenu);
+
+// --------------------------------------------------------------------------------------------
+const closeBack = () => {
+  modal1.classList.remove("block");
+  modal1.classList.add("hidden");
+  boxContainer.classList.remove("hidden");
+  boxContainer.classList.add("block");
+};
