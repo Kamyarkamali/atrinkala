@@ -555,6 +555,7 @@ const sliderBanner = document.getElementById("sliderBanner");
 const sliderItems = document.querySelectorAll(".slider-item");
 let startX = 0;
 let isTouching = false;
+let moveDistance = 0;
 
 // تابع برای حرکت به اسلاید بعدی
 function moveSlide() {
@@ -586,6 +587,8 @@ document.getElementById("prevBtn").addEventListener("click", prevSlide);
 sliderBanner.addEventListener("touchstart", function (e) {
   isTouching = true;
   startX = e.touches[0].clientX; // موقعیت اولیه لمس
+  moveDistance = 0; // صفر کردن فاصله حرکت
+  sliderBanner.style.transition = "none"; // حذف انیمیشن در حین لمس
 });
 
 // رویداد لمس حرکت
@@ -593,11 +596,11 @@ sliderBanner.addEventListener("touchmove", function (e) {
   if (!isTouching) return;
 
   const currentX = e.touches[0].clientX;
-  const diffX = startX - currentX; // تفاوت بین موقعیت شروع و حرکت فعلی
+  moveDistance = startX - currentX; // محاسبه تفاوت موقعیت
 
   // حرکت اسلایدر بر اساس حرکت لمس
   sliderBanner.style.transform = `translateX(-${
-    slideIndex2 * 220.03 - diffX
+    slideIndex2 * 220.03 - moveDistance
   }px)`;
 });
 
@@ -606,12 +609,15 @@ sliderBanner.addEventListener("touchend", function () {
   if (!isTouching) return;
 
   isTouching = false;
-  const endX = startX; // موقعیت انتهایی لمس
-  const diffX = startX - endX;
 
-  if (diffX > 50) {
+  // اگر حرکت بیشتر از حد معین بود، به اسلاید بعدی یا قبلی برو
+  if (moveDistance > 50) {
     moveSlide(); // حرکت به اسلاید بعدی
-  } else if (diffX < -50) {
+  } else if (moveDistance < -50) {
     prevSlide(); // حرکت به اسلاید قبلی
+  } else {
+    // اگر حرکت کم بود، به حالت اولیه بازگرد
+    sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن برگشت
+    sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // بازگشت به موقعیت اولیه
   }
 });

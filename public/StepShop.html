@@ -23,23 +23,23 @@
             alt="hamburGerMenu"
           />
           <a href="/public/HomePage.html">
-            <img
-            class="w-[150px] hidden lg:block lg:w-[190px]"
-            src="assets/images/images/logo.png"
-            alt="logo"
-            />
+              <img
+              class="w-[194.62px] hidden lg:block lg:w-[190px]"
+              src="assets/images/images/logo.png"
+              alt="logo"
+              />
           </a>
           <!-- فیلد جستجو -->
           <div
-            class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+            class="bg-[#F0F0F1] border h-[44px] justify-end hidden md:flex items-center rounded-[7px] w-full lg:w-auto mt-4 lg:mt-0 "
           >
             <img
               src="assets/icons/search.svg"
               alt="search"
-              class="w-6 h-6 ml-2"
+              class="w-[24px] h-[24px] mr-[12px]"
             />
             <input
-              class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+              class="text-sm bg-[#F0F0F1] h-[44px] placeholder-gray-500 placeholder:text-[12px] w-[350px] md:w-[430px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
               type="text"
               placeholder="جستجو"
             />
@@ -47,27 +47,28 @@
         </div>
         <!-- دکمه‌های ورود و ثبت نام -->
         <div class="flex ml-[5px] items-center gap-2 lg:hidden">
-          <button
-            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
-          >
-          <a href="SingIn.html">
-            <p>ورود</p>
-          </a>
+          <section class="w-[100px] flex justify-center items-center border-[0.5px] border-[#4D4D4D] rounded-[7px]">
+            <button
+            class="text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+            >
+            <a href="SingIn.html">
+              <p>ورود</p>
+            </a>
             <p class="text-black mx-1">|</p>
-          <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <a href="SingIn.html">
+              <p>ثبت نام</p>
+            </a>  
           </button>
+        </section>
           <button
-            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+            class="border-[0.5px] border-[#4D4D4D] w-[38px] h-[28px] flex items-center justify-center rounded-md"
           >
-            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+            <img class="w-[21px] h-[20px]" src="assets/icons/shopp.svg" alt="shopping" />
           </button>
         </div>
 
           <!-- محتوای همبرگر منو -->
-          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(200%);">
             <div class="flex justify-between items-center p-4">
               <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
               <button id="closeButton" class="text-lg font-bold">&times;</button>
@@ -93,39 +94,57 @@
       </div>
 
       <!-- فیلد جستجو -->
-      <div
-        class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+      <section
+        class="bg-[#F0F0F1] border justify-end md:hidden flex items-center rounded-[7px] h-[49px] w-full lg:w-auto lg:mx-6 lg:ml-[16px]"
       >
-        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 mr-[13px]" />
         <input
-          class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+          class="bg-[#F0F0F1] text-sm placeholder-[#9D9D9D] placeholder:text-[15px] w-full h-[49px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
           type="text"
           placeholder="جستجو"
         />
-      </div>
+      </section>
 
       <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
-      <div class="hidden lg:flex items-center gap-4">
-        <button
-          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
-        >
-        <a href="SingIn.html">
-          <p>ورود</p>
-        </a>
+      <div class="hidden lg:flex items-center gap-[22px]">
+        <section class="border-[0.5px] flex justify-center items-center rounded-[7px] border-[#4D4D4D]">
+          <button
+          class="flex items-center justify-center w-[140px] h-[40px] rounded-md"
+          >
+          <a href="SingIn.html">
+            <p class="text-[15px] ml-[11px]">ورود</p>
+          </a>
           <p class="text-black mx-1">|</p>
           <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <p class="text-[15px] mr-[11px]">ثبت نام</p>
+          </a>  
         </button>
+      </section>
         <button
-          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+          class="border border-[#4D4D4D] w-[55px] h-[40px] flex items-center justify-center rounded-md"
         >
-          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          <img class="w-[24.17px] h-[21.75px]" src="assets/icons/shopp.svg" alt="shopping" />
         </button>
       </div>
     </header>
-      <!-- navbar -->
+      
+
+    <section class="lg:mr-[35px] mr-3 mt-[20px]">
+      <ul class="w-full flex items-center justify-start lg:gap-10 gap-5">
+        <li class="hover:text-[#003FEB] cursor-pointer relative duration-300 text-[13px] hidden lg:block menu">دسته بندی ها</li>
+        <li class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 menuMobile lg:hidden">دسته بندی ها</li>
+        <a href="#">
+          <li class="hover:text-[#003FEB] lg:text-[13px] text-[9px] duration-300">صفحه اصلی</li>
+        </a>
+        <a href="#">
+          <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">مقایسه</li>
+        </a>
+        <a href="#">
+          <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">وبلاگ آترین کالا</li>
+        </a>
+      </ul>
+    </section>
+
 
            <!-- tom menu start -->
          <section class="mt-[20px] max-w-[1300px] mx-auto">
@@ -134,8 +153,8 @@
                 >
                   <a class="products">
           
-                    <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
-                    <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+                    <!-- <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li> -->
+                    <!-- <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li> -->
           
                     <!--مگا منو  دکستاپ-->
                    <section class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
@@ -358,22 +377,6 @@
             </div>
           </section>
           
-          <!-- مگا منو موبایل -->
-          
-                  <a href="HomePage.html">
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
-                  </a>
-                  <a >
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
-                  </a>
-                  <a >
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">
-                      تجربه خرید از آترین کالا
-                    </li>
-                  </a>
-                  <a>
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
-                  </a>
                 </ul>
               </section>
      <!-- top menu end -->
@@ -384,7 +387,7 @@
 
      <div class="max-w-[1300px] mx-auto mt-6 px-4 lg:px-0 flex lg:flex-row flex-col gap-6 items-center lg:items-start justify-around">
         <!-- باکس اول -->
-        <section class="w-full md:w-[600px] h-auto rounded-[10px] border-[0.5px] border-[#A9A9A9] shadow-md box">
+        <section class="w-full md:w-[600px] h-auto rounded-[10px] border-[0.5px] border-[#A9A9A9] box">
           <div class="flex flex-col p-4 text-[#1A1A1A] text-[14px] gap-5">
             <p>سینا احمدی</p>
             <p>تهران</p>
@@ -398,7 +401,7 @@
         </section>
       
         <!-- باکس دوم -->
-        <section class="w-full md:w-[600px] h-auto rounded-[19px] shadow-lg">
+        <section class="w-full md:w-[600px] h-auto rounded-[19px] border-[0.5px] border-[#A9A9A9]">
           <div class="flex items-center justify-between p-2 mt-[28px]">
             <p class="text-[#212121] text-[14px]">قیمت کالاها</p>
             <p class="text-[#212121] text-[14px]">55.000.000 تومان</p>
