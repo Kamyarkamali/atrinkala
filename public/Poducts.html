@@ -672,7 +672,7 @@
         <span class="text-[13px]">نمایش بیشتر</span>
         <img
           id="toggle-icon"
-          class="w-[14px] ml-2 transition-transform duration-500"
+          class="w-[14px] ml-2"
           src="assets/icons/arrowDown.svg"
           alt="arrow"
         />
@@ -783,7 +783,7 @@
       </h2>
       <div
         id="text-contents"
-        class="overflow-hidden text-gray-600 transition-all duration-500 ease-in-out max-h-[4rem] sm:max-h-[6rem] relative"
+        class="overflow-hidden text-gray-600  max-h-[4rem] sm:max-h-[6rem] relative"
       >
         <p class="text-sm sm:text-[14px] leading-7 sm:leading-7">
           اپل مطابق انتظار در ماه سپتامبر 2021 از سری جدید گوشی‌های آیفون 13 رونمایی کرد و توانست بار دیگر توجه و نگاه کاربران را از سرتاسر جهان معطوف خود سازد. گوشی آیفون 13 پرو مکس 1 ترابایت یکی از مدل‌های جدید شرکت اپل است که از جنبه نرم‌افزاری با تغییرات گسترده‌ای ازنظر عملکرد همراه بوده و ازنظر طراحی نیز تغییرات بسیار جزئی را تجربه کرده است. اپل در ساخت و طراحی ظاهری این گوشی جدید خود، تغییر چشمگیری را ایجاد نکرده است و تنها قسمت ماژول دوربین را بزرگ‌تر و عدسی‌ها را نیز برجسته‌تر ساخته است. در قسمت قدامی گوشی نیز حاشیه‌های اطراف نمایشگر باریک‌تر شده و اندازه ناچ با کاهش چشمگیر 40% همراه بوده تا مخاطبان بتوانند اندازه صفحه بیشتری را برای تماشا در اختیار داشته باشند. اپل برای ارائه بهترین تجربه دیداری مخاطبان، از نمایشگر باکیفیت OLED بهره برده و سایز نمایشگر را 6.7 اینچ قرار داده است. نمایشگر گوشی آیفون 13 پرومکس از نرخ بروزرسانی خیره کننده 120 هرتز پشتیبانی می کند و قابلیت ارائه حداکثر روشنایی 1000 نیت در حالت عادی و 1200 نیت در حالت HDR را برخوردار است که یک نمایش بصری عالی را ایجاد خواهد کرد. آیفون 13 پرو مکس در قسمت تراشه و پردازنده های مرکزی و گرافیکی نیز ارتقا پیدا کرده و عملکرد گوشی را بهبود بخشیده است. شرکت اپل از تراشه 5 نانومتری A15 Bionic بهره برده که قدرتمندترین تراشه طراحی شده در گوشی های جهان شناخته ش
@@ -946,8 +946,8 @@
 
 
      <!-- اسلایدر محصولات مشابه  -->      
-     <section class="allslides">
-      <div class="border-[0.5px] bordr-[#A9A9A9] max-w-[1310px] h-[459px] rounded-[16px] mx-auto mt-[20px]">
+     <section class="allslides overflow-x-hidden">
+      <div class="border-[0.5px] bordr-[#A9A9A9] max-w-[1310px] h-[322px] lg:h-[459px] rounded-[16px] mx-auto mt-[20px]">
         <header class="flex justify-between mt-[10px] mr-[20px] ml-[20px]">
           <h2 class="text-[16px] font-bold cursor-pointer text-[#383838]">محصولات مشابه</h2>
     
@@ -957,62 +957,53 @@
           </div>
         </header>
     
-        <div class="relative mt-[35px] w-full py-5 max-w-[1100px] mx-auto overflow-hidden">
-          <div class="flex gap-10 transition-transform duration-500 ease-in-out" id="slider">
-            <article class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
-              <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 1" class="w-[165px] h-[165px] rounded-lg">
-              <div class="flex flex-col">
-                <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                <div class="flex gap-2 mt-[6px]">
-                  <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
-                  <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
-                </div>
-                <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+
+        <div class="mt-[32px] overflow-hidden w-full mx-auto relative">
+          <div id="sliderBanner" class="flex justify-center items-center relative gap-4 transition-all duration-300 ease-linear">
+            <!-- اسلاید 1 -->
+            <div class="slider-item w-[193px] h-[253px] sm:w-[220px] sm:h-[328px] border-[0.5px] border-[#A9A9A9] rounded-lg overflow-hidden">
+              <img class="w-[120px] h-[120px] sm:w-[165px] sm:h-[165px] flex-shrink-0 mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide1">
+              <div>
+                <p class="w-[157px] text-[11px] sm:text-[13px] mt-[26px] mr-[20px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+                <p class="mt-[30px] text-left ml-[26.5px]">21.650.000 تومان</p>
               </div>
-            </article>
-    
-            <article class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
-              <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 2" class="w-[165px] h-[165px] rounded-lg">
-              <div class="flex flex-col">
-                <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                <div class="flex gap-2 mt-[6px]">
-                  <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
-                  <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
-                </div>
-                <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+            
+            <!-- اسلاید 2 -->
+            <div class="slider-item w-[193px] h-[253px] sm:w-[220px] sm:h-[328px] border-[0.5px] border-[#A9A9A9] rounded-lg overflow-hidden">
+              <img class="w-[120px] h-[120px] sm:w-[165px] sm:h-[165px] flex-shrink-0 mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide2">
+              <div>
+                <p class="w-[157px] text-[11px] sm:text-[13px] mt-[26px] mr-[20px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+                <p class="mt-[30px] text-left ml-[26.5px]">21.650.000 تومان</p>
               </div>
-            </article>
-    
-            <article class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
-              <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 3" class="w-[165px] h-[165px] rounded-lg">
-              <div class="flex flex-col">
-                <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                <div class="flex gap-2 mt-[6px]">
-                  <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
-                  <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
-                </div>
-                <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+        
+            <!-- اسلاید 3 -->
+            <div class="slider-item w-[193px] h-[253px] sm:w-[220px] sm:h-[328px] border-[0.5px] border-[#A9A9A9] rounded-lg overflow-hidden">
+              <img class="w-[120px] h-[120px] sm:w-[165px] sm:h-[165px] flex-shrink-0 mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide3">
+              <div>
+                <p class="w-[157px] text-[11px] sm:text-[13px] mt-[26px] mr-[20px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+                <p class="mt-[30px] text-left ml-[26.5px]">21.650.000 تومان</p>
               </div>
-            </article>
-    
-            <article class="flex-shrink-0 flex flex-col justify-start items-center w-[221px] border-[1px] rounded-[17px] overflow-hidden h-[329px] bg-white shadow-lg">
-              <img src="assets/images/ps5-digital-edition-1 2.png" alt="Image 4" class="w-[165px] h-[165px] rounded-lg">
-              <div class="flex flex-col">
-                <p class="text-[13px] mt-[26px] w-[157px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
-                <div class="flex gap-2 mt-[6px]">
-                  <p class="text-[12px] text-[#B3000F]">تخفیف خورده</p>
-                  <del class="text-[12px] text-[#B3000F]">42.000.000 تومان</del>
-                </div>
-                <p class="text-left font-bold mt-[5px]">21.650.000 تومان</p>
+            </div>
+        
+            <!-- اسلاید 4 -->
+            <div class="slider-item w-[193px] h-[253px] sm:w-[220px] sm:h-[328px] border-[0.5px] border-[#A9A9A9] rounded-lg overflow-hidden">
+              <img class="w-[120px] h-[120px] sm:w-[165px] sm:h-[165px] flex-shrink-0 mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide4">
+              <div>
+                <p class="w-[157px] text-[11px] sm:text-[13px] mt-[26px] mr-[20px]">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+                <p class="mt-[30px] text-left ml-[26.5px]">21.650.000 تومان</p>
               </div>
-            </article>
+            </div>
           </div>
-    
-          <button id="prevBtn" class="absolute w-[32px] h-[32px] left-20 top-1/2 transform px-3 bg-white shadow-md text-black rounded-full">
-            <img src="assets/icons/arrowLeft.svg" alt="previous">
+        
+          <!-- دکمه‌های ناوبری -->
+          <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white border-[0.5px] border-[#A9A9A9 text-white p-2 rounded-full">
+            <img src="/public/assets/icons/arrowLeft.svg" alt="">
           </button>
-          <button id="nextBtn" class="absolute right-[-3px] w-[32px] h-[32px] top-1/2 transform px-3 bg-white shadow-md text-black rounded-full">
-            <img src="assets/icons/arrowRight.svg" alt="next">
+
+          <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white border-[0.5px] border-[#A9A9A9 text-white p-2 rounded-full">
+            <img src="/public/assets/icons/arrowRight.svg" alt="arrow">
           </button>
         </div>
       </div>

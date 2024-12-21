@@ -547,3 +547,71 @@ function showModal() {
   popup.classList.remove("hidden");
   popup.classList.add("block");
 }
+
+// اسلایدر  مصحولات مشابه
+// ----------------------------------------------------
+let slideIndex2 = 0;
+const sliderBanner = document.getElementById("sliderBanner");
+const sliderItems = document.querySelectorAll(".slider-item");
+let startX = 0;
+let isTouching = false;
+
+// تابع برای حرکت به اسلاید بعدی
+function moveSlide() {
+  slideIndex2++;
+  if (slideIndex2 >= sliderItems.length) {
+    slideIndex2 = 0; // بازگشت به اولین اسلاید
+  }
+  sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن
+  sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // حرکت اسلاید
+}
+
+// تابع برای حرکت به اسلاید قبلی
+function prevSlide() {
+  slideIndex2--;
+  if (slideIndex2 < 0) {
+    slideIndex2 = sliderItems.length - 1; // بازگشت به آخرین اسلاید
+  }
+  sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن
+  sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // حرکت اسلاید
+}
+
+// رویداد کلیک برای دکمه "next"
+document.getElementById("nextBtn").addEventListener("click", moveSlide);
+
+// رویداد کلیک برای دکمه "prev"
+document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+// رویداد لمس شروع
+sliderBanner.addEventListener("touchstart", function (e) {
+  isTouching = true;
+  startX = e.touches[0].clientX; // موقعیت اولیه لمس
+});
+
+// رویداد لمس حرکت
+sliderBanner.addEventListener("touchmove", function (e) {
+  if (!isTouching) return;
+
+  const currentX = e.touches[0].clientX;
+  const diffX = startX - currentX; // تفاوت بین موقعیت شروع و حرکت فعلی
+
+  // حرکت اسلایدر بر اساس حرکت لمس
+  sliderBanner.style.transform = `translateX(-${
+    slideIndex2 * 220.03 - diffX
+  }px)`;
+});
+
+// رویداد لمس پایان
+sliderBanner.addEventListener("touchend", function () {
+  if (!isTouching) return;
+
+  isTouching = false;
+  const endX = startX; // موقعیت انتهایی لمس
+  const diffX = startX - endX;
+
+  if (diffX > 50) {
+    moveSlide(); // حرکت به اسلاید بعدی
+  } else if (diffX < -50) {
+    prevSlide(); // حرکت به اسلاید قبلی
+  }
+});

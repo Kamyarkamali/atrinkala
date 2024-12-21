@@ -23,23 +23,23 @@
             alt="hamburGerMenu"
           />
           <a href="/public/HomePage.html">
-            <img
-            class="w-[150px] hidden lg:block lg:w-[190px]"
-            src="assets/images/images/logo.png"
-            alt="logo"
-            />
+              <img
+              class="w-[194.62px] hidden lg:block lg:w-[190px]"
+              src="assets/images/images/logo.png"
+              alt="logo"
+              />
           </a>
           <!-- فیلد جستجو -->
           <div
-            class="bg-white border justify-end hidden md:flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+            class="bg-[#F0F0F1] border h-[44px] justify-end hidden md:flex items-center rounded-[7px] w-full lg:w-auto mt-4 lg:mt-0 "
           >
             <img
               src="assets/icons/search.svg"
               alt="search"
-              class="w-6 h-6 ml-2"
+              class="w-[24px] h-[24px] mr-[12px]"
             />
             <input
-              class="bg-white text-sm placeholder-gray-500 w-[350px] lg:w-[600px] p-2 rounded-md focus:outline-none"
+              class="text-sm bg-[#F0F0F1] h-[44px] placeholder-gray-500 placeholder:text-[12px] w-[350px] md:w-[430px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
               type="text"
               placeholder="جستجو"
             />
@@ -47,27 +47,28 @@
         </div>
         <!-- دکمه‌های ورود و ثبت نام -->
         <div class="flex ml-[5px] items-center gap-2 lg:hidden">
-          <button
-            class="border border-gray-400 text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
-          >
-          <a href="SingIn.html">
-            <p>ورود</p>
-          </a>
+          <section class="w-[100px] flex justify-center items-center border-[0.5px] border-[#4D4D4D] rounded-[7px]">
+            <button
+            class="text-xs flex items-center justify-center w-[80px] h-[30px] rounded-md"
+            >
+            <a href="SingIn.html">
+              <p>ورود</p>
+            </a>
             <p class="text-black mx-1">|</p>
-          <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <a href="SingIn.html">
+              <p>ثبت نام</p>
+            </a>  
           </button>
+        </section>
           <button
-            class="border border-gray-400 w-[38px] h-[30px] flex items-center justify-center rounded-md"
+            class="border-[0.5px] border-[#4D4D4D] w-[38px] h-[28px] flex items-center justify-center rounded-md"
           >
-            <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+            <img class="w-[21px] h-[20px]" src="assets/icons/shopp.svg" alt="shopping" />
           </button>
         </div>
 
           <!-- محتوای همبرگر منو -->
-          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(100%);">
+          <aside id="hamburgerMenu" class="w-full h-[100vh] z-[200] fixed lg:hidden top-0 right-0 left-0 bg-white transition-all duration-500 ease-in-out" style="transform: translateY(200%);">
             <div class="flex justify-between items-center p-4">
               <img class="w-[150px]" src="assets/images/images/logo.png" alt="logo" />
               <button id="closeButton" class="text-lg font-bold">&times;</button>
@@ -93,40 +94,57 @@
       </div>
 
       <!-- فیلد جستجو -->
-      <div
-        class="bg-white border justify-end md:hidden flex items-center rounded-md w-full lg:w-auto mt-4 lg:mt-0 lg:mx-6 lg:ml-[16px]"
+      <section
+        class="bg-[#F0F0F1] border justify-end md:hidden flex items-center rounded-[7px] h-[49px] w-full lg:w-auto lg:mx-6 lg:ml-[16px]"
       >
-        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 ml-2" />
+        <img src="assets/icons/search.svg" alt="search" class="w-6 h-6 mr-[13px]" />
         <input
-          class="bg-white text-sm placeholder-gray-500 w-full lg:w-[600px] p-2 rounded-md focus:outline-none"
+          class="bg-[#F0F0F1] text-sm placeholder-[#9D9D9D] placeholder:text-[15px] w-full h-[49px] lg:w-[600px] p-2 rounded-[7px] focus:outline-none"
           type="text"
           placeholder="جستجو"
         />
-      </div>
+      </section>
 
       <!-- دکمه‌های ورود و ثبت نام در دسکتاپ -->
-      <div class="hidden lg:flex items-center gap-4">
-        <button
-          class="border border-gray-400 text-sm flex items-center justify-center w-[140px] h-[40px] rounded-md"
-        >
-        <a href="SingIn.html">
-          <p>ورود</p>
-        </a>
+      <div class="hidden lg:flex items-center gap-[22px]">
+        <section class="border-[0.5px] flex justify-center items-center rounded-[7px] border-[#4D4D4D]">
+          <button
+          class="flex items-center justify-center w-[140px] h-[40px] rounded-md"
+          >
+          <a href="SingIn.html">
+            <p class="text-[15px] ml-[11px]">ورود</p>
+          </a>
           <p class="text-black mx-1">|</p>
           <a href="SingIn.html">
-            <p>ثبت نام</p>
-          </a>
-
+            <p class="text-[15px] mr-[11px]">ثبت نام</p>
+          </a>  
         </button>
+      </section>
         <button
-          class="border border-gray-400 w-[55px] h-[40px] flex items-center justify-center rounded-md"
+          class="border border-[#4D4D4D] w-[55px] h-[40px] flex items-center justify-center rounded-md"
         >
-          <img class="w-5" src="assets/icons/shopp.svg" alt="shopping" />
+          <img class="w-[24.17px] h-[21.75px]" src="assets/icons/shopp.svg" alt="shopping" />
         </button>
       </div>
     </header>
 
       <!-- navbar -->
+
+      <section class="lg:mr-[35px] mr-3 mt-[20px] border-b-[0.5px] p-3 border-[#A9A9A9] ">
+        <ul class="w-full flex items-center justify-start lg:gap-10 gap-5">
+          <li class="hover:text-[#003FEB] cursor-pointer relative duration-300 text-[13px] hidden lg:block menu">دسته بندی ها</li>
+          <li class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 menuMobile lg:hidden">دسته بندی ها</li>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[9px] duration-300">صفحه اصلی</li>
+          </a>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">مقایسه</li>
+          </a>
+          <a href="#">
+            <li class="hover:text-[#003FEB] lg:text-[13px] text-[10px] duration-300">وبلاگ آترین کالا</li>
+          </a>
+        </ul>
+      </section>
 
               <!-- tom menu start -->
               <section class="mt-[20px] max-w-[1300px] mx-auto">
@@ -135,8 +153,8 @@
                 >
                   <a class="products">
           
-                    <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li>
-                    <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li>
+                    <!-- <li class="hover:text-[#003FEB] relative duration-300 menu hidden lg:block">دسته بندی ها</li> -->
+                    <!-- <li class="hover:text-[#003FEB] text-[11px] relative duration-300 menuMobile md:hidden">دسته بندی ها</li> -->
           
                     <!--مگا منو  دکستاپ-->
                    <div class="absolute hidden top-[100px] w-[1192px] rounded-[18px] shadow-lg h-[420px] z-50 -[#ffff] megamenu">
@@ -359,22 +377,6 @@
             </div>
           </div>
           
-          <!-- مگا منو موبایل -->
-          
-                  <a href="HomePage.html">
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">صفحه اصلی</li>
-                  </a>
-                  <a >
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">مقایسه</li>
-                  </a>
-                  <a >
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">
-                      تجربه خرید از آترین کالا
-                    </li>
-                  </a>
-                  <a>
-                    <li class="hover:text-[#003FEB] text-[11px] duration-300">وبلاگ آترین کالا</li>
-                  </a>
                 </ul>
               </section>
      <!-- top menu end -->
@@ -382,22 +384,22 @@
 
      <div class="max-w-[1400px] mx-auto p-4">
        <!-- مسیر صفحات -->
-       <nav class="flex border-b-[0.5px] p-3 items-center gap-2" aria-label="breadcrumb">
+       <nav class="flex items-center gap-2" aria-label="breadcrumb">
         <ol class="flex items-center gap-2">
-          <li><a href="#" class="text-[#1A1A1A] text-[16px]">خانه</a></li>
-          <li aria-current="page" class="text-[#1A1A1A] text-[16px]">/</li>
-          <li><a href="#" class="text-[#1A1A1A] text-[16px]">چگونه اعتماد کنیم؟</a></li>
+          <li><a href="#" class="text-[#3A3A3A] text-[11px]">خانه</a></li>
+          <li aria-current="page" class="text-[#1A1A1A] text-[11px]">/</li>
+          <li><a href="#" class="text-[#1A1A1A] text-[11px]">چگونه اعتماد کنیم؟</a></li>
         </ol>
       </nav>
       
       <section class="flex justify-center mt-4">
-        <button class="w-[155px] h-[41px] text-[#212121] text-[16px] rounded-[6px] border-[0.5px] border-[#A9A9A9]">چگونه اعتماد کنیم؟</button>
+        <button class="w-[155px] h-[41px] text-[#212121] text-[13px] lg:text-[16px] rounded-[6px] border-[0.5px] border-[#A9A9A9]">چگونه اعتماد کنیم؟</button>
       </section>
       
       <section class="flex flex-col gap-3 lg:flex-row justify-between mt-8">
         <article class="flex flex-col gap-2">
-          <h2 class="text-[#1A1A1A] w-full lg:w-[400px] text-[17px] font-bold">اعتماد با خیال راحت</h2>
-          <p class="w-full lg:w-[600px] text-[16px] text-[#1A1A1A] leading-7">
+          <h2 class="text-[#1A1A1A] w-full lg:w-[400px] text-[15px] lg:text-[16px] font-bold">اعتماد با خیال راحت</h2>
+          <p class="w-full lg:w-[600px] text-[14px] lg:text-[16px] text-[#1A1A1A] leading-8">
             یکی از مهم ترین و پر کاربردترین سوال برای کاربران در خصوص خرید از فروشگاه های اینترنتی بحث چگونه اعتماد کنیم است؟ بحث اعتماد یکی از
             جنجالی ترین موضوعاتی است که هنوز پیش پای کاربران است که البته سو استفاده بسیاری از فروشندگان سبب پیدایش چنین معضلی شده است.
             متاسفانه این موضوع موجب شده تا برخی از کاربران حداقل یک تجربه خرید ناخوشایند را تجربه کنند و چندان به خرید اینترنتی تمایل
@@ -414,7 +416,7 @@
       <section class="flex flex-col lg:flex-row justify-between mt-8">
         <article class="flex flex-col gap-2">
           <h2 class="text-[#1A1A1A] w-full lg:w-[400px] text-[17px] font-bold">یک اعتبار ثبت شده</h2>
-          <p class="w-full lg:w-[600px] text-[16px] text-[#1A1A1A] leading-7">
+          <p class="w-full lg:w-[600px] text-[15px] lg:text-[16px] text-[#1A1A1A] leading-7">
             اما فروشگاه اینترنتی آترین کالا برای فراهم کردن زمینه های یک تجربه خرید آسان و بدون دغدغه، معتبرترین نمادهای کسب و کار
             اینترنتی را اخذ و دریافت کرده است. نماد اعتماد الکترونیکی، نماد فناوری اطلاعات و رسانه های دیجیتال و نماد اتحادیه کشوری
             کسب و کارهای مجازی از مهم ترین نشانه های معتبر بودن آترین کالا و مقبولیت آن در سطح کشور است که مخاطبان در صورت عدم
@@ -422,11 +424,11 @@
           </p>
         </article>
         <div class="flex gap-4 items-center justify-center lg:justify-start mt-4 lg:mt-0">
-          <img class="w-[50px]" src="assets/images/images/TrustImages/en 1.png" alt="نماد 1">
-          <img class="w-[50px]" src="assets/images/images/TrustImages/ershad 1.png" alt="نماد 2">
-          <img class="w-[50px]" src="assets/images/images/TrustImages/namad 1.png" alt="نماد 3">
-          <img class="w-[50px]" src="assets/images/images/TrustImages/torob_guarantee_hologram 1.png" alt="نماد 4">
-          <img class="w-[80px]" src="assets/images/images/TrustImages/medal-of-award-svgrepo-com 1.png" alt="نماد 5">
+          <img class="w-[66px] h-[69px] lg:w-[87px] lg:h-[91px] border-[3px] rounded-[10px] border-[#6122EC]" src="assets/images/images/TrustImages/torob_guarantee_hologram 1.png" alt="نماد 4">
+          <img class="w-[66px] h-[69px] lg:w-[87px] lg:h-[91px] border-[3px] rounded-[10px] border-[#6122EC]" src="assets/images/images/TrustImages/namad 1.png" alt="نماد 3">
+          <img class="w-[66px] h-[69px] lg:w-[87px] lg:h-[91px] border-[3px] rounded-[10px] border-[#6122EC]" src="assets/images/images/TrustImages/ershad 1.png" alt="نماد 2">
+          <img class="w-[66px] h-[69px] lg:w-[90px] lg:h-[91px] border-[3px] rounded-[10px] border-[#6122EC]" src="assets/images/images/TrustImages/en 1.png" alt="نماد 1">
+          <img class="w-[75.35px] h-[83px] lg:w-[118px] lg:h-[131px]" src="assets/images/images/TrustImages/medal-of-award-svgrepo-com 1.png" alt="نماد 5">
         </div>
       </section>
       
@@ -438,13 +440,38 @@
           </div>
         </figure>
       </section>
+
+
+
+      <section class="mt-[62px]">
+        <h2 class="text-[17px]">تضمین امنیت اطلاعات </h2>
+        <div class="flex lg:flex-row flex-col items-center lg:gap-[278px] gap-[17px]">
+          <p class="text-[16px] lg:w-[648px] mt-[20px] leading-8">امنیت اطلاعات همواره یکی از دغدغه های کاربران است اما آترین کالا با تضمین امنیت اطلات کاربران زمینه را برای یک خرید امن فراهم کرده است. به همین منظور مشتریان می توانند بدون استرس و نگرانـی از بابت اطلاعات شخصی فرایند خرید را طی کنند .</p>
+          <img class="w-[129px] h-[129px] lg:w-[157px] lg:h-[139.86px]" src="/public/assets/images/Group.png" alt="images">
+        </div>
+
+        <div class="flex justify-center gap-4 mt-[54px]">
+          <div class="w-[140px] h-[78px] lg:w-[382px] lg:h-[213px] rounded-[16px] flex items-center justify-center border-[3px] border-[#6122EC]">
+            <div class="w-[120px] h-[60px] lg:w-[348px] lg:h-[178px] flex items-center justify-center lg:text-2xl text-white font-bold rounded-[10px] bg-[#D9D9D9]">Video</div>
+          </div>
+          <div class="w-[140px] h-[78px] lg:w-[382px] lg:h-[213px] rounded-[16px] flex items-center justify-center border-[3px] border-[#6122EC]">
+            <div class="w-[120px] h-[60px] lg:w-[348px] lg:h-[178px] flex items-center justify-center lg:text-2xl text-white font-bold rounded-[10px] bg-[#D9D9D9]">Video</div>
+          </div>
+          <div class="w-[140px] h-[78px] lg:w-[382px] lg:h-[213px] rounded-[16px] flex items-center justify-center border-[3px] border-[#6122EC]">
+            <div class="w-[120px] h-[60px] lg:w-[348px] lg:h-[178px] flex items-center justify-center lg:text-2xl text-white font-bold rounded-[10px] bg-[#D9D9D9]">Video</div>
+          </div>
+        </div>
+      </section>
+
+
+
       
       <section class="flex flex-col md:flex-row justify-between mt-[62px] gap-4">
         <article class="flex flex-col gap-2">
           <h2 class="text-[#1A1A1A] w-full md:w-[400px] text-[17px] font-bold">
             تجربه خرید از آترین کالا
           </h2>
-          <p class="w-full md:w-[600px] text-[16px] text-[#1A1A1A] leading-7">
+          <p class="w-full md:w-[600px] text-[15px] lg:text-[16px] text-[#1A1A1A] leading-7">
             اصلی ترین شعار ما در آترین کالا رضایت کاربران است. خوشبختانه با شروع
             فعالیت خود از سال 95 تا کنون توانسته ایم در زمینه رضایت مشتریان عملکرد
             بسیار خوبی داشته باشیم. به طوری که با ایجاد یک بستر مطمئن به عنوان موفق
@@ -454,14 +481,14 @@
           </p>
         </article>
         <div class="flex justify-center md:justify-end">
-          <img class="w-[172px] md:w-[192px] max-w-[300px] md:max-w-[unset]" src="assets/images/images/TrustImages/comment-svgrepo-com 1.png" alt="نظرات کاربران">
+          <img class="lg:w-[216px] lg:h-[216px] w-[149px] h-[149px] max-w-[300px] md:max-w-[unset]" src="assets/images/images/TrustImages/comment-svgrepo-com 1.png" alt="نظرات کاربران">
         </div>
       </section>
       
       <section class="flex flex-col items-center">
         <div class="flex gap-4 items-center mt-[62px]">
-          <img src="assets/images/images/TrustImages/twitter.png" alt="توییتر">
-          <img src="assets/images/images/TrustImages/insta.png" alt="اینستاگرام">
+          <img class="lg:w-[64px] lg:h-[64px]" src="assets/images/images/TrustImages/twitter.png" alt="توییتر">
+          <img class="w-[53.14px] h-[53.14px]" src="assets/images/images/TrustImages/insta.png" alt="اینستاگرام">
           <div class="relative">
             <img src="assets/images/images/TrustImages/whats1.png" alt="واتس اپ 1">
             <div class="absolute top-4 right-3">

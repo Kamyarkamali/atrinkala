@@ -642,3 +642,10 @@ const closeBack = () => {
   boxContainer.classList.remove("hidden");
   boxContainer.classList.add("block");
 };
+
+const closeModalInformationContent = () => {
+  modal4.classList.remove("block");
+  modal4.classList.add("hidden");
+  boxContainer.classList.remove("hidden");
+  boxContainer.classList.add("block");
+};
