@@ -65,6 +65,7 @@ tabletContainer.addEventListener("mouseout", () => {
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 const openButton = document.getElementById("openButton");
 const closeButton = document.getElementById("closeButton");
+const checkBox = document.querySelector(".checkBox");
 
 // تابع باز کردن منو
 function openMenu() {
@@ -264,49 +265,57 @@ apple.addEventListener("click", () => {
 
 // ---------------------------------------------------------------------------------------
 
-const spans = document.querySelectorAll(".comment span");
-const videoContainer = document.querySelector(".videoContainer");
+document.addEventListener("DOMContentLoaded", () => {
+  const spans = document.querySelectorAll(".comment span");
+  const elements = {
+    videoContainer: document.querySelector(".videoContainer"),
+    videoContainer2: document.querySelector(".videoContainer2"),
+    commentsBox: document.querySelector(".commentsBox"),
+    voicesBox: document.querySelector(".voices"),
+    checkBox: document.querySelector(".checkBox"),
+    commentsUsr: document.querySelector(".commentsUsr"),
+  };
 
-const commentsBox = document.querySelector(".commentsBox");
+  // تابع برای نمایش یا مخفی کردن عناصر
+  const toggleVisibility = (visibleElements) => {
+    Object.keys(elements).forEach((key) => {
+      if (visibleElements.includes(key)) {
+        elements[key].classList.remove("hidden");
+        elements[key].classList.add("block");
+      } else {
+        elements[key].classList.add("hidden");
+        elements[key].classList.remove("block");
+      }
+    });
+  };
 
-const voicesBox = document.querySelector(".voices");
+  // تنظیمات پیش‌فرض
+  spans.forEach((span) =>
+    span.classList.remove("border-b-[2px]", "border-blue-500")
+  );
+  spans[0].classList.add("border-b-[2px]", "border-blue-500");
+  toggleVisibility(["videoContainer", "videoContainer2", "checkBox"]);
 
-spans.forEach((span) =>
-  span.classList.remove("border-b-[2px]", "border-blue-500")
-); // حذف همه انتخاب‌ها
-spans[0].classList.add("border-b-[2px]", "border-blue-500");
-videoContainer.classList.remove("hidden");
+  // افزودن رویداد کلیک برای هر span
+  spans.forEach((span) => {
+    span.addEventListener("click", () => {
+      spans.forEach((s) =>
+        s.classList.remove("border-b-[2px]", "border-blue-500", "rounded-[1px]")
+      );
+      span.classList.add("border-b-[2px]", "border-blue-500", "rounded-[1px]");
 
-spans.forEach((span) => {
-  span.addEventListener("click", () => {
-    // حذف کلاس از همه spanها
-    spans.forEach((s) =>
-      s.classList.remove("border-b-[2px]", "border-blue-500")
-    );
-
-    span.classList.add("border-b-[2px]", "border-blue-500");
-
-    if (span.textContent === "ویدیوهای شما") {
-      videoContainer.classList.remove("hidden");
-      videoContainer.classList.add("flex");
-      commentsBox.classList.add("hidden");
-      commentsBox.classList.remove("block");
-      voicesBox.classList.add("hidden");
-      voicesBox.classList.remove("block");
-    } else if (span.textContent === "نظرات شما") {
-      videoContainer.classList.add("hidden");
-      videoContainer.classList.remove("flex");
-      commentsBox.classList.remove("hidden");
-      commentsBox.classList.add("block");
-      voicesBox.classList.add("hidden");
-      voicesBox.classList.remove("block");
-    } else if (span.textContent === "صدای شما") {
-      videoContainer.classList.add("hidden");
-      videoContainer.classList.remove("flex");
-      commentsBox.classList.add("hidden");
-      commentsBox.classList.remove("block");
-      voicesBox.classList.remove("hidden");
-      voicesBox.classList.add("block");
-    }
+      // مدیریت نمایش/مخفی کردن بر اساس متن
+      switch (span.textContent) {
+        case "ویدیوهای شما":
+          toggleVisibility(["videoContainer", "videoContainer2", "checkBox"]);
+          break;
+        case "نظرات شما":
+          toggleVisibility(["commentsBox", "commentsUsr"]);
+          break;
+        case "صدای شما":
+          toggleVisibility(["voicesBox"]);
+          break;
+      }
+    });
   });
 });
