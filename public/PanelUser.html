@@ -403,14 +403,16 @@
     <!-- منوی انتخاب صفحه -->
     <section class="border-b-[0.5px] border-[#AFAFAF] p-4">
       <label for="pageSelect" class="block text-sm mb-2">انتخاب بخش</label>
-      <select id="pageSelect" class="w-full border border-[#AFAFAF] rounded-md p-2 text-sm bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none pr-10">
-        <option value="حساب کاربری من" selected>حساب کاربری من</option>
-        <option value="مدیریت کیف پول">مدیریت کیف پول</option>
-        <option value="سفارش‌های من">سفارش‌های من</option>
-        <option value="نظرات من">نظرات من</option>
-        <option value="تیکت">تیکت</option>
-      </select>
+      <div id="pageSelect" class="w-full border border-[#AFAFAF] rounded-md p-2 text-sm bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none pr-10">
+        <p data-value="حساب کاربری من" class="option bg-blue-100 text-blue-600 font-semibold rounded-md p-2 mb-1 cursor-pointer">حساب کاربری من</p>
+        <p data-value="مدیریت کیف پول" class="option rounded-md p-2 mb-1 cursor-pointer">مدیریت کیف پول</p>
+        <p data-value="سفارش‌های من" class="option rounded-md p-2 mb-1 cursor-pointer">سفارش‌های من</p>
+        <p data-value="نظرات من" class="option rounded-md p-2 mb-1 cursor-pointer">نظرات من</p>
+        <p data-value="تیکت" class="option rounded-md p-2 mb-1 cursor-pointer">تیکت</p>
+      </div>
     </section>
+    
+    
 
     <!-- لیست ناوبری (اختیاری) -->
     <nav>

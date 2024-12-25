@@ -616,8 +616,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const sectionMobile = document.getElementById("pageSelect");
+  const options = sectionMobile.querySelectorAll(".option");
 
-  // شیء برای نگهداری بخش‌ها بر اساس انتخاب
   const sections = {
     "حساب کاربری من": {
       show: [boxMobile1, boxMobile2],
@@ -641,9 +641,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  // تابع برای به‌روز رسانی نمایش و مخفی کردن بخش‌ها
   const updateSections = (selectedOption) => {
-    // مخفی کردن بخش‌های قبلی
     Object.values(sections).forEach(({ hide }) => {
       hide.forEach((el) => {
         el.classList.add("hidden");
@@ -651,27 +649,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // نمایش بخش‌های جدید
-    const { show, hide } = sections[selectedOption];
+    const { show } = sections[selectedOption];
     show.forEach((el) => {
       el.classList.remove("hidden");
       el.classList.add("block");
     });
   };
 
-  // اضافه کردن رویداد تغییر به select
-  sectionMobile.addEventListener("change", (e) => {
-    const selectedOption = e.target.value;
-    updateSections(selectedOption);
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      options.forEach((opt) =>
+        opt.classList.remove("bg-blue-100", "text-blue-600", "font-semibold")
+      );
+
+      option.classList.add("bg-blue-100", "text-blue-600", "font-semibold");
+
+      const selectedOption = option.getAttribute("data-value");
+      updateSections(selectedOption);
+    });
   });
 
-  // اجرای عملیات برای گزینه پیش‌فرض به محض بارگذاری صفحه
-  updateSections(sectionMobile.value);
-
-  // اضافه کردن رویداد برای تغییر اندازه پنجره (resize)
-  window.addEventListener("resize", () => {
-    updateSections(sectionMobile.value);
-  });
+  const defaultOption = "حساب کاربری من";
+  updateSections(defaultOption);
 });
 
 // --------------------------------------------------------------------------------------------
