@@ -612,6 +612,68 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// نمایش سایدبار بخش موبایل
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionMobile = document.getElementById("pageSelect");
+
+  // شیء برای نگهداری بخش‌ها بر اساس انتخاب
+  const sections = {
+    "حساب کاربری من": {
+      show: [boxMobile1, boxMobile2],
+      hide: [myWallet, myComments, tickets],
+    },
+    "مدیریت کیف پول": {
+      show: [],
+      hide: [myWallet, boxMobile1, boxMobile2, myComments, tickets],
+    },
+    "سفارش‌های من": {
+      show: [myWallet],
+      hide: [boxMobile1, boxMobile2, myComments, tickets],
+    },
+    "نظرات من": {
+      show: [myComments],
+      hide: [myWallet, boxMobile1, boxMobile2, tickets],
+    },
+    تیکت: {
+      show: [tickets],
+      hide: [myWallet, boxMobile1, boxMobile2, myComments],
+    },
+  };
+
+  // تابع برای به‌روز رسانی نمایش و مخفی کردن بخش‌ها
+  const updateSections = (selectedOption) => {
+    // مخفی کردن بخش‌های قبلی
+    Object.values(sections).forEach(({ hide }) => {
+      hide.forEach((el) => {
+        el.classList.add("hidden");
+        el.classList.remove("block");
+      });
+    });
+
+    // نمایش بخش‌های جدید
+    const { show, hide } = sections[selectedOption];
+    show.forEach((el) => {
+      el.classList.remove("hidden");
+      el.classList.add("block");
+    });
+  };
+
+  // اضافه کردن رویداد تغییر به select
+  sectionMobile.addEventListener("change", (e) => {
+    const selectedOption = e.target.value;
+    updateSections(selectedOption);
+  });
+
+  // اجرای عملیات برای گزینه پیش‌فرض به محض بارگذاری صفحه
+  updateSections(sectionMobile.value);
+
+  // اضافه کردن رویداد برای تغییر اندازه پنجره (resize)
+  window.addEventListener("resize", () => {
+    updateSections(sectionMobile.value);
+  });
+});
+
 // --------------------------------------------------------------------------------------------
 
 // باز و بسته کردن همبرگرمنو

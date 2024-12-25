@@ -7,6 +7,9 @@ module.exports = {
         accent: "rgba(53 95 222)",
         black: "#2A253B",
       },
+      scrollbar: {
+        hide: "scrollbar-width: none; -ms-overflow-style: none; display: none;",
+      },
       fontFamily: {
         sansRegular: "Sans Regular",
         sansBold: "Sans Bold",

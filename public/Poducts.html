@@ -22,7 +22,7 @@
             src="assets/icons/menu.svg"
             alt="hamburGerMenu"
           />
-          <a href="/public/HomePage.html">
+          <a href="HomePage.html">
             <img
             class="w-[150px] hidden lg:block lg:w-[190px]"
             src="assets/images/images/logo.png"
@@ -513,7 +513,7 @@
                     >
                     <!-- آیکون -->
                     <div class="absolute inset-0 flex items-center justify-center z-10">
-                      <img class="w-[30px] h-[30px]" src="/public/assets/icons/video-play-svgrepo-com 1.svg" alt="videoIcon">
+                      <img class="w-[30px] h-[30px]" src="assets/icons/video-play-svgrepo-com 1.svg" alt="videoIcon">
                     </div>
                   </div>
                   
@@ -523,9 +523,9 @@
               <!-- بخش اسلایدر دکستاپ-->
               <section class="lg:w-[258px] w-[100px] overflow-hidden m-auto absolute left-[20px] mt-[1rem]">
                 <div id="sliderMobile" class="flex relative lg:w-[257px] w-[100px] justify-end transition-all duration-200 ease-linear">
-                  <img class="lg:w-[257px] w-[100px]" src="/public/assets/images/sliderMobileModal/1.png" alt="iphone1">
-                  <img class="lg:w-[257px] w-[100px]" src="/public/assets/images/sliderMobileModal/2.png" alt="iphone2">
-                  <img class="lg:w-[257px] w-[100px]" src="/public/assets/images/sliderMobileModal/3.png" alt="iphone3">
+                  <img class="lg:w-[257px] w-[100px]" src="assets/images/sliderMobileModal/1.png" alt="iphone1">
+                  <img class="lg:w-[257px] w-[100px]" src="assets/images/sliderMobileModal/2.png" alt="iphone2">
+                  <img class="lg:w-[257px] w-[100px]" src="assets/images/sliderMobileModal/3.png" alt="iphone3">
                 </div>
                 <div class="absolute md:right-[30px] left-0 flex justify-center items-center lg:gap-36 gap-14 top-[50%] text-black">
                   <button class="prev lg:w-[30px] lg:h-[32px] w-[20px] h-[20px] shadow-md flex justify-center items-center rounded-[100%] bg-white" onclick="moveSlide(-1)">&#10094;</button>
@@ -947,7 +947,7 @@
 
      <!-- اسلایدر محصولات مشابه  -->      
      <section class="allslides overflow-hidden">
-      <div class="border border-gray-400 max-w-[1310px] lg:h-[459px] h-[322px] rounded-[16px] mx-auto mt-5">
+      <div class="border border-gray-400 max-w-[1100px] lg:h-[459px] h-[322px] rounded-[16px] mx-auto mt-5">
         <header class="flex justify-between mt-2 mx-5">
           <h2 class="text-sm lg:text-base font-bold cursor-pointer text-gray-800">محصولات مشابه</h2>
           <div class="flex items-center gap-2">
@@ -957,48 +957,65 @@
         </header>
     
         <div class="mt-4 lg:mt-8 overflow-hidden relative">
-          <div id="sliderBanner" class="flex lg:gap-[56px] gap-[30px] justify-center transition-all duration-300 ease-linear">
-            <!-- اسلاید -->
-            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0">
-              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide">
+          <!-- اسلایدر -->
+          <div id="sliderBanner" class="flex justify-center gap-x-6 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
+            <!-- آیتم‌های اسلایدر -->
+            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 scroll-snap-center">
+              <!-- <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="assets/images/ps5-digital-edition-1 2.png" alt="slide"> -->
               <div class="p-2 sm:p-4">
                 <p class="text-[10px] sm:text-[12px] lg:text-[14px] mt-2 sm:mt-4">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
                 <p class="mt-[3rem] sm:mt-4 text-left text-gray-800 text-[12px] sm:text-[14px]">21.650.000 تومان</p>
               </div>
             </div>
-            <!-- تکرار برای اسلایدهای دیگر -->
-            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0">
-              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide">
+
+            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 scroll-snap-center">
+              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="assets/images/ps5-digital-edition-1 2.png" alt="slide">
               <div class="p-2 sm:p-4">
                 <p class="text-[10px] sm:text-[12px] lg:text-[14px] mt-2 sm:mt-4">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
                 <p class="mt-[3rem] sm:mt-4 text-left text-gray-800 text-[12px] sm:text-[14px]">21.650.000 تومان</p>
               </div>
             </div>
-            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0">
-              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide">
+
+            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 scroll-snap-center">
+              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="assets/images/ps5-digital-edition-1 2.png" alt="slide">
               <div class="p-2 sm:p-4">
                 <p class="text-[10px] sm:text-[12px] lg:text-[14px] mt-2 sm:mt-4">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
                 <p class="mt-[3rem] sm:mt-4 text-left text-gray-800 text-[12px] sm:text-[14px]">21.650.000 تومان</p>
               </div>
             </div>
-            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 ml-[27rem] sm:ml-0">
-              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="/public/assets/images/ps5-digital-edition-1 2.png" alt="slide">
+
+            <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 scroll-snap-center">
+              <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="assets/images/ps5-digital-edition-1 2.png" alt="slide">
               <div class="p-2 sm:p-4">
                 <p class="text-[10px] sm:text-[12px] lg:text-[14px] mt-2 sm:mt-4">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
                 <p class="mt-[3rem] sm:mt-4 text-left text-gray-800 text-[12px] sm:text-[14px]">21.650.000 تومان</p>
               </div>
             </div>
+          
           </div>
+    
           <!-- دکمه‌های ناوبری -->
-          <button id="prevBtn" class="absolute left-2 sm:left-4 lg:left-8 top-1/2 transform -translate-y-1/2 bg-white border border-gray-400 p-2 rounded-full shadow">
-            <img src="/public/assets/icons/arrowLeft.svg" alt="arrow left">
+          <button id="prevBtn" class="absolute lg:hidden left-2 sm:left-4 lg:left-8 top-1/2 transform -translate-y-1/2 bg-white border border-gray-400 p-2 rounded-full shadow disabled:opacity-50 disabled:cursor-not-allowed">
+            <img src="assets/icons/arrowLeft.svg" alt="arrow left" class="w-6 h-6">
           </button>
-          <button id="nextBtn" class="absolute right-2 sm:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 bg-white border border-gray-400 p-2 rounded-full shadow">
-            <img src="/public/assets/icons/arrowRight.svg" alt="arrow right">
+          <button id="nextBtn" class="absolute lg:hidden right-2 sm:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 bg-white border border-gray-400 p-2 rounded-full shadow disabled:opacity-50 disabled:cursor-not-allowed">
+            <img src="assets/icons/arrowRight.svg" alt="arrow right" class="w-6 h-6">
           </button>
         </div>
       </div>
     </section>
+    
+    
+    
+    <!-- <div class="slider-item w-[193px] h-[253px] lg:h-[329px] md:w-[22%] lg:w-[220px] border border-gray-400 rounded-lg overflow-hidden flex-shrink-0 scroll-snap-center">
+      <img class="w-[110px] sm:w-[100px] lg:w-[165px] mx-auto mt-4" src="assets/images/ps5-digital-edition-1 2.png" alt="slide">
+      <div class="p-2 sm:p-4">
+        <p class="text-[10px] sm:text-[12px] lg:text-[14px] mt-2 sm:mt-4">کنسول بازی PS5 slim حافظه 1 ترابایت Standard</p>
+        <p class="mt-[3rem] sm:mt-4 text-left text-gray-800 text-[12px] sm:text-[14px]">21.650.000 تومان</p>
+      </div>
+    </div> -->
+    
+    
     
          <!-- اسلایدر محصولات مشابه  -->
 

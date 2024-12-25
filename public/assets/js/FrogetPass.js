@@ -277,9 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("bg-[#6122EC]", "text-white");
       button.classList.remove("text-black");
       if (button.classList.contains("mobile-btn")) {
-        inputLabel.textContent = "شماره موبایل:";
+        inputLabel.textContent = "شماره موبایل";
       } else if (button.classList.contains("email-btn")) {
-        inputLabel.textContent = "ایمیل:";
+        inputLabel.textContent = "ایمیل";
       }
     });
   });

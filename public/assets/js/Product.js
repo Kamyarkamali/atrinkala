@@ -399,12 +399,16 @@ $.addEventListener("DOMContentLoaded", () => {
       tabaledesc2.classList.add("block");
       created.classList.remove("block");
       created.classList.add("hidden");
+      slider.classList.remove("block");
+      slider.classList.add("hidden");
     } else if (btnText === "نظرات کاربران (12)") {
       hideTabContent();
       comments.classList.remove("hidden");
       comments.classList.add("block");
       created.classList.remove("block");
       created.classList.add("hidden");
+      slider.classList.remove("block");
+      slider.classList.add("hidden");
     } else if (btnText === "محصولات مشابه") {
       created.classList.remove("block");
       created.classList.add("hidden");
@@ -473,151 +477,38 @@ openButton.addEventListener("click", openMenu);
 closeButton.addEventListener("click", closeMenu);
 
 // ---------------------------------------------------------------------------------------------
+const slider = document.getElementById("sliderBanner");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
-// اسلایدر محصولات مشابه
+const itemWidth = document.querySelector(".slider-item").offsetWidth;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById("slider");
-  const slides = Array.from(slider.children);
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  let currentIndex = 0;
-
-  // تابع برای حرکت به جلو
-  const moveNext = () => {
-    currentIndex++;
-    if (currentIndex >= slides.length) {
-      currentIndex = 0; // حلقه به اول برگردد
-    }
-    updateSlider();
-  };
-
-  // تابع برای حرکت به عقب
-  const movePrev = () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = slides.length - 1; // حلقه به آخر برگردد
-    }
-    updateSlider();
-  };
-
-  // به‌روزرسانی اسلایدر
-  const updateSlider = () => {
-    // اضافه کردن انیمیشن به حرکت اسلایدها
-    slider.style.transition = "transform 0.5s ease-in-out";
-    slider.style.transform = `translateX(-${
-      (currentIndex * 100) / slides.length
-    }%)`;
-  };
-
-  // افزودن رویدادهای کلیک به دکمه‌ها
-  nextBtn.addEventListener("click", moveNext);
-  prevBtn.addEventListener("click", movePrev);
-
-  // به‌روزرسانی اسلایدر به صورت پیش‌فرض
-  updateSlider();
-});
-
-// اسلایدر بخش مودال موبایل
-
-let slideOne = 0;
-
-function moveSlide(direction) {
-  const sliderBanner = document.getElementById("sliderMobile");
-  const totalSlides = document.querySelectorAll("#sliderMobile img").length;
-
-  slideOne += direction;
-
-  // بررسی مرزها
-  if (slideOne >= totalSlides) {
-    slideOne = 0; //
-  } else if (slideOne < 0) {
-    slideOne = totalSlides - 1;
-  }
-
-  // حرکت دادن اسلایدر
-  sliderBanner.style.transform = `translateX(-${slideOne * 100}%)`;
-  sliderBanner.style.transition = "transform 0.5s ease-in-out";
-}
-
-// نمایش اسلایدر برای سایز موبایل
-// --------------------------------------------------------------
-function showModal() {
-  popup.classList.remove("hidden");
-  popup.classList.add("block");
-}
-
-// اسلایدر  مصحولات مشابه
-// ----------------------------------------------------
-let slideIndex2 = 0;
-const sliderBanner = document.getElementById("sliderBanner");
-const sliderItems = document.querySelectorAll(".slider-item");
-let startX = 0;
-let isTouching = false;
-let moveDistance = 0;
-
-// تابع برای حرکت به اسلاید بعدی
-function moveSlide() {
-  slideIndex2++;
-  if (slideIndex2 >= sliderItems.length) {
-    slideIndex2 = 0; // بازگشت به اولین اسلاید
-  }
-  sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن
-  sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // حرکت اسلاید
-}
-
-// تابع برای حرکت به اسلاید قبلی
-function prevSlide() {
-  slideIndex2--;
-  if (slideIndex2 < 0) {
-    slideIndex2 = sliderItems.length - 1; // بازگشت به آخرین اسلاید
-  }
-  sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن
-  sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // حرکت اسلاید
-}
-
-// رویداد کلیک برای دکمه "next"
-document.getElementById("nextBtn").addEventListener("click", moveSlide);
-
-// رویداد کلیک برای دکمه "prev"
-document.getElementById("prevBtn").addEventListener("click", prevSlide);
-
-// رویداد لمس شروع
-sliderBanner.addEventListener("touchstart", function (e) {
-  isTouching = true;
-  startX = e.touches[0].clientX; // موقعیت اولیه لمس
-  moveDistance = 0; // صفر کردن فاصله حرکت
-  sliderBanner.style.transition = "none"; // حذف انیمیشن در حین لمس
-});
-
-// رویداد لمس حرکت
-sliderBanner.addEventListener("touchmove", function (e) {
-  if (!isTouching) return;
-
-  const currentX = e.touches[0].clientX;
-  moveDistance = startX - currentX; // محاسبه تفاوت موقعیت
-
-  // حرکت اسلایدر بر اساس حرکت لمس
-  sliderBanner.style.transform = `translateX(-${
-    slideIndex2 * 220.03 - moveDistance
-  }px)`;
-});
-
-// رویداد لمس پایان
-sliderBanner.addEventListener("touchend", function () {
-  if (!isTouching) return;
-
-  isTouching = false;
-
-  // اگر حرکت بیشتر از حد معین بود، به اسلاید بعدی یا قبلی برو
-  if (moveDistance > 50) {
-    moveSlide(); // حرکت به اسلاید بعدی
-  } else if (moveDistance < -50) {
-    prevSlide(); // حرکت به اسلاید قبلی
+function updateButtons() {
+  if (slider.scrollLeft === 0) {
+    prevBtn.disabled = true;
   } else {
-    // اگر حرکت کم بود، به حالت اولیه بازگرد
-    sliderBanner.style.transition = "transform 0.3s ease-in-out"; // انیمیشن برگشت
-    sliderBanner.style.transform = `translateX(-${slideIndex2 * 220.03}px)`; // بازگشت به موقعیت اولیه
+    prevBtn.disabled = false;
   }
+
+  if (slider.scrollWidth - slider.scrollLeft === slider.clientWidth) {
+    nextBtn.disabled = true;
+  } else {
+    nextBtn.disabled = false;
+  }
+}
+
+slider.addEventListener("scroll", updateButtons);
+
+prevBtn.addEventListener("click", () => {
+  slider.scrollBy({
+    left: -itemWidth,
+    behavior: "smooth",
+  });
+});
+
+nextBtn.addEventListener("click", () => {
+  slider.scrollBy({
+    left: itemWidth,
+    behavior: "smooth",
+  });
 });
