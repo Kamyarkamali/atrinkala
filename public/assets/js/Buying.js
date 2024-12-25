@@ -182,6 +182,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // مگا منو سایز موبایل
 
+const menuMobile = document.querySelector(".menuMobile");
+const megaMobile = document.querySelector(".megaMobile");
+
+menuMobile.addEventListener("click", () => {
+  megaMobile.classList.remove("hidden");
+  megaMobile.classList.add("block");
+});
+
 const accordionItems = document.querySelectorAll(".accordion-item");
 
 accordionItems.forEach((item) => {
@@ -215,6 +223,11 @@ accordionItems.forEach((item) => {
     });
   });
 });
+
+const closeMenuHandeler = () => {
+  megaMobile.classList.remove("block");
+  megaMobile.classList.add("hidden");
+};
 
 // بستن مگامنو در سایز موبایل
 document.addEventListener("DOMContentLoaded", () => {

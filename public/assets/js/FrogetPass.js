@@ -179,6 +179,18 @@ document.addEventListener("DOMContentLoaded", () => {
   dynamicContent.innerHTML = mobileContent;
 });
 
+const megaMobile2 = document.querySelector(".megaMobile");
+
+const openMenuMobileMega = () => {
+  megaMobile2.classList.remove("hidden");
+  megaMobile2.classList.add("block");
+};
+
+const closeMenuHandeler = () => {
+  megaMobile2.classList.remove("block");
+  megaMobile2.classList.add("hidden");
+};
+
 // مگا منو سایز موبایل
 
 const accordionItems = document.querySelectorAll(".accordion-item");

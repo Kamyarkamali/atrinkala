@@ -55,6 +55,6 @@
   src: url("/public/assets/fonts/woff2/YekanBakhFaNum-Regular.woff2");
 }
 
-body {
+* {
   font-family: YekanBakh;
 }

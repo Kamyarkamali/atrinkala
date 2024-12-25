@@ -351,109 +351,55 @@ const toggleContents = () => {
   }
 };
 // عوض  کردن قسمت مشخصات با کلیک کردن
-$.addEventListener("DOMContentLoaded", () => {
-  const togeleBtn = $.querySelectorAll(".tab");
-  const created = $.querySelector(".created");
-  const description = $.querySelector(".desc");
-  const tabaledesc1 = $.querySelector(".tabaledesc");
-  const tabaledesc2 = $.querySelector(".tabaledescription");
-  const comments = $.querySelector(".comments");
-  const slider = $.querySelector(".allslides");
-
-  const toggleTabContent = (btnText) => {
-    const clearTabs = () => {
-      togeleBtn.forEach((otherBtn) => {
-        otherBtn.classList.remove("border-b-[2px]", "border-blue-600", "py-3");
-      });
-    };
-
-    const showTabContent = (contentToShow, contentToHide1, contentToHide2) => {
-      contentToShow.classList.remove("hidden");
-      contentToShow.classList.add("block");
-      contentToHide1.classList.remove("block");
-      contentToHide1.classList.add("hidden");
-      contentToHide2.classList.remove("block");
-      contentToHide2.classList.add("hidden");
-    };
-
-    const hideTabContent = () => {
-      description.classList.remove("block");
-      description.classList.add("hidden");
-      tabaledesc1.classList.remove("block");
-      tabaledesc2.classList.remove("block");
-      tabaledesc1.classList.add("hidden");
-      tabaledesc2.classList.add("hidden");
-    };
-
-    clearTabs();
-
-    if (btnText === "توضیحات تکمیلی") {
-      showTabContent(description, tabaledesc1, tabaledesc2);
-      created.classList.remove("hidden");
-      created.classList.add("block");
-    } else if (btnText === "مشخصات فنی") {
-      showTabContent(tabaledesc1, description, tabaledesc2);
-      tabaledesc1.classList.remove("hidden");
-      tabaledesc1.classList.add("block");
-      tabaledesc2.classList.remove("hidden");
-      tabaledesc2.classList.add("block");
-      created.classList.remove("block");
-      created.classList.add("hidden");
-      slider.classList.remove("block");
-      slider.classList.add("hidden");
-    } else if (btnText === "نظرات کاربران (12)") {
-      hideTabContent();
-      comments.classList.remove("hidden");
-      comments.classList.add("block");
-      created.classList.remove("block");
-      created.classList.add("hidden");
-      slider.classList.remove("block");
-      slider.classList.add("hidden");
-    } else if (btnText === "محصولات مشابه") {
-      created.classList.remove("block");
-      created.classList.add("hidden");
-      slider.classList.remove("hidden");
-      slider.classList.add("block");
-      comments.classList.remove("block");
-      comments.classList.add("hidden");
-      tabaledesc2.classList.remove("block");
-      tabaledesc2.classList.add("hidden");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".tab");
+  const contentSections = {
+    "توضیحات تکمیلی": [".desc", ".created"],
+    "مشخصات فنی": [".tabaledesc", ".tabaledescription"],
+    "نظرات کاربران (12)": [".comments"],
+    "محصولات مشابه": [".allslides"],
   };
 
-  const applyDefaultStyles = () => {
-    const technicalBtn = Array.from(togeleBtn).find(
-      (btn) => btn.textContent.trim() === "مشخصات فنی"
+  const toggleTab = (selectedTab) => {
+    tabs.forEach((tab) =>
+      tab.classList.remove("border-b-[2px]", "border-blue-600", "py-3")
     );
 
-    if (technicalBtn) {
-      technicalBtn.classList.add("border-b-[2px]", "border-blue-600", "py-3");
-      tabaledesc1.classList.remove("hidden");
-      tabaledesc2.classList.remove("hidden");
-      tabaledesc1.classList.add("block");
-      tabaledesc2.classList.add("block");
-      description.classList.remove("block");
-      description.classList.add("hidden");
-      created.classList.remove("hidden");
-      created.classList.add("block");
-      slider.classList.add("hidden");
-      slider.classList.remove("block");
-      comments.classList.remove("block");
-      comments.classList.add("hidden");
-    }
+    document
+      .querySelectorAll(
+        ".desc, .created, .tabaledesc, .tabaledescription, .comments, .allslides"
+      )
+      .forEach((section) => section.classList.add("hidden"));
+
+    selectedTab.classList.add("border-b-[2px]", "border-blue-600", "py-3");
+    (contentSections[selectedTab.textContent.trim()] || []).forEach(
+      (selector) => {
+        document.querySelector(selector).classList.remove("hidden");
+      }
+    );
   };
 
-  applyDefaultStyles();
+  const defaultTab = Array.from(tabs).find(
+    (tab) => tab.textContent.trim() === "مشخصات فنی"
+  );
+  if (defaultTab) toggleTab(defaultTab);
 
-  togeleBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      toggleTabContent(btn.textContent.trim());
-      btn.classList.add("border-b-[2px]", "border-blue-600", "py-3");
-    });
-  });
+  tabs.forEach((tab) => tab.addEventListener("click", () => toggleTab(tab)));
 });
 
 // --------------------------------------------------------------------------------------------
+
+const megaMobile2 = document.querySelector(".megaMobile");
+
+const openMenuMobileMega = () => {
+  megaMobile2.classList.remove("hidden");
+  megaMobile2.classList.add("block");
+};
+
+const closeMenuHandeler = () => {
+  megaMobile2.classList.remove("block");
+  megaMobile2.classList.add("hidden");
+};
 
 // باز و بسته کردن همبرگرمنو
 
@@ -484,35 +430,33 @@ let isDown6 = false;
 let startX6;
 let scrollLeft6;
 
-// جلوگیری از کشیدن تصاویر (برای کل اسلایدر)
 slider6.addEventListener("mousedown", (e) => {
   isDown6 = true;
   startX6 = e.pageX - slider6.offsetLeft;
   scrollLeft6 = slider6.scrollLeft;
 
-  // جلوگیری از کشیدن تصویر
-  e.preventDefault(); // این خط برای جلوگیری از حرکت تصاویر است.
+  e.preventDefault();
 
-  slider6.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
+  slider6.style.cursor = "grabbing";
 });
 
 // برای ترک کردن موس
 slider6.addEventListener("mouseleave", () => {
   isDown6 = false;
-  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
+  slider6.style.cursor = "grab";
 });
 
 document.addEventListener("mouseup", () => {
   isDown6 = false;
-  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
+  slider6.style.cursor = "grab";
 });
 
 slider6.addEventListener("mousemove", (e) => {
-  if (!isDown6) return; // اگر موس نگه داشته نشده باشد، کاری انجام نشود
-  e.preventDefault(); // جلوگیری از حرکت صفحه
+  if (!isDown6) return;
+  e.preventDefault();
   const x = e.pageX - slider6.offsetLeft;
-  const walk = (x - startX6) * 2; // محاسبه فاصله اسکرول
-  slider6.scrollLeft = scrollLeft6 - walk; // اعمال اسکرول
+  const walk = (x - startX6) * 2;
+  slider6.scrollLeft = scrollLeft6 - walk;
 });
 
 // برای رویداد تاچ (موبایل)
@@ -520,26 +464,26 @@ slider6.addEventListener("touchstart", (e) => {
   isDown6 = true;
   startX6 = e.touches[0].pageX - slider6.offsetLeft;
   scrollLeft6 = slider6.scrollLeft;
-  slider6.style.cursor = "grabbing"; // تغییر نمای موس به حالت grabbing
+  slider6.style.cursor = "grabbing";
 });
 
 document.addEventListener("touchend", () => {
   isDown6 = false;
-  slider6.style.cursor = "grab"; // تغییر نمای موس به حالت grab
+  slider6.style.cursor = "grab";
 });
 
 slider6.addEventListener("touchmove", (e) => {
   if (!isDown6) return;
   const x = e.touches[0].pageX - slider6.offsetLeft;
-  const walk = (x - startX6) * 2; // محاسبه فاصله اسکرول
-  slider6.scrollLeft = scrollLeft6 - walk; // اعمال اسکرول
+  const walk = (x - startX6) * 2;
+  slider6.scrollLeft = scrollLeft6 - walk;
 });
 
 // جلوگیری از کشیدن روی تصویر گوشی (دقیقا مثل اسلایدر)
-const items7 = slider4.querySelectorAll(".flex-shrink-0"); // پیدا کردن همه آیتم‌های اسلایدر (گوشی‌ها)
+const items7 = slider4.querySelectorAll(".flex-shrink-0");
 
 items7.forEach((item8) => {
   item8.addEventListener("mousedown", (e) => {
-    e.preventDefault(); // جلوگیری از کشیدن تصویر گوشی
+    e.preventDefault();
   });
 });

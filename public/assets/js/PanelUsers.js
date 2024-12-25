@@ -673,6 +673,18 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSections(defaultOption);
 });
 
+const megaMobile2 = document.querySelector(".megaMobile");
+
+const openMenuMobileMega = () => {
+  megaMobile2.classList.remove("hidden");
+  megaMobile2.classList.add("block");
+};
+
+const closeMenuHandeler = () => {
+  megaMobile2.classList.remove("block");
+  megaMobile2.classList.add("hidden");
+};
+
 // --------------------------------------------------------------------------------------------
 
 // باز و بسته کردن همبرگرمنو

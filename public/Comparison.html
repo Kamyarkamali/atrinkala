@@ -134,7 +134,7 @@
   <section class="lg:mr-[35px] mr-3 mt-[20px] border-b-[0.5px] p-3 border-[#A9A9A9] ">
     <ul class="w-full flex items-center justify-start lg:gap-10 gap-5">
       <li class="hover:text-[#003FEB] cursor-pointer relative duration-300 text-[13px] hidden lg:block menu">دسته بندی ها</li>
-      <li class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 menuMobile lg:hidden">دسته بندی ها</li>
+      <li onclick="openMenuMobileMega()" class="hover:text-[#003FEB] mr-3 lg:text-[13px] text-[10px] relative duration-300 cursor-pointer menuMobile lg:hidden">دسته بندی ها</li>
       <a href="#">
         <li class="hover:text-[#003FEB] lg:text-[13px] text-[9px] duration-300">صفحه اصلی</li>
       </a>
@@ -274,7 +274,7 @@
             <!-- هدر مگا منو -->
             <div
               class="flex items-center justify-between mt-[15px] mb-2 border-b-[1px] border-[#A9A9A9] p-1 mr-[28px] ml-[28px]">
-              <img class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
+              <img onclick="closeMenuHandeler()" class="w-[25px] close z-40" src="assets/icons/close.svg" alt="close">
               <p class="text-[15px]">دسته بندی کالا ها</p>
             </div>
 
@@ -404,7 +404,7 @@
 
     <section class="grid grid-cols-1 md:grid-cols-2 justify-items-center lg:grid-cols-3 gap-4 mt-8 px-4 w-full max-w-7xl">
       <!-- کارت ۱ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
+      <article class="w-full max-w-[404px] h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
         <form>
           <label for="product-1" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -417,7 +417,7 @@
       </article>
     
       <!-- کارت ۲ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
+      <article class="w-full max-w-[404px] h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
 
           <label for="product-2" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -430,7 +430,7 @@
       </article>
     
       <!-- کارت ۳ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
+      <article class="w-full max-w-[404px]  h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
         <form>
           <label for="product-3" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -443,7 +443,7 @@
       </article>
     
       <!-- کارت ۴ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
+      <article class="w-full max-w-[404px]  h-auto border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
         <form>
           <label for="product-4" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -456,7 +456,7 @@
       </article>
     
       <!-- کارت ۵ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white">
+      <article class="w-full max-w-[404px]  h-auto border border-gray-300 rounded-lg p-6 bg-white">
         <form>
           <label for="product-5" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -469,7 +469,7 @@
       </article>
     
       <!-- کارت ۶ -->
-      <article class="w-full max-w-[404px] z-30 h-auto border border-gray-300 rounded-lg p-6 bg-white">
+      <article class="w-full max-w-[404px]  h-auto border border-gray-300 rounded-lg p-6 bg-white">
         <form>
           <label for="product-6" class="block mb-2 text-sm font-medium text-gray-700">مقایسه با:</label>
           <div class="flex items-center gap-2">
@@ -628,6 +628,200 @@
 
     <!-- مقایدر مقایسه شده  -->
   </div>
+
+  <footer
+  class="max-w-[1370px]  relative bg-[#F4F4F4] h-[500px] lg:h-[590px] border-[1px] border-[#3F3F3F] mt-[16px] mx-auto rounded-[15px]"
+>
+  <div class="flex justify-between gap-3 max-w-[1000px] text-[#3F3F3F]">
+    <div class="mt-[27px] mr-[30px] hidden lg:block">
+      <img src="assets/images/images/logo.png" alt="logo" />
+    </div>
+
+    <div class="mt-[37px] text-[13px] mr-[20px] lg:mr-0">
+      <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">راهنمای مشتریان</h3>
+      <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-4">
+        <a href="#" target="_blank">
+          <li>تماس با ما</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>درباره ما</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>شرایط و ضوابط استفاده</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>چگونه اعتماد کنیم؟</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>تجربه خرید از آترین کالا</li>
+        </a>
+        <a href="#" target="_blank">
+          <li>نقشه سایت</li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="mt-[37px] text-[13px]">
+      <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">لینک های مفید</h3>
+      <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-4">
+        <a href="#" target="_blank">
+          <li>محصولات جدید</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>آترین پلاس</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>آیفون 14</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>آیفون 15</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>آیپد</li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="mt-[37px] text-[10px] lg:text-[13px] ml-[20px] lg:mr-0">
+      <h3 class="lg:text-[15px] text-[12px] text-[#3A3A3A] font-bold">خواندنی ها</h3>
+      <ul class="flex mt-[6px] md:text-[13px] text-[11px] flex-col gap-4">
+        <a href="#" target="_blank">
+          <li>آیا آیفون 15 ارزش خریدن دارد؟</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>بهترین لپ تاپ اچ پی</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>بهترین ساعت هوشمند</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>آیفون چی بخرم؟</li>
+        </a>
+
+        <a href="#" target="_blank">
+          <li>تفاوت اپل واچ فیک و اصل</li>
+        </a>
+        <a href="#" target="_blank">
+          <li>تفاوت گوشی اکتیو و نات اکتیو</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <div class="flex justify-center mt-[21px]">
+    <p
+      class="text-[11px] lg:text-[14px] border-b-[1px] p-2 border-[#C9C9C9] inline-block text-[#373737]"
+    >
+      تماس با ما هفت روز هفته از ساعت 8 الی 19
+    </p>
+  </div>
+
+  <div class="flex justify-center flex-wrap lg:justify-around mt-[21px] gap-[20px]">
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">09129407014</p>
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">09129407013</p>
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">09129407012</p>
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">021-28421592</p>
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">021-71057528</p>
+    <p class="text-[8px] lg:text-[17px] cursor-pointer text-[#333333] font-bold">0873-4259380</p>
+  </div>
+
+  <div
+class="flex flex-wrap lg:justify-between justify-around items-center max-w-[1300px] mx-auto mt-[33px] gap-4"
+>
+<!-- لوگوها -->
+<div class="flex items-center gap-[10px] flex-wrap">
+<img
+class="w-[29px] h-[30px] lg:w-[83px] lg:h-[83px] rounded-[6px] object-cover"
+  src="assets/images/images/imagesFooter/namad 1.png"
+  alt="/"
+/>
+<img
+  class="w-[24px] h-[29px] lg:w-[83px] lg:h-[83px] rounded-[6px] object-cover"
+  src="assets/images/images/imagesFooter/ershad 1.png"
+  alt="/"
+/>
+<img
+class="w-[27px] h-[27px] lg:w-[83px] lg:h-[83px] rounded-[6px] object-cover"
+src="assets/images/images/imagesFooter/en 1.png"
+alt="/"
+/>
+<img
+class="w-[29.41px] h-[32px] lg:w-[76.29px] lg:h-[83px] rounded-[6px] object-cover"
+  src="assets/images/images/imagesFooter/torob_guarantee_hologram 1.png"
+  alt="/"
+/>
+</div>
+
+<!-- دکمه‌ها -->
+<div class="flex flex-wrap justify-center items-center gap-[21px] lg:gap-20">
+<div
+  class="w-[26px] h-[17px] lg:w-[146px] lg:h-[42px] mt-6 flex justify-center items-center bg-white rounded-[8px]"
+>
+  <div class="flex gap-3 items-center">
+    <img
+    class="w-[10x] h-[11px] lg:w-[24px] lg:h-[24px]"
+      src="assets/images/images/imagesFooter/shopper-svgrepo-com 1.png"
+      alt="/"
+    />
+    <p class="text-[10px] md:text-[13px] ml-1 text-[#003FEB] hidden lg:block">
+      تجربه خریداران
+    </p>
+  </div>
+</div>
+<div class="flex flex-col items-center text-[13px] text-[#727272] gap-[7px]">
+  <p class="text-[8px] lg:text-[13px]">پرداخت آنلاین</p>
+<div class="w-[57px] h-[17px] lg:w-[146px] lg:h-[42px] flex justify-center items-center bg-white rounded-[8px]">
+  <img src="assets/images/images/logo.png" class="w-[80px] lg:w-[110px]" alt="logo" />
+</div>
+</div>
+<div class="flex flex-col items-center text-[13px] text-[#727272] gap-[7px]">
+  <p class="text-[8px] lg:text-[13px]">پرداخت آنلاین</p>
+<div class="w-[57px] h-[17px] lg:w-[146px] lg:h-[42px] flex justify-center items-center bg-white rounded-[8px]">
+  <img src="assets/images/images/logo.png" class="w-[80px] lg:w-[110px]" alt="logo" />
+</div>
+</div>
+</div>
+
+<!-- شبکه های اجتماعی -->
+<div class="flex flex-col items-center gap-[7px]">
+<p class="mb-4 text-[8px] lg:text-[13px] text-[#727272]">شبکه های اجتماعی</p>
+<section class="flex items-center gap-4 mt-[-15px]">
+<img class="lg:w-[29px] lg:h-[29px] w-[12px] h-[12px]"
+  src="assets/images/images/imagesFooter/instagram-167-svgrepo-com 1.png"
+  alt="/"
+/>
+<img
+  class="w-[13px] h-[13px] lg:w-[33px] lg:h-[33px]"
+  src="assets/images/images/imagesFooter/whatsapp-svgrepo-com (1) 1.png"
+  alt="/"
+/>
+<img
+  class="w-[12px] h-[12px] lg:w-[30px] lg:h-[30px]"
+  src="assets/images/images/imagesFooter/aparat-svgrepo-com 1.png"
+  alt="/"
+/>
+</section>
+</div>
+</div>
+  <section
+    class="absolute flex justify-center items-center bottom-0 rounded-b-[15px] h-[64px] w-full bg-[#ECEBEB]"
+  >
+    <p class="lg:text-[13px] text-[10px] font-bold text-[#555555]">
+      استفاده از تمامی مطالب، تصاویر و محتوای سایت فقط برای مقاصد غیر تجاری
+      و با ذکر منبع بلامانع است.
+    </p>
+  </section>
+</footer>
   
   </div>
   <script src="assets/js/Comparison.js"></script>

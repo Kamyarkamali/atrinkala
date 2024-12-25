@@ -13,6 +13,18 @@ tageLi.addEventListener("mouseover", () => {
   megamenu.classList.add("transition-all", "duration-300");
 });
 
+const megaMobile2 = document.querySelector(".megaMobile");
+
+const openMenuMobileMega = () => {
+  megaMobile2.classList.remove("hidden");
+  megaMobile2.classList.add("block");
+};
+
+const closeMenuHandeler = () => {
+  megaMobile2.classList.remove("block");
+  megaMobile2.classList.add("hidden");
+};
+
 // وقتی موس از "دسته بندی ها" خارج می‌شود، مگا منو بسته می‌شود
 tageLi.addEventListener("mouseout", () => {
   // فقط زمانی که موس از مگا منو هم خارج شود بسته می‌شود
@@ -84,6 +96,8 @@ smartwatchContainer.addEventListener("mouseout", () => {
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 const openButton = document.getElementById("openButton");
 const closeButton = document.getElementById("closeButton");
+
+const megaMobile = document.querySelector(".megamenuMobile");
 
 // تابع باز کردن منو
 function openMenu() {
@@ -219,7 +233,6 @@ accordionItems.forEach((item) => {
 document.addEventListener("DOMContentLoaded", () => {
   const closed = document.querySelector(".close");
   const tageProducts = document.querySelector(".products");
-  const megaMobile = document.querySelector(".megaMobile");
 
   if (!closed || !tageProducts || !megaMobile) {
     console.error("یکی از عناصر یافت نشد!");

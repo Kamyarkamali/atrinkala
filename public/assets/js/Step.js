@@ -99,6 +99,18 @@ closeButton.addEventListener("click", closeMenu);
 
 // ---------------------------------------------------------------------------------------------
 
+const megaMobile2 = document.querySelector(".megaMobile");
+
+const openMenuMobileMega = () => {
+  megaMobile2.classList.remove("hidden");
+  megaMobile2.classList.add("block");
+};
+
+const closeMenuHandeler = () => {
+  megaMobile2.classList.remove("block");
+  megaMobile2.classList.add("hidden");
+};
+
 // هاور برای فعال و غیر فعال کردن لوازم جانبی گوشی
 
 document.addEventListener("DOMContentLoaded", () => {
